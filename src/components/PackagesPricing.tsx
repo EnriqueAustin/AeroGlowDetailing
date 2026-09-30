@@ -43,7 +43,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-2">
+            <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
               Transparent West Coast Rates
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -61,7 +61,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
               onClick={() => setSelectedVehicle('sedan')}
               className={`px-2.5 sm:px-4 py-2 text-xs font-semibold rounded-sm transition-colors cursor-pointer text-center ${
                 selectedVehicle === 'sedan'
-                  ? 'bg-[#222222] text-[#D4AF37] border border-[#D4AF37]/40 shadow-sm'
+                  ? 'bg-[#222222] text-[#00D2FF] border border-[#00D2FF]/40 shadow-sm'
                   : 'text-neutral-400 hover:text-white border border-transparent'
               }`}
             >
@@ -73,7 +73,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
               onClick={() => setSelectedVehicle('suv')}
               className={`px-2.5 sm:px-4 py-2 text-xs font-semibold rounded-sm transition-colors cursor-pointer text-center ${
                 selectedVehicle === 'suv'
-                  ? 'bg-[#222222] text-[#D4AF37] border border-[#D4AF37]/40 shadow-sm'
+                  ? 'bg-[#222222] text-[#00D2FF] border border-[#00D2FF]/40 shadow-sm'
                   : 'text-neutral-400 hover:text-white border border-transparent'
               }`}
             >
@@ -85,7 +85,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
               onClick={() => setSelectedVehicle('bakkie')}
               className={`px-2.5 sm:px-4 py-2 text-xs font-semibold rounded-sm transition-colors cursor-pointer text-center ${
                 selectedVehicle === 'bakkie'
-                  ? 'bg-[#222222] text-[#D4AF37] border border-[#D4AF37]/40 shadow-sm'
+                  ? 'bg-[#222222] text-[#00D2FF] border border-[#00D2FF]/40 shadow-sm'
                   : 'text-neutral-400 hover:text-white border border-transparent'
               }`}
             >
@@ -98,9 +98,9 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
         {/* Pricing Cards Grid (Core Service + 3 Bundles) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1: Core Headlight Restoration */}
-          <div className="bg-[#121212] rounded-sm p-6 flex flex-col justify-between transition-all duration-300 relative border border-[#D4AF37]/60 shadow-[0_0_25px_rgba(212,175,55,0.08)] bg-gradient-to-b from-[#161616] to-[#101010]">
+          <div className="bg-[#121212] rounded-sm p-6 flex flex-col justify-between transition-all duration-300 relative border border-[#00D2FF]/60 shadow-[0_0_25px_rgba(0,210,255,0.08)] bg-gradient-to-b from-[#161616] to-[#101010]">
             <div>
-              <div className="inline-block text-[10px] font-bold uppercase tracking-wider text-black bg-[#D4AF37] px-2.5 py-0.5 rounded-sm mb-3">
+              <div className="inline-block text-[10px] font-bold uppercase tracking-wider text-black bg-[#00D2FF] px-2.5 py-0.5 rounded-sm mb-3">
                 {headlineOffer.badge}
               </div>
 
@@ -114,14 +114,14 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
               {/* Price */}
               <div className="mt-5 pt-4 border-t border-neutral-800">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-extrabold text-[#D4AF37] font-mono-tabular">
+                  <span className="text-3xl font-extrabold text-[#00D2FF] font-mono-tabular">
                     R{headlineOffer.price}
                   </span>
                   <span className="text-xs text-neutral-400 font-mono">Both Headlights</span>
                 </div>
-                <div className="text-[11px] text-[#E5C07B] mt-0.5 flex items-center justify-between">
+                <div className="text-[11px] text-[#38BDF8] mt-0.5 flex items-center justify-between">
                   <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
                     1-Year Written Guarantee
                   </span>
                   <span className="flex items-center gap-1 text-neutral-400 font-mono">
@@ -138,7 +138,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                 </div>
                 {headlineOffer.includes.map((feature, i) => (
                   <div key={i} className="flex items-start gap-2 text-xs text-neutral-300">
-                    <Check className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                    <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -149,7 +149,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenBooking('headlight-restoration')}
-                className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
+                className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
               >
                 <span>Book Headlights (R650)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -167,7 +167,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                 key={pkg.id}
                 className={`bg-[#121212] rounded-sm p-6 flex flex-col justify-between transition-all duration-300 relative border ${
                   isBestSeller
-                    ? 'border-[#D4AF37]/80 shadow-[0_0_30px_rgba(212,175,55,0.12)] bg-gradient-to-b from-[#181818] to-[#111111]'
+                    ? 'border-[#00D2FF]/80 shadow-[0_0_30px_rgba(0,210,255,0.12)] bg-gradient-to-b from-[#181818] to-[#111111]'
                     : 'border-neutral-800 hover:border-neutral-700'
                 }`}
               >
@@ -176,8 +176,8 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                     <div
                       className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm mb-3 ${
                         isBestSeller
-                          ? 'bg-[#D4AF37] text-black font-extrabold'
-                          : 'text-[#D4AF37] border border-[#D4AF37]/40'
+                          ? 'bg-[#00D2FF] text-black font-extrabold'
+                          : 'text-[#00D2FF] border border-[#00D2FF]/40'
                       }`}
                     >
                       {pkg.badge}
@@ -194,7 +194,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                   {/* Price */}
                   <div className="mt-5 pt-4 border-t border-neutral-800">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-extrabold text-[#D4AF37] font-mono-tabular">
+                      <span className="text-3xl font-extrabold text-[#00D2FF] font-mono-tabular">
                         R{price.toLocaleString()}
                       </span>
                       {pkg.savingsText && (
@@ -219,7 +219,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                     </div>
                     {pkg.includes.map((feature, i) => (
                       <div key={i} className="flex items-start gap-2 text-xs text-neutral-300">
-                        <Check className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                        <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -232,7 +232,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                     onClick={() => onOpenBooking(pkg.id)}
                     className={`w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider rounded-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
                       isBestSeller
-                        ? 'bg-[#D4AF37] text-black hover:bg-[#E5C07B] shadow-md'
+                        ? 'bg-[#00D2FF] text-black hover:bg-[#38BDF8] shadow-md'
                         : 'bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700'
                     }`}
                   >
@@ -249,7 +249,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-6 pt-10 border-t border-neutral-800">
           {/* Trade Pricing Box */}
           <div className="lg:col-span-6 bg-[#111111] border border-neutral-800 rounded-sm p-6">
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#D4AF37] mb-2">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#00D2FF] mb-2">
               <Briefcase className="w-4 h-4" />
               <span>Used Car Lots, Panel Beaters & Fleet Managers</span>
             </div>
@@ -263,7 +263,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                     <span className="font-bold text-white block">{trade.title}</span>
                     <span className="text-neutral-400 text-[11px]">{trade.highlights[0]} · We come to your lot in Vredenburg / Saldanha</span>
                   </div>
-                  <span className="font-mono-tabular font-bold text-sm text-[#D4AF37] shrink-0">
+                  <span className="font-mono-tabular font-bold text-sm text-[#00D2FF] shrink-0">
                     {trade.rateDescription}
                   </span>
                 </div>
@@ -274,7 +274,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
           {/* Travel & Call-Out Policy Box */}
           <div className="lg:col-span-6 bg-[#111111] border border-neutral-800 rounded-sm p-6 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#D4AF37] mb-2">
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#00D2FF] mb-2">
                 <MapPin className="w-4 h-4" />
                 <span>Mobile Service Radius · We Come To You</span>
               </div>
@@ -291,7 +291,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                 </div>
                 <div className="p-2.5 bg-[#161616] border border-neutral-800 rounded-sm">
                   <span className="text-white font-bold block">Saldanha, Langebaan, Jacobsbaai</span>
-                  <span className="text-[#D4AF37] text-[11px] font-mono">R150 (FREE over R700!)</span>
+                  <span className="text-[#00D2FF] text-[11px] font-mono">R150 (FREE over R700!)</span>
                 </div>
               </div>
             </div>

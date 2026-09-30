@@ -105,7 +105,7 @@ export const ProcessPage: React.FC = () => {
         {/* Section 1: Headlight 5-Stage Mobile Process Interactive */}
         <section className="space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Primary Specialist Protocol
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
@@ -127,7 +127,7 @@ export const ProcessPage: React.FC = () => {
                     onClick={() => setActiveStep(idx)}
                     className={`p-5 rounded-sm border cursor-pointer transition-all ${
                       isCurrent
-                        ? 'bg-[#151515] border-[#D4AF37] shadow-lg'
+                        ? 'bg-[#151515] border-[#00D2FF] shadow-lg'
                         : 'bg-[#0E0E0E] hover:bg-[#121212] border-neutral-800 text-neutral-400'
                     }`}
                   >
@@ -135,7 +135,7 @@ export const ProcessPage: React.FC = () => {
                       <div className="flex items-start gap-4">
                         <span
                           className={`font-mono text-lg font-bold ${
-                            isCurrent ? 'text-[#D4AF37]' : 'text-neutral-600'
+                            isCurrent ? 'text-[#00D2FF]' : 'text-neutral-600'
                           }`}
                         >
                           {step.step}
@@ -166,7 +166,7 @@ export const ProcessPage: React.FC = () => {
             <div className="lg:col-span-6 bg-[#131313] border border-neutral-800 p-6 sm:p-8 rounded-sm sticky top-28 shadow-xl">
               <div className="flex items-start justify-between gap-3 pb-4 border-b border-neutral-800 mb-6">
                 <div>
-                  <span className="text-xs font-mono text-[#D4AF37] uppercase">
+                  <span className="text-xs font-mono text-[#00D2FF] uppercase">
                     Stage Details
                   </span>
                   <h4 className="text-lg sm:text-xl font-bold text-white font-display mt-0.5">
@@ -182,8 +182,8 @@ export const ProcessPage: React.FC = () => {
                 {HEADLIGHT_PROCESS_STEPS[activeStep].description}
               </p>
 
-              <div className="bg-[#1A1A1A] border border-[#D4AF37]/30 p-4 rounded-sm mb-6">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#D4AF37] block mb-1">
+              <div className="bg-[#1A1A1A] border border-[#00D2FF]/30 p-4 rounded-sm mb-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#00D2FF] block mb-1">
                   Key Quality Action:
                 </span>
                 <p className="text-xs text-neutral-200">
@@ -198,7 +198,7 @@ export const ProcessPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => openBooking('headlight-restoration')}
-                  className="px-5 py-2 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-colors cursor-pointer"
+                  className="px-5 py-2 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-colors cursor-pointer"
                 >
                   Book This Procedure (R650)
                 </button>
@@ -210,7 +210,7 @@ export const ProcessPage: React.FC = () => {
         {/* Section 2: Mobile Setup & Real Equipment */}
         <section className="space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Tools & Supplies
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
@@ -227,14 +227,14 @@ export const ProcessPage: React.FC = () => {
               return (
                 <div
                   key={eq.title}
-                  className="p-6 bg-[#121212] border border-neutral-800 rounded-sm hover:border-[#D4AF37]/50 transition-colors"
+                  className="p-6 bg-[#121212] border border-neutral-800 rounded-sm hover:border-[#00D2FF]/50 transition-colors"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-sm bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center shrink-0 text-[#D4AF37]">
+                    <div className="w-10 h-10 rounded-sm bg-[#00D2FF]/15 border border-[#00D2FF]/30 flex items-center justify-center shrink-0 text-[#00D2FF]">
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono text-[#D4AF37] uppercase block">
+                      <span className="text-[11px] font-mono text-[#00D2FF] uppercase block">
                         {eq.role}
                       </span>
                       <h3 className="text-base font-bold text-white font-display mt-0.5 mb-2">
@@ -254,7 +254,7 @@ export const ProcessPage: React.FC = () => {
         {/* Section 3: Safe Mobile Washing & Valeting Sequence */}
         <section className="space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Vehicle Maintenance
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
@@ -272,7 +272,7 @@ export const ProcessPage: React.FC = () => {
                 className="p-5 bg-[#121212] border border-neutral-800 rounded-sm flex flex-col md:flex-row md:items-center justify-between gap-4"
               >
                 <div className="flex items-start gap-4">
-                  <span className="font-mono text-lg font-bold text-[#D4AF37] shrink-0">
+                  <span className="font-mono text-lg font-bold text-[#00D2FF] shrink-0">
                     {phase.number}
                   </span>
                   <div>
@@ -297,7 +297,7 @@ export const ProcessPage: React.FC = () => {
         {/* Section 4: On-Site Requirements Banner */}
         <section className="bg-gradient-to-r from-[#141414] via-[#161616] to-[#141414] border border-neutral-800 p-8 sm:p-10 rounded-sm flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-2 max-w-xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-wider">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-wider">
               On-Site Mobile Logistics
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
@@ -311,7 +311,7 @@ export const ProcessPage: React.FC = () => {
           <button
             type="button"
             onClick={() => openBooking()}
-            className="w-full sm:w-auto px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-md cursor-pointer shrink-0"
+            className="w-full sm:w-auto px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer shrink-0"
           >
             Book Mobile Appointment
           </button>

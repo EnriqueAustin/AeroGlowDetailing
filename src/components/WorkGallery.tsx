@@ -22,7 +22,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-2">
+            <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
               Restoration Demonstrations
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -50,7 +50,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
                   onClick={() => setFilter(tab.id as typeof filter)}
                   className={`px-3.5 py-1.5 text-xs font-semibold rounded-sm whitespace-nowrap transition-colors cursor-pointer ${
                     isActive
-                      ? 'bg-[#222222] text-[#D4AF37] border border-[#D4AF37]/50 shadow-sm'
+                      ? 'bg-[#222222] text-[#00D2FF] border border-[#00D2FF]/50 shadow-sm'
                       : 'text-neutral-400 hover:text-white border border-transparent'
                   }`}
                 >
@@ -67,7 +67,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
             <div
               key={project.id}
               onClick={() => setActiveModalProject(project)}
-              className="bg-[#121212] border border-neutral-800/80 hover:border-[#D4AF37]/50 rounded-sm overflow-hidden transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+              className="bg-[#121212] border border-neutral-800/80 hover:border-[#00D2FF]/50 rounded-sm overflow-hidden transition-all duration-300 group cursor-pointer flex flex-col justify-between"
             >
               {/* Media Thumbnail */}
               <div className="relative aspect-[4/3] bg-neutral-900 overflow-hidden">
@@ -78,7 +78,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                <div className="absolute top-3 left-3 bg-black/75 px-2.5 py-1 rounded-sm text-[10px] font-mono uppercase tracking-wider text-[#D4AF37] border border-neutral-800">
+                <div className="absolute top-3 left-3 bg-black/75 px-2.5 py-1 rounded-sm text-[10px] font-mono uppercase tracking-wider text-[#00D2FF] border border-neutral-800">
                   {project.category}
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
@@ -102,7 +102,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
                   <span className="text-neutral-400 font-mono-tabular">
                     R{project.quoteZAR.toLocaleString()}
                   </span>
-                  <span className="text-[#D4AF37] group-hover:translate-x-0.5 transition-transform flex items-center gap-1 font-semibold text-[11px] uppercase tracking-wider">
+                  <span className="text-[#00D2FF] group-hover:translate-x-0.5 transition-transform flex items-center gap-1 font-semibold text-[11px] uppercase tracking-wider">
                     View Case <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -147,7 +147,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-[10px] font-mono text-[#D4AF37]">
+                  <div className="absolute top-2 left-2 bg-black/80 px-2 py-0.5 rounded text-[10px] font-mono text-[#00D2FF]">
                     RESTORED
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
               {/* Modal Body */}
               <div className="p-6 sm:p-8 space-y-6">
                 <div>
-                  <div className="flex items-center gap-3 text-xs text-[#D4AF37] font-mono mb-1">
+                  <div className="flex items-center gap-3 text-xs text-[#00D2FF] font-mono mb-1">
                     <span>{activeModalProject.vehicle}</span>
                     <span>·</span>
                     <span>{activeModalProject.area}</span>
@@ -176,13 +176,13 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
 
                 {/* Key Outcomes */}
                 <div className="p-4 bg-[#181818] border border-neutral-800 rounded-sm">
-                  <div className="text-xs font-mono uppercase tracking-wider text-[#D4AF37] mb-2">
+                  <div className="text-xs font-mono uppercase tracking-wider text-[#00D2FF] mb-2">
                     Verified Transformation Outcomes
                   </div>
                   <ul className="space-y-1.5 text-xs text-neutral-300">
                     {activeModalProject.keyOutcomes.map((outcome, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
                         <span>{outcome}</span>
                       </li>
                     ))}
@@ -210,7 +210,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
                 <div className="pt-4 border-t border-neutral-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
                     <span className="text-[11px] text-neutral-400 block font-mono">Completed Job Value</span>
-                    <span className="text-xl font-bold text-[#D4AF37] font-mono-tabular">
+                    <span className="text-xl font-bold text-[#00D2FF] font-mono-tabular">
                       R{activeModalProject.quoteZAR.toLocaleString()}
                     </span>
                   </div>
@@ -222,7 +222,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
                       setActiveModalProject(null);
                       onOpenBooking(id);
                     }}
-                    className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow cursor-pointer text-center"
+                    className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow cursor-pointer text-center"
                   >
                     Request Similar Detail
                   </button>

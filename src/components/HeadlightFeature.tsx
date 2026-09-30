@@ -16,14 +16,14 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-3">
-            <Award className="w-4 h-4 text-[#D4AF37]" />
+          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-3">
+            <Award className="w-4 h-4 text-[#00D2FF]" />
             <span>Primary Core Service</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight text-balance">
             PROFESSIONAL HEADLIGHT RESTORATION
           </h2>
-          <p className="mt-3 text-lg text-[#E5C07B] font-medium">
+          <p className="mt-3 text-lg text-[#38BDF8] font-medium">
             Full Multi-Stage Wet-Sanding + UV-Resistant Protective Clearcoat
           </p>
           <p className="mt-4 text-sm sm:text-base text-neutral-400 leading-relaxed text-balance">
@@ -48,7 +48,7 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
               {/* Overlay Badges */}
               <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2.5 text-white">
                 <div>
-                  <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[#D4AF37] font-semibold">
+                  <div className="text-[10px] sm:text-xs uppercase tracking-wider text-[#00D2FF] font-semibold">
                     Restoration Outcome
                   </div>
                   <div className="text-sm sm:text-lg font-bold leading-tight mt-0.5">
@@ -56,7 +56,7 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-neutral-300 font-mono-tabular bg-black/75 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-sm border border-neutral-700 shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
                   <span>1-Year Written Guarantee</span>
                 </div>
               </div>
@@ -65,19 +65,19 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
             {/* Quick Micro-Process bullets below media */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-3 border-t border-neutral-800 text-xs">
               <div className="p-2 bg-neutral-900/60 rounded-sm">
-                <span className="text-[#D4AF37] block font-mono">01. 800 Grit</span>
+                <span className="text-[#00D2FF] block font-mono">01. 800 Grit</span>
                 <span className="text-neutral-300">Shaves UV Burn</span>
               </div>
               <div className="p-2 bg-neutral-900/60 rounded-sm">
-                <span className="text-[#D4AF37] block font-mono">02. 3000 Grit</span>
+                <span className="text-[#00D2FF] block font-mono">02. 3000 Grit</span>
                 <span className="text-neutral-300">Smooths Scratches</span>
               </div>
               <div className="p-2 bg-neutral-900/60 rounded-sm">
-                <span className="text-[#D4AF37] block font-mono">03. IPA Wipe</span>
+                <span className="text-[#00D2FF] block font-mono">03. IPA Wipe</span>
                 <span className="text-neutral-300">Degreases Surface</span>
               </div>
               <div className="p-2 bg-neutral-900/60 rounded-sm">
-                <span className="text-[#D4AF37] block font-mono">04. UV Clear</span>
+                <span className="text-[#00D2FF] block font-mono">04. UV Clear</span>
                 <span className="text-neutral-300">Protective Seal</span>
               </div>
             </div>
@@ -86,9 +86,9 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
           {/* Pricing & Coupon Voucher Action Box */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             {/* Offer Card */}
-            <div className="bg-[#181818] border-2 border-[#D4AF37]/40 p-6 sm:p-8 rounded-sm relative shadow-xl">
+            <div className="bg-[#181818] border-2 border-[#00D2FF]/40 p-6 sm:p-8 rounded-sm relative shadow-xl">
               {/* Floating Ribbon */}
-              <div className="inline-block text-[11px] font-bold uppercase tracking-wider text-black bg-[#D4AF37] px-3 py-1 rounded-sm mb-4">
+              <div className="inline-block text-[11px] font-bold uppercase tracking-wider text-black bg-[#00D2FF] px-3 py-1 rounded-sm mb-4">
                 Special Mobile Service
               </div>
 
@@ -102,7 +102,7 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
                   </p>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#D4AF37] font-mono-tabular">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-[#00D2FF] font-mono-tabular">
                     R650
                   </div>
                   <span className="text-[11px] text-emerald-400 font-medium block">Both Headlights Included</span>
@@ -112,26 +112,26 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
               {/* Package Inclusions */}
               <ul className="space-y-3 text-xs sm:text-sm text-neutral-300 mb-6">
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Dual lenses progressively wet-sanded (800 → 1200 → 2000 → 3000 grit)</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Sealed with premium UV acrylic clear coat / Meguiar's coating</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Protective tape shields bumper paintwork & fender clearcoat</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span className="font-semibold text-white">Written 1-Year Guarantee against West Coast sun</span>
                 </li>
               </ul>
 
               {/* Curing Time Upsell Callout */}
-              <div className="p-3 bg-[#111111] border border-[#D4AF37]/30 rounded-sm mb-6 text-xs">
-                <div className="text-[#D4AF37] font-bold flex items-center gap-1.5 mb-1">
+              <div className="p-3 bg-[#111111] border border-[#00D2FF]/30 rounded-sm mb-6 text-xs">
+                <div className="text-[#00D2FF] font-bold flex items-center gap-1.5 mb-1">
                   <Zap className="w-3.5 h-3.5 fill-current" />
                   <span>Curing Time Add-On (+R200):</span>
                 </div>
@@ -145,7 +145,7 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
                 <button
                   type="button"
                   onClick={onBookHeadlights}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold tracking-wider uppercase text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-md cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold tracking-wider uppercase text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer"
                 >
                   <span>BOOK HEADLIGHT RESTORATION (R650)</span>
                   <ArrowRight className="w-4 h-4" />
@@ -181,7 +181,7 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
                   </span>
                 </div>
                 <div className="flex items-start gap-2 text-neutral-300">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>
                     <strong className="text-white">AeroGlow Clearcoat:</strong> Shaves off the dead layer, creates an anchor profile, and bonds a brand-new UV hardcoat. Backed by 1-Year Guarantee.
                   </span>

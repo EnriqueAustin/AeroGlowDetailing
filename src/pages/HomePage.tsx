@@ -32,7 +32,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#0D0D0D] pb-8 text-center">
           <button
             onClick={() => navigateTo('headlights')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>View Dedicated Headlight Restoration Page with Full Technical Specs</span>
             <ArrowRight className="w-4 h-4" />
@@ -46,7 +46,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#080808] pb-10 text-center">
           <button
             onClick={() => navigateTo('process')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>View Step-by-Step Mobile Restoration Process</span>
             <ArrowRight className="w-4 h-4" />
@@ -63,7 +63,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#0A0A0A] pb-10 text-center">
           <button
             onClick={() => navigateTo('before-after')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>View Before & After Comparisons & Visual Proof</span>
             <ArrowRight className="w-4 h-4" />
@@ -80,7 +80,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#080808] pb-10 text-center">
           <button
             onClick={() => navigateTo('services')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>Browse All Mobile Detailing Services & Pricing</span>
             <ArrowRight className="w-4 h-4" />
@@ -100,7 +100,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#080808] pb-10 text-center">
           <button
             onClick={() => navigateTo('packages')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>Open Packages & Mobile Cost Calculator</span>
             <ArrowRight className="w-4 h-4" />
@@ -114,7 +114,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#0A0A0A] pb-10 text-center">
           <button
             onClick={() => navigateTo('work')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>View Restoration Demonstrations & Work Archive</span>
             <ArrowRight className="w-4 h-4" />
@@ -128,7 +128,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#080808] pb-10 text-center">
           <button
             onClick={() => navigateTo('reviews')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>Read Our 5-Point Quality Charter & Guarantees</span>
             <ArrowRight className="w-4 h-4" />
@@ -142,7 +142,7 @@ export const HomePage: React.FC = () => {
         <div className="bg-[#090909] pb-10 text-center">
           <button
             onClick={() => navigateTo('faq')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#D4AF37] hover:text-[#E5C07B] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
           >
             <span>View Mobile FAQs & Service Information</span>
             <ArrowRight className="w-4 h-4" />
@@ -153,7 +153,7 @@ export const HomePage: React.FC = () => {
       {/* Final Conversion Callout */}
       <section className="py-20 lg:py-28 bg-gradient-to-b from-[#0C0C0C] to-[#080808] border-b border-neutral-900 text-center px-4 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-xs font-mono uppercase tracking-[0.25em] text-[#D4AF37] mb-3">
+          <div className="text-xs font-mono uppercase tracking-[0.25em] text-[#00D2FF] mb-3">
             Mobile Service Across The West Coast
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white font-display tracking-tight text-balance mb-6">
@@ -167,7 +167,7 @@ export const HomePage: React.FC = () => {
             <button
               type="button"
               onClick={() => navigateTo('book')}
-              className="w-full sm:w-auto px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>BOOK A MOBILE DETAIL</span>
               <ArrowRight className="w-4 h-4" />

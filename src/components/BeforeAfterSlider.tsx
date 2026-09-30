@@ -51,7 +51,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-2">
+            <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
               Interactive Evidence
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -76,7 +76,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                   }}
                   className={`px-4 py-2 text-xs font-semibold rounded-sm whitespace-nowrap transition-colors cursor-pointer ${
                     isSelected
-                      ? 'bg-[#222222] text-[#D4AF37] border border-[#D4AF37]/50 shadow-sm'
+                      ? 'bg-[#222222] text-[#00D2FF] border border-[#00D2FF]/50 shadow-sm'
                       : 'text-neutral-400 hover:text-white border border-transparent'
                   }`}
                 >
@@ -133,16 +133,16 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               <div className="absolute top-2.5 sm:top-4 left-2.5 sm:left-4 max-w-[44%] truncate pointer-events-none bg-black/80 backdrop-blur-md px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border border-neutral-800 text-[10px] sm:text-xs font-mono font-semibold text-neutral-300">
                 BEFORE: {activeCase.beforeLabel}
               </div>
-              <div className="absolute top-2.5 sm:top-4 right-2.5 sm:right-4 max-w-[44%] truncate pointer-events-none bg-black/80 backdrop-blur-md px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border border-neutral-800 text-[10px] sm:text-xs font-mono font-semibold text-[#D4AF37]">
+              <div className="absolute top-2.5 sm:top-4 right-2.5 sm:right-4 max-w-[44%] truncate pointer-events-none bg-black/80 backdrop-blur-md px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border border-neutral-800 text-[10px] sm:text-xs font-mono font-semibold text-[#00D2FF]">
                 AFTER: {activeCase.afterLabel}
               </div>
 
               {/* Draggable Divider Line & Knob */}
               <div
-                className="absolute top-0 bottom-0 w-[2px] bg-[#D4AF37] pointer-events-none shadow-[0_0_10px_rgba(212,175,55,0.6)]"
+                className="absolute top-0 bottom-0 w-[2px] bg-[#00D2FF] pointer-events-none shadow-[0_0_10px_rgba(0,210,255,0.6)]"
                 style={{ left: `${sliderPosition}%` }}
               >
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#181818] border-2 border-[#D4AF37] flex items-center justify-center shadow-xl text-[#D4AF37]">
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#181818] border-2 border-[#00D2FF] flex items-center justify-center shadow-xl text-[#00D2FF]">
                   <MoveHorizontal className="w-5 h-5 animate-pulse" />
                 </div>
               </div>
@@ -170,12 +170,12 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
               {/* Technical Measurement List */}
               <div className="space-y-2.5 pt-4 border-t border-neutral-800">
-                <div className="text-xs font-mono uppercase tracking-wider text-[#D4AF37]">
+                <div className="text-xs font-mono uppercase tracking-wider text-[#00D2FF]">
                   Technical Audit Metrics
                 </div>
                 {activeCase.technicalDetails.map((detail, index) => (
                   <div key={index} className="flex items-start gap-2 text-xs text-neutral-300">
-                    <Check className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
+                    <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
                     <span>{detail}</span>
                   </div>
                 ))}
@@ -189,7 +189,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                   <button
                     type="button"
                     onClick={onOpenCoupon}
-                    className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                    className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                   >
                     <span>CLAIM R650 COUPON</span>
                     <ArrowRight className="w-3.5 h-3.5" />

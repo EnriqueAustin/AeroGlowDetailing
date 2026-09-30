@@ -3,6 +3,7 @@ import { PageHeader } from '../components/PageHeader';
 import { useNavigation } from '../context/NavigationContext';
 import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
 import { VehicleType, BookingState, WestCoastArea } from '../types';
+import { AeroGlowLogo } from '../components/AeroGlowLogo';
 import {
   Calendar,
   Clock,
@@ -142,6 +143,10 @@ export const BookPage: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div className="flex justify-center mb-6">
+          <AeroGlowLogo size="lg" showSubtitle={true} />
+        </div>
+
         <div className="bg-[#121212] border border-neutral-800 rounded-sm shadow-2xl overflow-hidden">
           
           {/* Progress Tracker */}
@@ -162,9 +167,9 @@ export const BookPage: React.FC = () => {
                       <div
                         className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-mono font-bold transition-all shrink-0 ${
                           isPast
-                            ? 'bg-[#D4AF37] text-black'
+                            ? 'bg-[#00D2FF] text-black'
                             : isCurrent
-                            ? 'bg-white text-black ring-2 ring-[#D4AF37]'
+                            ? 'bg-white text-black ring-2 ring-[#00D2FF]'
                             : 'bg-neutral-800 text-neutral-400'
                         }`}
                       >
@@ -188,7 +193,7 @@ export const BookPage: React.FC = () => {
             {submitted ? (
               /* Success Screen */
               <div className="text-center py-8 space-y-6">
-                <div className="w-16 h-16 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center mx-auto text-[#D4AF37]">
+                <div className="w-16 h-16 rounded-full bg-[#00D2FF]/15 border border-[#00D2FF]/40 flex items-center justify-center mx-auto text-[#00D2FF]">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <div>
@@ -222,11 +227,11 @@ export const BookPage: React.FC = () => {
                   </div>
                   <div className="flex justify-between py-1 border-b border-neutral-800">
                     <span className="text-neutral-400">Payment:</span>
-                    <span className="text-[#D4AF37] font-semibold">Pay on Completion</span>
+                    <span className="text-[#00D2FF] font-semibold">Pay on Completion</span>
                   </div>
                   <div className="flex justify-between py-2 pt-3">
                     <span className="text-neutral-300 font-bold">Estimated Cost:</span>
-                    <span className="text-xl font-mono-tabular font-extrabold text-[#D4AF37]">
+                    <span className="text-xl font-mono-tabular font-extrabold text-[#00D2FF]">
                       R{totalEstimate.toLocaleString()}
                     </span>
                   </div>
@@ -277,7 +282,7 @@ export const BookPage: React.FC = () => {
                             onClick={() => setBooking({ ...booking, serviceId: s.id })}
                             className={`p-4 sm:p-5 rounded-sm border cursor-pointer transition-all flex items-start justify-between gap-4 ${
                               isSelected
-                                ? 'bg-[#181818] border-[#D4AF37] shadow-lg'
+                                ? 'bg-[#181818] border-[#00D2FF] shadow-lg'
                                 : 'bg-[#111111] hover:bg-[#151515] border-neutral-800 text-neutral-400'
                             }`}
                           >
@@ -285,7 +290,7 @@ export const BookPage: React.FC = () => {
                               <span
                                 className={`w-5 h-5 rounded-full border mt-0.5 flex items-center justify-center shrink-0 ${
                                   isSelected
-                                    ? 'border-[#D4AF37] bg-[#D4AF37]'
+                                    ? 'border-[#00D2FF] bg-[#00D2FF]'
                                     : 'border-neutral-700'
                                 }`}
                               >
@@ -301,7 +306,7 @@ export const BookPage: React.FC = () => {
                                     {s.title}
                                   </span>
                                   {s.badge && (
-                                    <span className="text-[10px] uppercase font-bold tracking-wider text-black bg-[#D4AF37] px-2 py-0.5 rounded-sm">
+                                    <span className="text-[10px] uppercase font-bold tracking-wider text-black bg-[#00D2FF] px-2 py-0.5 rounded-sm">
                                       {s.badge}
                                     </span>
                                   )}
@@ -311,7 +316,7 @@ export const BookPage: React.FC = () => {
                             </div>
 
                             <div className="text-right shrink-0">
-                              <div className="font-mono-tabular font-bold text-base text-[#D4AF37]">
+                              <div className="font-mono-tabular font-bold text-base text-[#00D2FF]">
                                 R{s.price.toLocaleString()}
                               </div>
                               <span className="text-[11px] text-neutral-500 font-mono block">
@@ -355,7 +360,7 @@ export const BookPage: React.FC = () => {
                             }
                             className={`p-3.5 rounded-sm border text-xs font-semibold transition-all cursor-pointer text-center ${
                               booking.vehicleType === v.type
-                                ? 'bg-[#181818] border-[#D4AF37] text-[#D4AF37]'
+                                ? 'bg-[#181818] border-[#00D2FF] text-[#00D2FF]'
                                 : 'bg-[#111111] hover:bg-[#151515] border-neutral-800 text-neutral-400'
                             }`}
                           >
@@ -374,7 +379,7 @@ export const BookPage: React.FC = () => {
                         placeholder="e.g. Ford Ranger 2020 or Toyota Hilux 2017"
                         value={booking.vehicleModel}
                         onChange={(e) => setBooking({ ...booking, vehicleModel: e.target.value })}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#D4AF37] text-sm"
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm"
                       />
                     </div>
 
@@ -396,7 +401,7 @@ export const BookPage: React.FC = () => {
                         />
                       </label>
                       {uploadedPhotos.length > 0 && (
-                        <div className="mt-2 text-xs text-[#D4AF37] flex items-center gap-1.5">
+                        <div className="mt-2 text-xs text-[#00D2FF] flex items-center gap-1.5">
                           <Check className="w-3.5 h-3.5" />
                           <span>{uploadedPhotos.length} photo(s) selected</span>
                         </div>
@@ -439,7 +444,7 @@ export const BookPage: React.FC = () => {
                               area === 'Surrounding West Coast' ? 'col-span-2 sm:col-span-1' : ''
                             } ${
                               booking.suburb === area
-                                ? 'bg-[#181818] border-[#D4AF37] text-[#D4AF37]'
+                                ? 'bg-[#181818] border-[#00D2FF] text-[#00D2FF]'
                                 : 'bg-[#111111] hover:bg-[#151515] border-neutral-800 text-neutral-400'
                             }`}
                           >
@@ -452,7 +457,7 @@ export const BookPage: React.FC = () => {
                           <span className="text-emerald-400">✓ FREE Call-Out in Vredenburg</span>
                         ) : (
                           <span>
-                            Call-out fee is R150, but <strong className="text-[#D4AF37]">completely waived</strong> on any booking over R700!
+                            Call-out fee is R150, but <strong className="text-[#00D2FF]">completely waived</strong> on any booking over R700!
                           </span>
                         )}
                       </div>
@@ -467,7 +472,7 @@ export const BookPage: React.FC = () => {
                         placeholder="e.g. 14 Church Street, Vredenburg or Mykonos, Langebaan"
                         value={booking.streetAddress}
                         onChange={(e) => setBooking({ ...booking, streetAddress: e.target.value })}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#D4AF37] text-sm"
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm"
                       />
                     </div>
 
@@ -492,7 +497,7 @@ export const BookPage: React.FC = () => {
                             }
                             className={`p-2.5 sm:p-3 rounded-sm border text-xs font-semibold transition-all cursor-pointer text-center ${
                               booking.waterAndPowerAvailable === item.id
-                                ? 'bg-[#181818] border-[#D4AF37] text-[#D4AF37]'
+                                ? 'bg-[#181818] border-[#00D2FF] text-[#00D2FF]'
                                 : 'bg-[#111111] border-neutral-800 text-neutral-400'
                             }`}
                           >
@@ -529,7 +534,7 @@ export const BookPage: React.FC = () => {
                           type="date"
                           value={booking.preferredDate}
                           onChange={(e) => setBooking({ ...booking, preferredDate: e.target.value })}
-                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#D4AF37] text-sm font-mono"
+                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm font-mono"
                         />
                       </div>
 
@@ -540,7 +545,7 @@ export const BookPage: React.FC = () => {
                         <select
                           value={booking.preferredTime}
                           onChange={(e) => setBooking({ ...booking, preferredTime: e.target.value })}
-                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#D4AF37] text-sm"
+                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm"
                         >
                           <option value="08:30 AM (Early Morning)">08:30 AM (Early Morning)</option>
                           <option value="11:00 AM (Late Morning)">11:00 AM (Late Morning)</option>
@@ -558,7 +563,7 @@ export const BookPage: React.FC = () => {
                         placeholder="e.g. Park behind gate, barking dog in yard, shady driveway, etc."
                         value={booking.notes}
                         onChange={(e) => setBooking({ ...booking, notes: e.target.value })}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm p-4 text-white focus:outline-none focus:border-[#D4AF37] text-sm"
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm p-4 text-white focus:outline-none focus:border-[#00D2FF] text-sm"
                       />
                     </div>
                   </div>
@@ -587,7 +592,7 @@ export const BookPage: React.FC = () => {
                           placeholder="Your name"
                           value={booking.clientName}
                           onChange={(e) => setBooking({ ...booking, clientName: e.target.value })}
-                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#D4AF37] text-sm"
+                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm"
                         />
                       </div>
 
@@ -601,13 +606,13 @@ export const BookPage: React.FC = () => {
                           placeholder="e.g. 082 123 4567"
                           value={booking.clientPhone}
                           onChange={(e) => setBooking({ ...booking, clientPhone: e.target.value })}
-                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#D4AF37] text-sm font-mono"
+                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm font-mono"
                         />
                       </div>
                     </div>
 
                     {/* Breakdown */}
-                    <div className="p-5 bg-[#161616] border border-[#D4AF37]/30 rounded-sm space-y-3">
+                    <div className="p-5 bg-[#161616] border border-[#00D2FF]/30 rounded-sm space-y-3">
                       <div className="flex justify-between text-xs sm:text-sm">
                         <span className="text-neutral-400">{activeOption.title}:</span>
                         <span className="text-white font-mono">R{baseServicePrice.toLocaleString()}</span>
@@ -627,7 +632,7 @@ export const BookPage: React.FC = () => {
                             1-Year Clarity Guarantee on Headlights · Instant EFT / Cash
                           </span>
                         </div>
-                        <div className="text-2xl sm:text-3xl font-extrabold text-[#D4AF37] font-mono-tabular">
+                        <div className="text-2xl sm:text-3xl font-extrabold text-[#00D2FF] font-mono-tabular">
                           R{totalEstimate.toLocaleString()}
                         </div>
                       </div>
@@ -653,7 +658,7 @@ export const BookPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleNext}
-                      className="px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg"
+                      className="px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center gap-2 cursor-pointer shadow-lg"
                     >
                       <span>Continue</span>
                       <ArrowRight className="w-4 h-4" />
@@ -661,7 +666,7 @@ export const BookPage: React.FC = () => {
                   ) : (
                     <button
                       type="submit"
-                      className="px-10 py-3.5 text-xs font-extrabold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center gap-2 cursor-pointer shadow-xl"
+                      className="px-10 py-3.5 text-xs font-extrabold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center gap-2 cursor-pointer shadow-xl"
                     >
                       <CheckCircle2 className="w-4 h-4" />
                       <span>Confirm Mobile Booking</span>

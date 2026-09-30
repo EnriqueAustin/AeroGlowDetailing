@@ -61,7 +61,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-2">
+          <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
             The Automotive Journey
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -83,15 +83,15 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
                 onClick={() => setActiveStage(idx)}
                 className={`py-2.5 sm:py-3.5 px-2.5 sm:px-4 text-left rounded-sm transition-all flex flex-col justify-between cursor-pointer ${
                   isActive
-                    ? 'bg-[#1D1D1D] border border-[#D4AF37]/50 shadow-md'
+                    ? 'bg-[#1D1D1D] border border-[#00D2FF]/50 shadow-md'
                     : 'bg-transparent hover:bg-neutral-900/60 border border-transparent text-neutral-500'
                 }`}
               >
                 <div className="flex items-center justify-between text-xs font-mono mb-1">
-                  <span className={isActive ? 'text-[#D4AF37] font-bold' : 'text-neutral-500'}>
+                  <span className={isActive ? 'text-[#00D2FF] font-bold' : 'text-neutral-500'}>
                     0{idx + 1}
                   </span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />}
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF]" />}
                 </div>
                 <div className={`text-xs sm:text-sm font-bold tracking-wider font-display truncate ${isActive ? 'text-white' : 'text-neutral-400'}`}>
                   {stage.label}
@@ -113,13 +113,13 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
             <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3 py-1.5 border border-neutral-700 rounded-sm flex items-center gap-2">
-              <IconComp className="w-4 h-4 text-[#D4AF37]" />
+              <IconComp className="w-4 h-4 text-[#00D2FF]" />
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-white">
                 STAGE: {current.label}
               </span>
             </div>
             <div className="absolute bottom-4 left-4 right-4">
-              <span className="text-xs text-[#D4AF37] font-mono block">State Diagnosis</span>
+              <span className="text-xs text-[#00D2FF] font-mono block">State Diagnosis</span>
               <span className="text-sm font-semibold text-neutral-200">{current.visualNote}</span>
             </div>
           </div>
@@ -127,13 +127,13 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
           {/* Right Editorial Copy */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             <div>
-              <div className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] mb-2">
+              <div className="text-xs font-mono uppercase tracking-widest text-[#00D2FF] mb-2">
                 Phase 0{activeStage + 1} of 04
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-display mb-1">
                 {current.label}
               </h3>
-              <p className="text-sm font-medium text-[#E5C07B] mb-4">
+              <p className="text-sm font-medium text-[#38BDF8] mb-4">
                 {current.subtitle}
               </p>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-6">
@@ -166,7 +166,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
                     key={i}
                     onClick={() => setActiveStage(i)}
                     className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                      i === activeStage ? 'bg-[#D4AF37]' : 'bg-neutral-700 hover:bg-neutral-500'
+                      i === activeStage ? 'bg-[#00D2FF]' : 'bg-neutral-700 hover:bg-neutral-500'
                     }`}
                     aria-label={`Go to stage ${i + 1}`}
                   />
@@ -176,7 +176,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
               <button
                 type="button"
                 onClick={() => setActiveStage((prev) => (prev < 3 ? prev + 1 : 0))}
-                className="text-xs text-[#D4AF37] hover:text-[#E5C07B] font-semibold transition-colors"
+                className="text-xs text-[#00D2FF] hover:text-[#38BDF8] font-semibold transition-colors"
               >
                 Next Stage →
               </button>
@@ -187,7 +187,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
         {/* Closing Action Ribbon */}
         <div className="mt-12 p-8 bg-gradient-to-r from-[#141414] via-[#1A1A1A] to-[#141414] border border-neutral-800 rounded-sm flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] mb-1">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#00D2FF] mb-1">
               Your Vehicle Next
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
@@ -201,7 +201,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
           <button
             type="button"
             onClick={onOpenBooking}
-            className="w-full md:w-auto px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-md shrink-0 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full md:w-auto px-8 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md shrink-0 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>BOOK YOUR DETAIL</span>
             <ArrowRight className="w-4 h-4" />

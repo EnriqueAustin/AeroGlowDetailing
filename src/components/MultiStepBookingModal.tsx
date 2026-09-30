@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { VehicleType, BookingState, WestCoastArea } from '../types';
 import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
+import { AeroGlowLogo } from './AeroGlowLogo';
 
 interface MultiStepBookingModalProps {
   isOpen: boolean;
@@ -142,15 +143,18 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto">
       <div className="bg-[#121212] border border-neutral-800 max-w-2xl w-full rounded-sm shadow-2xl relative flex flex-col max-h-[92vh] overflow-hidden my-auto">
         {/* Header */}
-        <div className="p-5 sm:p-6 border-b border-neutral-800 flex items-center justify-between bg-[#161616]">
-          <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-[#D4AF37] uppercase tracking-wider">
-              <MapPin className="w-3.5 h-3.5" />
-              <span>West Coast Mobile Booking</span>
+        <div className="p-4 sm:p-6 border-b border-neutral-800 flex items-center justify-between bg-[#161616]">
+          <div className="flex items-center gap-3">
+            <AeroGlowLogo size="sm" showSubtitle={false} />
+            <div>
+              <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#00D2FF] uppercase tracking-wider">
+                <MapPin className="w-3 h-3" />
+                <span>West Coast Mobile Booking</span>
+              </div>
+              <h2 className="text-base sm:text-lg font-bold text-white font-display">
+                BOOK YOUR MOBILE SERVICE
+              </h2>
             </div>
-            <h2 className="text-lg sm:text-xl font-bold text-white font-display mt-0.5">
-              BOOK YOUR MOBILE SERVICE
-            </h2>
           </div>
           <button
             type="button"
@@ -179,9 +183,9 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                   <div
                     className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold font-mono transition-colors shrink-0 ${
                       isPast
-                        ? 'bg-[#D4AF37] text-black'
+                        ? 'bg-[#00D2FF] text-black'
                         : isCurrent
-                        ? 'bg-white text-black ring-2 ring-[#D4AF37]'
+                        ? 'bg-white text-black ring-2 ring-[#00D2FF]'
                         : 'bg-neutral-800 text-neutral-400'
                     }`}
                   >
@@ -205,7 +209,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
           {submitted ? (
             /* Submission Confirmation Screen */
             <div className="py-8 text-center space-y-6">
-              <div className="w-16 h-16 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center mx-auto text-[#D4AF37]">
+              <div className="w-16 h-16 rounded-full bg-[#00D2FF]/15 border border-[#00D2FF]/40 flex items-center justify-center mx-auto text-[#00D2FF]">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <div>
@@ -237,11 +241,11 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                 </div>
                 <div className="flex justify-between py-1 border-b border-neutral-800">
                   <span className="text-neutral-400">Payment Terms:</span>
-                  <span className="text-[#D4AF37] font-semibold">Pay on Completion</span>
+                  <span className="text-[#00D2FF] font-semibold">Pay on Completion</span>
                 </div>
                 <div className="flex justify-between py-1.5 pt-3">
                   <span className="text-neutral-300 font-bold">Estimated Total:</span>
-                  <span className="text-lg font-mono-tabular font-extrabold text-[#D4AF37]">
+                  <span className="text-lg font-mono-tabular font-extrabold text-[#00D2FF]">
                     R{totalEstimate.toLocaleString()}
                   </span>
                 </div>
@@ -289,7 +293,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                           onClick={() => setBooking({ ...booking, serviceId: item.id })}
                           className={`p-3.5 rounded-sm border cursor-pointer transition-all flex items-start justify-between gap-4 ${
                             isSelected
-                              ? 'bg-[#181818] border-[#D4AF37] shadow-md'
+                              ? 'bg-[#181818] border-[#00D2FF] shadow-md'
                               : 'bg-[#111111] hover:bg-[#141414] border-neutral-800 text-neutral-400'
                           }`}
                         >
@@ -297,7 +301,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                             <span
                               className={`w-4 h-4 rounded-full border mt-0.5 flex items-center justify-center shrink-0 ${
                                 isSelected
-                                  ? 'border-[#D4AF37] bg-[#D4AF37]'
+                                  ? 'border-[#00D2FF] bg-[#00D2FF]'
                                   : 'border-neutral-700'
                               }`}
                             >
@@ -313,7 +317,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                                   {item.title}
                                 </span>
                                 {item.badge && (
-                                  <span className="text-[9px] uppercase tracking-wider font-bold text-black bg-[#D4AF37] px-1.5 py-0.2 rounded-sm">
+                                  <span className="text-[9px] uppercase tracking-wider font-bold text-black bg-[#00D2FF] px-1.5 py-0.2 rounded-sm">
                                     {item.badge}
                                   </span>
                                 )}
@@ -322,7 +326,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                             </div>
                           </div>
                           <div className="text-right shrink-0">
-                            <div className="font-mono-tabular font-bold text-sm text-[#D4AF37]">
+                            <div className="font-mono-tabular font-bold text-sm text-[#00D2FF]">
                               R{item.price.toLocaleString()}
                             </div>
                             <span className="text-[10px] text-neutral-500 font-mono block">
@@ -366,7 +370,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                           }
                           className={`p-3 rounded-sm border text-xs font-semibold transition-all cursor-pointer text-center ${
                             booking.vehicleType === item.type
-                              ? 'bg-[#181818] border-[#D4AF37] text-[#D4AF37]'
+                              ? 'bg-[#181818] border-[#00D2FF] text-[#00D2FF]'
                               : 'bg-[#111111] hover:bg-[#141414] border-neutral-800 text-neutral-400'
                           }`}
                         >
@@ -385,7 +389,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                       placeholder="e.g. Toyota Hilux 2018 or VW Polo 2016"
                       value={booking.vehicleModel}
                       onChange={(e) => setBooking({ ...booking, vehicleModel: e.target.value })}
-                      className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#D4AF37] text-xs sm:text-sm"
+                      className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm"
                     />
                   </div>
 
@@ -408,7 +412,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                       />
                     </label>
                     {simulatedUploadedImages.length > 0 && (
-                      <div className="mt-2 text-xs text-[#D4AF37] flex items-center gap-1.5">
+                      <div className="mt-2 text-xs text-[#00D2FF] flex items-center gap-1.5">
                         <Check className="w-3.5 h-3.5" />
                         <span>{simulatedUploadedImages.length} photo(s) selected</span>
                       </div>
@@ -451,7 +455,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                             area === 'Surrounding West Coast' ? 'col-span-2 sm:col-span-1' : ''
                           } ${
                             booking.suburb === area
-                              ? 'bg-[#181818] border-[#D4AF37] text-[#D4AF37]'
+                              ? 'bg-[#181818] border-[#00D2FF] text-[#00D2FF]'
                               : 'bg-[#111111] hover:bg-[#141414] border-neutral-800 text-neutral-400'
                           }`}
                         >
@@ -464,7 +468,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                          <span className="text-emerald-400">✓ FREE Call-Out in Vredenburg</span>
                       ) : (
                         <span>
-                          Call-out is R150, but <strong className="text-[#D4AF37]">completely waived</strong> on any booking over R700!
+                          Call-out is R150, but <strong className="text-[#00D2FF]">completely waived</strong> on any booking over R700!
                         </span>
                       )}
                     </div>
@@ -479,7 +483,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                       placeholder="e.g. 14 Main Road, Vredenburg or Business Park, Saldanha"
                       value={booking.streetAddress}
                       onChange={(e) => setBooking({ ...booking, streetAddress: e.target.value })}
-                      className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#D4AF37] text-xs sm:text-sm"
+                      className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm"
                     />
                   </div>
 
@@ -504,7 +508,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                           }
                           className={`p-2.5 rounded-sm border text-xs font-semibold transition-all cursor-pointer text-center ${
                             booking.waterAndPowerAvailable === item.id
-                              ? 'bg-[#181818] border-[#D4AF37] text-[#D4AF37]'
+                              ? 'bg-[#181818] border-[#00D2FF] text-[#00D2FF]'
                               : 'bg-[#111111] border-neutral-800 text-neutral-400'
                           }`}
                         >
@@ -541,7 +545,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                         type="date"
                         value={booking.preferredDate}
                         onChange={(e) => setBooking({ ...booking, preferredDate: e.target.value })}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white focus:outline-none focus:border-[#D4AF37] text-xs sm:text-sm font-mono"
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm font-mono"
                       />
                     </div>
 
@@ -552,7 +556,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                       <select
                         value={booking.preferredTime}
                         onChange={(e) => setBooking({ ...booking, preferredTime: e.target.value })}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white focus:outline-none focus:border-[#D4AF37] text-xs sm:text-sm"
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm"
                       >
                         <option value="08:30 AM (Early Morning)">08:30 AM (Early Morning)</option>
                         <option value="11:00 AM (Late Morning)">11:00 AM (Late Morning)</option>
@@ -570,7 +574,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                       placeholder="e.g. Gate code, park in driveway, shading available, etc."
                       value={booking.notes}
                       onChange={(e) => setBooking({ ...booking, notes: e.target.value })}
-                      className="w-full bg-[#111111] border border-neutral-800 rounded-sm p-3 text-white placeholder-neutral-600 focus:outline-none focus:border-[#D4AF37] text-xs sm:text-sm"
+                      className="w-full bg-[#111111] border border-neutral-800 rounded-sm p-3 text-white placeholder-neutral-600 focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm"
                     />
                   </div>
                 </div>
@@ -599,7 +603,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                         placeholder="Your name"
                         value={booking.clientName}
                         onChange={(e) => setBooking({ ...booking, clientName: e.target.value })}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#D4AF37] text-xs sm:text-sm"
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm"
                       />
                     </div>
 
@@ -613,13 +617,13 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                         placeholder="e.g. 082 123 4567"
                         value={booking.clientPhone}
                         onChange={(e) => setBooking({ ...booking, clientPhone: e.target.value })}
-                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#D4AF37] text-xs sm:text-sm font-mono"
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm font-mono"
                       />
                     </div>
                   </div>
 
                   {/* Summary Breakdown */}
-                  <div className="p-4 bg-[#141414] border border-[#D4AF37]/30 rounded-sm space-y-2">
+                  <div className="p-4 bg-[#141414] border border-[#00D2FF]/30 rounded-sm space-y-2">
                     <div className="flex justify-between text-xs">
                       <span className="text-neutral-400">{activeOption.title}:</span>
                       <span className="text-white font-mono">R{baseServicePrice.toLocaleString()}</span>
@@ -639,7 +643,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                           1-Year Guarantee on headlights · Instant EFT or Cash
                         </span>
                       </div>
-                      <div className="text-2xl font-extrabold text-[#D4AF37] font-mono-tabular">
+                      <div className="text-2xl font-extrabold text-[#00D2FF] font-mono-tabular">
                         R{totalEstimate.toLocaleString()}
                       </div>
                     </div>
@@ -665,7 +669,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center gap-1.5 cursor-pointer shadow-md"
+                    className="px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center gap-1.5 cursor-pointer shadow-md"
                   >
                     <span>Continue</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -673,7 +677,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                 ) : (
                   <button
                     type="submit"
-                    className="px-8 py-3 text-xs font-extrabold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center gap-2 cursor-pointer shadow-xl"
+                    className="px-8 py-3 text-xs font-extrabold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center gap-2 cursor-pointer shadow-xl"
                   >
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Confirm Booking</span>

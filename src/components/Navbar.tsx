@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigation } from '../context/NavigationContext';
 import { Calendar, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { AppPage } from '../types';
+import { AeroGlowLogo } from './AeroGlowLogo';
 
 export const Navbar: React.FC = () => {
   const { currentPage, navigateTo, openBooking, openCoupon } = useNavigation();
@@ -45,21 +46,13 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
             
-            {/* Zone 1: Wordmark Logo */}
+            {/* Zone 1: Wordmark & Official Brand Logo */}
             <button
               type="button"
               onClick={() => handleLinkClick('home')}
-              className="text-left group shrink-0 cursor-pointer max-w-[200px] sm:max-w-none"
+              className="text-left group shrink-0 cursor-pointer flex items-center hover:opacity-95 transition-opacity"
             >
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#D4AF37] group-hover:scale-125 transition-transform shrink-0" />
-                <span className="text-sm sm:text-lg font-bold tracking-tight text-white font-display group-hover:text-[#D4AF37] transition-colors truncate">
-                  AEROGLOW DETAILING
-                </span>
-              </div>
-              <div className="text-[9px] sm:text-[10px] font-mono tracking-widest text-neutral-400 uppercase pl-4 truncate">
-                Mobile Detailing · West Coast
-              </div>
+              <AeroGlowLogo size="md" showSubtitle={true} />
             </button>
 
             {/* Zone 2: Navigation Links for Bespoke Pages */}
@@ -72,17 +65,17 @@ export const Navbar: React.FC = () => {
                     type="button"
                     onClick={() => handleLinkClick(link.page)}
                     className={`transition-colors relative py-1 text-xs tracking-wider uppercase flex items-center gap-1 cursor-pointer ${
-                      isActive ? 'text-[#D4AF37] font-semibold' : 'text-neutral-300 hover:text-white'
+                      isActive ? 'text-[#00D2FF] font-semibold' : 'text-neutral-300 hover:text-white'
                     }`}
                   >
                     <span>{link.label}</span>
                     {link.badge && (
-                      <span className="text-[9px] font-mono text-black bg-[#D4AF37] px-1.5 py-0.2 rounded-sm font-bold">
+                      <span className="text-[9px] font-mono text-black bg-[#00D2FF] px-1.5 py-0.2 rounded-sm font-bold">
                         {link.badge}
                       </span>
                     )}
                     {isActive && (
-                      <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#D4AF37]" />
+                      <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#00D2FF]" />
                     )}
                   </button>
                 );
@@ -106,7 +99,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => handleLinkClick('book')}
-                className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-2 text-xs font-semibold text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-colors shadow-sm whitespace-nowrap cursor-pointer"
+                className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-2 text-xs font-semibold text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-colors shadow-sm whitespace-nowrap cursor-pointer"
               >
                 <Calendar className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Book Mobile Detail</span>
@@ -117,7 +110,7 @@ export const Navbar: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-neutral-400 hover:text-white xl:hidden rounded focus:outline-none focus:ring-1 focus:ring-[#D4AF37] cursor-pointer"
+                className="p-2 text-neutral-400 hover:text-white xl:hidden rounded focus:outline-none focus:ring-1 focus:ring-[#00D2FF] cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -131,7 +124,7 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 xl:hidden bg-[#080808]/98 backdrop-blur-xl pt-20 px-6 pb-8 flex flex-col justify-between border-b border-neutral-800 animate-fade-in overflow-y-auto">
           <div className="flex justify-between items-center pb-4 border-b border-neutral-900">
-            <span className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest">
+            <span className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest">
               Navigation Menu
             </span>
             <button
@@ -152,13 +145,13 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleLinkClick(link.page)}
                   className={`text-left text-lg font-medium py-2.5 px-3 rounded-sm border-b border-neutral-900 flex items-center justify-between cursor-pointer transition-colors ${
                     isActive
-                      ? 'text-[#D4AF37] bg-neutral-900/60 font-bold'
+                      ? 'text-[#00D2FF] bg-neutral-900/60 font-bold'
                       : 'text-neutral-300 hover:text-white'
                   }`}
                 >
                   <span>{link.label}</span>
                   {link.badge && (
-                    <span className="text-xs font-mono text-black bg-[#D4AF37] px-2 py-0.5 rounded font-bold">
+                    <span className="text-xs font-mono text-black bg-[#00D2FF] px-2 py-0.5 rounded font-bold">
                       {link.badge}
                     </span>
                   )}
@@ -181,7 +174,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => handleLinkClick('book')}
-              className="w-full py-3 text-center text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] rounded-sm cursor-pointer"
+              className="w-full py-3 text-center text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] rounded-sm cursor-pointer"
             >
               Book Mobile Service
             </button>

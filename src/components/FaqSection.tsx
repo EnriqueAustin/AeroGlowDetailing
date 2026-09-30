@@ -15,7 +15,7 @@ export const FaqSection: React.FC = () => {
     <section id="faq" className="py-20 lg:py-28 bg-[#090909] border-b border-neutral-900">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-2">
+          <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
             Clarity & Confidence
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -44,7 +44,7 @@ export const FaqSection: React.FC = () => {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#D4AF37] shrink-0 transition-transform duration-200 ${
+                    className={`w-5 h-5 text-[#00D2FF] shrink-0 transition-transform duration-200 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
@@ -76,7 +76,7 @@ export const FaqSection: React.FC = () => {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-5 py-2.5 text-xs font-semibold text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer shadow-sm text-center"
+            className="w-full sm:w-auto px-5 py-2.5 text-xs font-semibold text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer shadow-sm text-center"
           >
             <MessageSquare className="w-3.5 h-3.5" />
             <span>WhatsApp: 073 859 5637</span>

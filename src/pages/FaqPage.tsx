@@ -63,7 +63,7 @@ export const FaqPage: React.FC = () => {
             placeholder="Search questions (e.g. wet-sanding, guarantee, deposit, mobile tap)..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-5 py-3.5 bg-neutral-900 border border-neutral-800 rounded-sm text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#D4AF37]"
+            className="w-full px-5 py-3.5 bg-neutral-900 border border-neutral-800 rounded-sm text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#00D2FF]"
           />
 
           <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#121212] border border-neutral-800 rounded-sm">
@@ -81,7 +81,7 @@ export const FaqPage: React.FC = () => {
                   onClick={() => setActiveCategory(cat.id as typeof activeCategory)}
                   className={`px-3.5 py-1.5 text-xs font-semibold rounded-sm transition-colors cursor-pointer ${
                     isActive
-                      ? 'bg-[#222222] text-[#D4AF37] border border-[#D4AF37]/50 shadow-sm'
+                      ? 'bg-[#222222] text-[#00D2FF] border border-[#00D2FF]/50 shadow-sm'
                       : 'text-neutral-400 hover:text-white border border-transparent'
                   }`}
                 >
@@ -111,7 +111,7 @@ export const FaqPage: React.FC = () => {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#D4AF37] shrink-0 transition-transform duration-200 ${
+                    className={`w-5 h-5 text-[#00D2FF] shrink-0 transition-transform duration-200 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
@@ -129,8 +129,8 @@ export const FaqPage: React.FC = () => {
 
         {/* Post-Restoration Care Guide Section */}
         <section className="bg-gradient-to-r from-[#121212] via-[#161616] to-[#121212] border border-neutral-800 p-8 sm:p-12 rounded-sm space-y-6">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#D4AF37] tracking-widest">
-            <BookOpen className="w-4 h-4 text-[#D4AF37]" />
+          <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#00D2FF] tracking-widest">
+            <BookOpen className="w-4 h-4 text-[#00D2FF]" />
             <span>Driver Aftercare Guide</span>
           </div>
 
@@ -143,7 +143,7 @@ export const FaqPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 text-xs text-neutral-300">
             <div className="p-4 bg-black/50 border border-neutral-800 rounded-sm space-y-2">
-              <span className="text-[#D4AF37] font-mono font-bold block text-sm">
+              <span className="text-[#00D2FF] font-mono font-bold block text-sm">
                 01. Two-Bucket Wash Method
               </span>
               <p>
@@ -151,7 +151,7 @@ export const FaqPage: React.FC = () => {
               </p>
             </div>
             <div className="p-4 bg-black/50 border border-neutral-800 rounded-sm space-y-2">
-              <span className="text-[#D4AF37] font-mono font-bold block text-sm">
+              <span className="text-[#00D2FF] font-mono font-bold block text-sm">
                 02. Avoid Spinning Automatic Brushes
               </span>
               <p>
@@ -159,7 +159,7 @@ export const FaqPage: React.FC = () => {
               </p>
             </div>
             <div className="p-4 bg-black/50 border border-neutral-800 rounded-sm space-y-2">
-              <span className="text-[#D4AF37] font-mono font-bold block text-sm">
+              <span className="text-[#00D2FF] font-mono font-bold block text-sm">
                 03. Caring For New UV Clearcoat
               </span>
               <p>
@@ -185,7 +185,7 @@ export const FaqPage: React.FC = () => {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 text-xs font-semibold text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center gap-2 shrink-0 cursor-pointer shadow-sm"
+            className="px-6 py-2.5 text-xs font-semibold text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center gap-2 shrink-0 cursor-pointer shadow-sm"
           >
             <MessageSquare className="w-3.5 h-3.5" />
             <span>WhatsApp: 073 859 5637</span>

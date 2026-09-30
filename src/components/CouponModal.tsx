@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, ShieldCheck, MessageSquare, ArrowRight, MapPin, Check } from 'lucide-react';
 import { HERO_HEADLIGHT_OFFER } from '../data/studioData';
+import { AeroGlowLogo } from './AeroGlowLogo';
 
 interface CouponModalProps {
   isOpen: boolean;
@@ -21,19 +22,22 @@ export const CouponModal: React.FC<CouponModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
-      <div className="bg-[#141414] border-2 border-[#D4AF37]/60 max-w-md w-full rounded-sm shadow-2xl p-6 sm:p-8 relative">
-        {/* Close Button */}
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute top-4 right-4 p-1.5 text-neutral-400 hover:text-white rounded-full bg-neutral-900 border border-neutral-800 cursor-pointer"
-          aria-label="Close modal"
-        >
-          <X className="w-5 h-5" />
-        </button>
+      <div className="bg-[#141414] border-2 border-[#00D2FF]/60 max-w-md w-full rounded-sm shadow-2xl p-6 sm:p-8 relative">
+        {/* Brand Logo & Close Button */}
+        <div className="flex items-center justify-between mb-4">
+          <AeroGlowLogo size="sm" showSubtitle={false} />
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-1.5 text-neutral-400 hover:text-white rounded-full bg-neutral-900 border border-neutral-800 cursor-pointer"
+            aria-label="Close modal"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#D4AF37] text-black text-xs font-bold uppercase tracking-wider rounded-sm mb-4">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00D2FF] text-black text-xs font-bold uppercase tracking-wider rounded-sm mb-4">
           <ShieldCheck className="w-3.5 h-3.5 fill-current" />
           <span>Core West Coast Rate</span>
         </div>
@@ -51,12 +55,12 @@ export const CouponModal: React.FC<CouponModalProps> = ({
             <span className="text-[11px] text-neutral-400 font-mono block">
               Both Front Headlights
             </span>
-            <span className="text-3xl font-extrabold text-[#D4AF37] font-mono-tabular">
+            <span className="text-3xl font-extrabold text-[#00D2FF] font-mono-tabular">
               R650
             </span>
           </div>
           <div className="text-right flex items-center gap-1.5 text-xs text-neutral-300">
-            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
+            <ShieldCheck className="w-4 h-4 text-[#00D2FF]" />
             <span>1-Year Guarantee</span>
           </div>
         </div>
@@ -64,15 +68,15 @@ export const CouponModal: React.FC<CouponModalProps> = ({
         {/* Inclusions */}
         <div className="space-y-2 text-xs text-neutral-300 mb-6">
           <div className="flex items-center gap-2">
-            <Check className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <Check className="w-3.5 h-3.5 text-[#00D2FF]" />
             <span>Multi-stage wet cut (800 to 3000 grit)</span>
           </div>
           <div className="flex items-center gap-2">
-            <Check className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <Check className="w-3.5 h-3.5 text-[#00D2FF]" />
             <span>Protective UV clearcoat seal</span>
           </div>
           <div className="flex items-center gap-2">
-            <Check className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <Check className="w-3.5 h-3.5 text-[#00D2FF]" />
             <span>Pay on completion in your driveway</span>
           </div>
         </div>
@@ -82,7 +86,7 @@ export const CouponModal: React.FC<CouponModalProps> = ({
           <button
             type="button"
             onClick={onApplyAndBook}
-            className="w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
+            className="w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
           >
             <span>Book Headlights (R650)</span>
             <ArrowRight className="w-4 h-4" />

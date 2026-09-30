@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, ShieldCheck, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { AeroGlowLogo } from './AeroGlowLogo';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -38,24 +39,29 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreWork }) => {
         <div
           className="absolute inset-0 opacity-25 pointer-events-none transition-opacity duration-500"
           style={{
-            background: `radial-gradient(circle 600px at ${mousePosition.x}% ${mousePosition.y}%, rgba(212, 175, 55, 0.15), transparent 70%)`,
+            background: `radial-gradient(circle 600px at ${mousePosition.x}% ${mousePosition.y}%, rgba(0, 210, 255, 0.15), transparent 70%)`,
           }}
         />
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+        {/* Official Brand Emblem Badge */}
+        <div className="mb-6 flex justify-center">
+          <AeroGlowLogo size="hero" showSubtitle={false} />
+        </div>
+
         {/* Clean unboxed editorial kicker without pill enclosure */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] text-[#D4AF37] uppercase font-semibold mb-5 sm:mb-6 text-center">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] text-[#00D2FF] uppercase font-semibold mb-5 sm:mb-6 text-center">
           <span>Mobile Headlight Restoration & Detailing</span>
-          <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] hidden sm:inline-block" />
-          <span>West Coast, WC</span>
+          <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-[#00D2FF] hidden sm:inline-block" />
+          <span className="text-white">West Coast, WC</span>
         </div>
 
         {/* Main Display Headline */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white font-display leading-[1.05] max-w-4xl text-balance mb-6">
           YOUR CAR. <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-[#D4AF37]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-[#00D2FF]">
             RESTORED.
           </span>
         </h1>
@@ -71,7 +77,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreWork }) => {
           <button
             type="button"
             onClick={onOpenBooking}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-semibold tracking-wide text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all duration-200 shadow-lg shadow-[#D4AF37]/15 group cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-semibold tracking-wide text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all duration-200 shadow-lg shadow-[#00D2FF]/15 group cursor-pointer"
           >
             <span>BOOK A MOBILE DETAIL</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -89,17 +95,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreWork }) => {
         {/* Trust Badges - Unboxed, clean metadata with typographic separators */}
         <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs sm:text-sm text-neutral-400 font-medium border-t border-neutral-800/80 pt-8 w-full max-w-3xl">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+            <CheckCircle2 className="w-4 h-4 text-[#00D2FF]" />
             <span className="tracking-wide">We Come To You (West Coast)</span>
           </div>
           <span aria-hidden="true" className="hidden sm:inline text-neutral-700">·</span>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+            <CheckCircle2 className="w-4 h-4 text-[#00D2FF]" />
             <span className="tracking-wide">1-Year Written Clarity Guarantee</span>
           </div>
           <span aria-hidden="true" className="hidden sm:inline text-neutral-700">·</span>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+            <CheckCircle2 className="w-4 h-4 text-[#00D2FF]" />
             <span className="tracking-wide">Pay on Completion (R650 per Pair)</span>
           </div>
         </div>

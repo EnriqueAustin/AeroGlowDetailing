@@ -43,7 +43,7 @@ export const ReviewsPage: React.FC = () => {
         {/* Quality Charter Hero Bar */}
         <section className="bg-gradient-to-r from-[#141414] via-[#1A1A1A] to-[#141414] border border-neutral-800 p-8 sm:p-12 rounded-sm shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="space-y-3">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-xs font-mono text-[#D4AF37] uppercase tracking-wider">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-xs font-mono text-[#00D2FF] uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
               <span>West Coast Customer Commitment</span>
             </div>
@@ -57,7 +57,7 @@ export const ReviewsPage: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
             <div className="p-4 bg-black/60 rounded-sm border border-neutral-800 text-center">
-              <span className="text-2xl font-bold font-mono text-[#D4AF37] block">
+              <span className="text-2xl font-bold font-mono text-[#00D2FF] block">
                 1 YEAR
               </span>
               <span className="text-[10px] uppercase font-mono text-neutral-400">
@@ -65,7 +65,7 @@ export const ReviewsPage: React.FC = () => {
               </span>
             </div>
             <div className="p-4 bg-black/60 rounded-sm border border-neutral-800 text-center">
-              <span className="text-2xl font-bold font-mono text-[#D4AF37] block">
+              <span className="text-2xl font-bold font-mono text-[#00D2FF] block">
                 R0
               </span>
               <span className="text-[10px] uppercase font-mono text-neutral-400">
@@ -78,7 +78,7 @@ export const ReviewsPage: React.FC = () => {
         {/* The 5 Pillars in Detail */}
         <section className="space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Our Principles
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
@@ -93,16 +93,16 @@ export const ReviewsPage: React.FC = () => {
             {QUALITY_CHARTER_PILLARS.map((pillar) => (
               <div
                 key={pillar.id}
-                className="bg-[#121212] border border-neutral-800 p-6 sm:p-7 rounded-sm flex flex-col justify-between hover:border-[#D4AF37]/50 transition-all"
+                className="bg-[#121212] border border-neutral-800 p-6 sm:p-7 rounded-sm flex flex-col justify-between hover:border-[#00D2FF]/50 transition-all"
               >
                 <div>
-                  <div className="text-xs font-mono text-[#D4AF37] font-bold mb-3">
+                  <div className="text-xs font-mono text-[#00D2FF] font-bold mb-3">
                     PILLAR {pillar.number}
                   </div>
                   <h3 className="text-lg font-bold text-white font-display mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs text-[#E5C07B] font-medium mb-3">
+                  <p className="text-xs text-[#38BDF8] font-medium mb-3">
                     {pillar.summary}
                   </p>
                   <p className="text-xs text-neutral-400 leading-relaxed">
@@ -117,7 +117,7 @@ export const ReviewsPage: React.FC = () => {
         {/* Written Guarantee Details */}
         <section className="bg-[#111111] border border-neutral-800 p-8 sm:p-12 rounded-sm space-y-6">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-1">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-1">
               Warranty Terms
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold text-white font-display">
@@ -130,19 +130,19 @@ export const ReviewsPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-neutral-800 text-xs">
             <div className="p-4 bg-black/40 border border-neutral-800 rounded-sm space-y-2">
-              <span className="text-[#D4AF37] font-mono font-bold block">01. WHAT IS COVERED</span>
+              <span className="text-[#00D2FF] font-mono font-bold block">01. WHAT IS COVERED</span>
               <p className="text-neutral-300 leading-relaxed">
                 Covers any recurring yellow UV degradation, hazing, or clearcoat peeling under normal driving conditions across the West Coast.
               </p>
             </div>
             <div className="p-4 bg-black/40 border border-neutral-800 rounded-sm space-y-2">
-              <span className="text-[#D4AF37] font-mono font-bold block">02. HOW TO CLAIM</span>
+              <span className="text-[#00D2FF] font-mono font-bold block">02. HOW TO CLAIM</span>
               <p className="text-neutral-300 leading-relaxed">
                 Simply send a photo via WhatsApp with your name and address. We schedule a priority revisit to your location at zero charge.
               </p>
             </div>
             <div className="p-4 bg-black/40 border border-neutral-800 rounded-sm space-y-2">
-              <span className="text-[#D4AF37] font-mono font-bold block">03. NO HASSLE POLICY</span>
+              <span className="text-[#00D2FF] font-mono font-bold block">03. NO HASSLE POLICY</span>
               <p className="text-neutral-300 leading-relaxed">
                 If the clearcoat does not hold up, we fix it. We stand 100% behind our preparation and UV protective chemistry.
               </p>
@@ -153,7 +153,7 @@ export const ReviewsPage: React.FC = () => {
         {/* Customer Feedback Invitation */}
         <section className="bg-gradient-to-r from-[#141414] via-[#161616] to-[#141414] border border-neutral-800 p-8 sm:p-10 rounded-sm flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-3 max-w-xl">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#D4AF37] uppercase">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#00D2FF] uppercase">
               <MapPin className="w-4 h-4" />
               <span>West Coast Community Feedback</span>
             </div>
@@ -172,7 +172,7 @@ export const ReviewsPage: React.FC = () => {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-md cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
               <span>WhatsApp Us: 073 859 5637</span>

@@ -31,7 +31,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   return (
     <div className="relative pt-28 pb-12 sm:pt-32 sm:pb-16 px-4 sm:px-6 lg:px-8 border-b border-neutral-800/80 bg-gradient-to-b from-[#0F0F0F] via-[#0A0A0A] to-[#080808] overflow-hidden">
       {/* Background ambient glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#00D2FF]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Breadcrumbs Navigation */}
@@ -39,7 +39,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           <button
             type="button"
             onClick={() => navigateTo('home')}
-            className="hover:text-[#D4AF37] transition-colors flex items-center gap-1.5 cursor-pointer"
+            className="hover:text-[#00D2FF] transition-colors flex items-center gap-1.5 cursor-pointer"
           >
             <span>HOME</span>
           </button>
@@ -50,7 +50,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
                 <button
                   type="button"
                   onClick={() => crumb.page && navigateTo(crumb.page)}
-                  className="hover:text-[#D4AF37] transition-colors uppercase cursor-pointer"
+                  className="hover:text-[#00D2FF] transition-colors uppercase cursor-pointer"
                 >
                   {crumb.label}
                 </button>
@@ -65,7 +65,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-3xl">
             {badge && (
-              <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-[0.2em] text-[#D4AF37] uppercase mb-3 border border-[#D4AF37]/30 px-2.5 py-1 rounded-sm bg-[#D4AF37]/5">
+              <div className="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-[0.2em] text-[#00D2FF] uppercase mb-3 border border-[#00D2FF]/30 px-2.5 py-1 rounded-sm bg-[#00D2FF]/5">
                 <span>{badge}</span>
               </div>
             )}
@@ -93,7 +93,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
                 <button
                   type="button"
                   onClick={primaryAction.onClick}
-                  className="w-full sm:w-auto px-6 py-3 text-xs font-bold tracking-wider uppercase text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-colors shadow-lg shadow-[#D4AF37]/10 cursor-pointer text-center"
+                  className="w-full sm:w-auto px-6 py-3 text-xs font-bold tracking-wider uppercase text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-colors shadow-lg shadow-[#00D2FF]/10 cursor-pointer text-center"
                 >
                   {primaryAction.label}
                 </button>

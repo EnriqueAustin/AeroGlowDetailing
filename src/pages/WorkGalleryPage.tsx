@@ -72,7 +72,7 @@ export const WorkGalleryPage: React.FC = () => {
                   onClick={() => setFilter(tab.id as typeof filter)}
                   className={`px-3.5 py-1.5 text-xs font-semibold rounded-sm whitespace-nowrap transition-colors cursor-pointer ${
                     isActive
-                      ? 'bg-[#222222] text-[#D4AF37] border border-[#D4AF37]/50 shadow-sm'
+                      ? 'bg-[#222222] text-[#00D2FF] border border-[#00D2FF]/50 shadow-sm'
                       : 'text-neutral-400 hover:text-white border border-transparent'
                   }`}
                 >
@@ -89,7 +89,7 @@ export const WorkGalleryPage: React.FC = () => {
               placeholder="Search by area or service..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#121212] border border-neutral-800 rounded-sm px-3 py-1.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#D4AF37]"
+              className="w-full bg-[#121212] border border-neutral-800 rounded-sm px-3 py-1.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-[#00D2FF]"
             />
           </div>
         </div>
@@ -100,7 +100,7 @@ export const WorkGalleryPage: React.FC = () => {
             <div
               key={project.id}
               onClick={() => setActiveModalProject(project)}
-              className="bg-[#121212] border border-neutral-800 rounded-sm overflow-hidden hover:border-[#D4AF37]/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl"
+              className="bg-[#121212] border border-neutral-800 rounded-sm overflow-hidden hover:border-[#00D2FF]/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between shadow-xl"
             >
               {/* Media Thumbnail */}
               <div className="relative aspect-[4/3] bg-neutral-900 overflow-hidden">
@@ -111,12 +111,12 @@ export const WorkGalleryPage: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                <div className="absolute top-3 left-3 bg-black/75 px-2.5 py-1 rounded-sm text-[10px] font-mono uppercase tracking-wider text-[#D4AF37] border border-neutral-800">
+                <div className="absolute top-3 left-3 bg-black/75 px-2.5 py-1 rounded-sm text-[10px] font-mono uppercase tracking-wider text-[#00D2FF] border border-neutral-800">
                   {project.category}
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
                   <span className="font-bold font-display truncate">{project.vehicle}</span>
-                  <span className="text-[11px] text-[#E5C07B] font-mono-tabular shrink-0 flex items-center gap-1">
+                  <span className="text-[11px] text-[#38BDF8] font-mono-tabular shrink-0 flex items-center gap-1">
                     <MapPin className="w-3 h-3" /> {project.area}
                   </span>
                 </div>
@@ -137,7 +137,7 @@ export const WorkGalleryPage: React.FC = () => {
                   <span className="text-neutral-400 font-mono-tabular">
                     R{project.quoteZAR.toLocaleString()}
                   </span>
-                  <span className="text-[#D4AF37] group-hover:translate-x-0.5 transition-transform flex items-center gap-1 font-semibold text-[11px] uppercase tracking-wider">
+                  <span className="text-[#00D2FF] group-hover:translate-x-0.5 transition-transform flex items-center gap-1 font-semibold text-[11px] uppercase tracking-wider">
                     View Details <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
@@ -159,7 +159,7 @@ export const WorkGalleryPage: React.FC = () => {
           <button
             type="button"
             onClick={() => openBooking()}
-            className="w-full md:w-auto px-6 py-3 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-md cursor-pointer shrink-0"
+            className="w-full md:w-auto px-6 py-3 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer shrink-0"
           >
             Book Mobile Service
           </button>
@@ -202,7 +202,7 @@ export const WorkGalleryPage: React.FC = () => {
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute top-2 left-2 bg-[#D4AF37] px-2 py-0.5 rounded text-[10px] font-mono font-bold text-black">
+                    <div className="absolute top-2 left-2 bg-[#00D2FF] px-2 py-0.5 rounded text-[10px] font-mono font-bold text-black">
                       AFTER
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export const WorkGalleryPage: React.FC = () => {
               {/* Modal Content Details */}
               <div className="p-6 sm:p-8 space-y-6">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#D4AF37] mb-1">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#00D2FF] mb-1">
                     <span>{activeModalProject.vehicle}</span>
                     <span>·</span>
                     <span>{activeModalProject.area}</span>
@@ -233,7 +233,7 @@ export const WorkGalleryPage: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-300">
                     {activeModalProject.servicesCompleted.map((s, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <Check className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0" />
                         <span>{s}</span>
                       </div>
                     ))}
@@ -248,7 +248,7 @@ export const WorkGalleryPage: React.FC = () => {
                   <div className="space-y-1.5 text-xs text-neutral-300">
                     {activeModalProject.keyOutcomes.map((k, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF]" />
                         <span>{k}</span>
                       </div>
                     ))}
@@ -261,7 +261,7 @@ export const WorkGalleryPage: React.FC = () => {
                     <span className="text-[11px] font-mono text-neutral-500 block">
                       Price:
                     </span>
-                    <span className="text-xl font-bold font-mono text-[#D4AF37]">
+                    <span className="text-xl font-bold font-mono text-[#00D2FF]">
                       R{activeModalProject.quoteZAR.toLocaleString()}
                     </span>
                   </div>
@@ -271,7 +271,7 @@ export const WorkGalleryPage: React.FC = () => {
                       setActiveModalProject(null);
                       openBooking(activeModalProject.id);
                     }}
-                    className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all cursor-pointer shadow-md text-center"
+                    className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all cursor-pointer shadow-md text-center"
                   >
                     Book Similar Service
                   </button>

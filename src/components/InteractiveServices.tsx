@@ -21,7 +21,7 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-14">
-          <div className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-2">
+          <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
             Mobile Detailing & Headlight Restoration
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -45,7 +45,7 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                   onMouseEnter={() => setActiveServiceId(service.id)}
                   className={`p-5 sm:p-6 rounded-sm border transition-all cursor-pointer group ${
                     isSelected
-                      ? 'bg-[#151515] border-[#D4AF37]/60 shadow-lg'
+                      ? 'bg-[#151515] border-[#00D2FF]/60 shadow-lg'
                       : 'bg-[#0E0E0E] hover:bg-[#121212] border-neutral-800/80 text-neutral-400'
                   }`}
                 >
@@ -54,7 +54,7 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                       {/* Editorial Number */}
                       <span
                         className={`text-xl sm:text-2xl font-bold font-mono transition-colors ${
-                          isSelected ? 'text-[#D4AF37]' : 'text-neutral-600 group-hover:text-neutral-400'
+                          isSelected ? 'text-[#00D2FF]' : 'text-neutral-600 group-hover:text-neutral-400'
                         }`}
                       >
                         {service.number}
@@ -69,7 +69,7 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                             {service.title}
                           </h3>
                           {service.isSpecialistHero && (
-                            <span className="text-[10px] uppercase font-bold tracking-wider text-[#D4AF37] border border-[#D4AF37]/40 px-2 py-0.5 rounded-sm">
+                            <span className="text-[10px] uppercase font-bold tracking-wider text-[#00D2FF] border border-[#00D2FF]/40 px-2 py-0.5 rounded-sm">
                               Specialist
                             </span>
                           )}
@@ -109,14 +109,14 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                   <div>
-                    <span className="text-xs font-mono text-[#D4AF37] block">
+                    <span className="text-xs font-mono text-[#00D2FF] block">
                       CHAPTER {activeService.number}
                     </span>
                     <h4 className="text-lg sm:text-xl font-bold text-white font-display">
                       {activeService.title}
                     </h4>
                   </div>
-                  <div className="text-right bg-black/70 px-3 py-1 rounded-sm border border-neutral-800 text-xs text-[#D4AF37] font-mono-tabular">
+                  <div className="text-right bg-black/70 px-3 py-1 rounded-sm border border-neutral-800 text-xs text-[#00D2FF] font-mono-tabular">
                     Est. {activeService.durationHours}
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                 </div>
                 {activeService.inclusions.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-2.5 text-xs text-neutral-300">
-                    <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -147,7 +147,7 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                 <span className="text-[11px] text-neutral-400 block font-mono">
                   Standard Mobile Rate
                 </span>
-                <span className="text-2xl font-extrabold text-[#D4AF37] font-mono-tabular">
+                <span className="text-2xl font-extrabold text-[#00D2FF] font-mono-tabular">
                   {activeService.id === 'headlight-restoration' ? (
                     <>
                       R650 <span className="text-xs text-emerald-400 font-normal">(both headlights)</span>
@@ -172,7 +172,7 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                 <button
                   type="button"
                   onClick={() => onOpenBooking(activeService.id)}
-                  className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                  className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Book Service</span>
                   <ArrowRight className="w-3.5 h-3.5" />

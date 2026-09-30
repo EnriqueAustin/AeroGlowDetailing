@@ -67,7 +67,7 @@ export const ServicesPage: React.FC = () => {
         {/* Core Services Catalog Cards */}
         <section className="space-y-10">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Service Catalog
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
@@ -82,17 +82,17 @@ export const ServicesPage: React.FC = () => {
             {SERVICES.map((service) => (
               <div
                 key={service.id}
-                className="bg-[#121212] border border-neutral-800 rounded-sm p-6 sm:p-8 hover:border-[#D4AF37]/50 transition-all shadow-xl"
+                className="bg-[#121212] border border-neutral-800 rounded-sm p-6 sm:p-8 hover:border-[#00D2FF]/50 transition-all shadow-xl"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   {/* Left Column: Number, Title, Overview */}
                   <div className="lg:col-span-4 space-y-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono text-[#D4AF37] font-bold">
+                      <span className="text-xs font-mono text-[#00D2FF] font-bold">
                         SERVICE {service.number}
                       </span>
                       {service.isSpecialistHero && (
-                        <span className="text-[10px] uppercase tracking-wider font-bold text-black bg-[#D4AF37] px-2 py-0.5 rounded-sm">
+                        <span className="text-[10px] uppercase tracking-wider font-bold text-black bg-[#00D2FF] px-2 py-0.5 rounded-sm">
                           Core Service
                         </span>
                       )}
@@ -101,7 +101,7 @@ export const ServicesPage: React.FC = () => {
                     <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
                       {service.title}
                     </h3>
-                    <p className="text-xs text-[#E5C07B] font-medium">
+                    <p className="text-xs text-[#38BDF8] font-medium">
                       {service.subtitle}
                     </p>
 
@@ -114,7 +114,7 @@ export const ServicesPage: React.FC = () => {
                         <span className="text-[10px] font-mono text-neutral-500 uppercase block">
                           Standard Mobile Rate:
                         </span>
-                        <div className="text-2xl font-extrabold text-[#D4AF37] font-mono-tabular">
+                        <div className="text-2xl font-extrabold text-[#00D2FF] font-mono-tabular">
                           {service.id === 'headlight-restoration' ? (
                             <>
                               R650 <span className="text-xs text-emerald-400 font-normal">(both headlights)</span>
@@ -133,7 +133,7 @@ export const ServicesPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => openBooking(service.id)}
-                        className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                        className="w-full sm:w-auto px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                       >
                         <span>Book This Service</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -144,13 +144,13 @@ export const ServicesPage: React.FC = () => {
                   {/* Right Column: Inclusions & Highlights */}
                   <div className="lg:col-span-8 bg-[#161616] p-6 rounded-sm border border-neutral-800/80 space-y-6">
                     <div>
-                      <div className="text-xs font-mono uppercase tracking-wider text-[#D4AF37] mb-3">
+                      <div className="text-xs font-mono uppercase tracking-wider text-[#00D2FF] mb-3">
                         What’s Included:
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-neutral-300">
                         {service.inclusions.map((inc, i) => (
                           <div key={i} className="flex items-start gap-2.5">
-                            <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                            <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                             <span>{inc}</span>
                           </div>
                         ))}
@@ -184,7 +184,7 @@ export const ServicesPage: React.FC = () => {
         {/* Section 2: Mobile Add-On Options */}
         <section className="space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Custom Upgrades
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
@@ -203,7 +203,7 @@ export const ServicesPage: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-lg font-extrabold text-[#D4AF37] font-mono-tabular">
+                    <span className="text-lg font-extrabold text-[#00D2FF] font-mono-tabular">
                       {addon.price}
                     </span>
                     <Plus className="w-4 h-4 text-neutral-500" />
@@ -223,7 +223,7 @@ export const ServicesPage: React.FC = () => {
         {/* Section 3: Expanding Services Notice */}
         <section className="bg-[#111111] border border-neutral-800 p-8 sm:p-10 rounded-sm">
           <div className="max-w-2xl space-y-3">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-wider">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-wider">
               Roadmap & Expansion
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-white font-display">

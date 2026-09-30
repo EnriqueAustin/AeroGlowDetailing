@@ -52,7 +52,7 @@ export const HeadlightProcessInteractive: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-semibold tracking-[0.2em] text-[#D4AF37] uppercase mb-2">
+          <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
             The Scientific Method
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-display tracking-tight">
@@ -76,15 +76,15 @@ export const HeadlightProcessInteractive: React.FC = () => {
                   idx === 4 ? 'col-span-2 sm:col-span-1' : ''
                 } ${
                   isActive
-                    ? 'bg-[#1C1C1C] border border-[#D4AF37]/60 shadow-md'
+                    ? 'bg-[#1C1C1C] border border-[#00D2FF]/60 shadow-md'
                     : 'bg-transparent hover:bg-neutral-900/60 border border-transparent text-neutral-400'
                 }`}
               >
                 <div className="flex items-center justify-between text-xs font-mono mb-1">
-                  <span className={isActive ? 'text-[#D4AF37] font-bold' : 'text-neutral-500'}>
+                  <span className={isActive ? 'text-[#00D2FF] font-bold' : 'text-neutral-500'}>
                     STAGE {step.step}
                   </span>
-                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />}
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#00D2FF]" />}
                 </div>
                 <div className={`text-xs font-semibold truncate ${isActive ? 'text-white' : 'text-neutral-400'}`}>
                   {stepVisuals[idx].stage}
@@ -106,7 +106,7 @@ export const HeadlightProcessInteractive: React.FC = () => {
             />
             {/* Visual Stage Overlay Tag */}
             <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 bg-black/80 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 border border-neutral-700 rounded-sm flex items-center gap-2">
-              <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#D4AF37]" />
+              <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#00D2FF]" />
               <span className="text-[10px] sm:text-xs font-mono font-bold tracking-wider text-white">
                 STAGE {currentStepData.step}: {currentVisual.stage}
               </span>
@@ -126,7 +126,7 @@ export const HeadlightProcessInteractive: React.FC = () => {
           {/* Technical Explanations */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono text-[#D4AF37] uppercase tracking-wider mb-2">
+              <div className="flex items-center gap-2 text-xs font-mono text-[#00D2FF] uppercase tracking-wider mb-2">
                 <span>Phase Breakdown</span>
                 <span>·</span>
                 <span>Approx. {currentStepData.time}</span>
@@ -139,7 +139,7 @@ export const HeadlightProcessInteractive: React.FC = () => {
               </p>
 
               <div className="p-4 bg-[#181818] border border-neutral-800 rounded-sm">
-                <div className="text-xs uppercase font-semibold text-[#D4AF37] mb-1">
+                <div className="text-xs uppercase font-semibold text-[#00D2FF] mb-1">
                   Why this step is essential:
                 </div>
                 <div className="text-xs sm:text-sm text-neutral-300">
@@ -171,7 +171,7 @@ export const HeadlightProcessInteractive: React.FC = () => {
                   )
                 }
                 disabled={activeStepIndex === HEADLIGHT_PROCESS_STEPS.length - 1}
-                className="px-4 py-2 text-xs font-semibold text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="px-4 py-2 text-xs font-semibold text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 Next Stage →
               </button>

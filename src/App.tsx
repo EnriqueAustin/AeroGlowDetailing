@@ -57,7 +57,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-[#F0EFEA] flex flex-col font-sans selection:bg-[#D4AF37] selection:text-black">
+    <div className="min-h-screen bg-[#080808] text-[#F0EFEA] flex flex-col font-sans selection:bg-[#00D2FF] selection:text-black">
       {/* Universal Top Navigation */}
       <Navbar />
 

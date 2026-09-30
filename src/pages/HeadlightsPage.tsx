@@ -82,12 +82,12 @@ export const HeadlightsPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-20 sm:space-y-28">
         
         {/* Section 1: Hero Offer Highlight Banner */}
-        <section className="bg-gradient-to-r from-[#141414] via-[#1A1A1A] to-[#141414] border-2 border-[#D4AF37]/50 rounded-sm p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#D4AF37]/10 blur-[90px] rounded-full pointer-events-none" />
+        <section className="bg-gradient-to-r from-[#141414] via-[#1A1A1A] to-[#141414] border-2 border-[#00D2FF]/50 rounded-sm p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#00D2FF]/10 blur-[90px] rounded-full pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D4AF37] text-black text-xs font-bold uppercase tracking-wider rounded-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00D2FF] text-black text-xs font-bold uppercase tracking-wider rounded-sm">
                 <ShieldCheck className="w-3.5 h-3.5 fill-current" />
                 <span>Standard West Coast Rate · Both Headlights</span>
               </div>
@@ -102,22 +102,22 @@ export const HeadlightsPage: React.FC = () => {
 
               <div className="flex flex-wrap items-center gap-y-2 gap-x-4 sm:gap-x-6 text-xs font-mono text-neutral-400 pt-2">
                 <div className="flex items-center gap-1.5 text-white">
-                  <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
+                  <ShieldCheck className="w-4 h-4 text-[#00D2FF]" />
                   <span>1-Year Written Guarantee</span>
                 </div>
                 <span className="hidden sm:inline">·</span>
                 <div className="flex items-center gap-1.5 text-white">
-                  <MapPin className="w-4 h-4 text-[#D4AF37]" />
+                  <MapPin className="w-4 h-4 text-[#00D2FF]" />
                   <span>Mobile Service (We Come To You)</span>
                 </div>
                 <span className="hidden sm:inline">·</span>
                 <div className="flex items-center gap-1.5 text-white">
-                  <Clock className="w-4 h-4 text-[#D4AF37]" />
+                  <Clock className="w-4 h-4 text-[#00D2FF]" />
                   <span>1.5 – 2 Hours Duration</span>
                 </div>
                 <span className="hidden sm:inline">·</span>
                 <div className="flex items-center gap-1.5 text-white">
-                  <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#00D2FF]" />
                   <span>Pay on Completion</span>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export const HeadlightsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openBooking('headlight-restoration')}
-                className="w-full py-4 px-6 text-xs sm:text-sm font-bold tracking-wider uppercase text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-4 px-6 text-xs sm:text-sm font-bold tracking-wider uppercase text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Book Headlights (R650)</span>
                 <ArrowRight className="w-4 h-4" />
@@ -150,7 +150,7 @@ export const HeadlightsPage: React.FC = () => {
         {/* Section 2: Interactive Before & After Visual Slider */}
         <section className="space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Visual Transformation
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
@@ -215,10 +215,10 @@ export const HeadlightsPage: React.FC = () => {
 
               {/* Slider Divider Line */}
               <div
-                className="absolute top-0 bottom-0 w-1 bg-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.7)]"
+                className="absolute top-0 bottom-0 w-1 bg-[#00D2FF] shadow-[0_0_15px_rgba(0,210,255,0.7)]"
                 style={{ left: `${sliderPos}%` }}
               >
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-2 border-[#D4AF37] text-[#D4AF37] flex items-center justify-center shadow-lg">
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-black border-2 border-[#00D2FF] text-[#00D2FF] flex items-center justify-center shadow-lg">
                   <MoveHorizontal className="w-4 h-4" />
                 </div>
               </div>
@@ -229,7 +229,7 @@ export const HeadlightsPage: React.FC = () => {
         {/* Section 3: The Multi-Stage Abrasive Science */}
         <section className="space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Our Methodology
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
@@ -244,10 +244,10 @@ export const HeadlightsPage: React.FC = () => {
             {gritStages.map((stage, idx) => (
               <div
                 key={stage.grit}
-                className="p-6 bg-[#121212] border border-neutral-800 rounded-sm hover:border-[#D4AF37]/50 transition-colors"
+                className="p-6 bg-[#121212] border border-neutral-800 rounded-sm hover:border-[#00D2FF]/50 transition-colors"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-mono text-[#D4AF37] font-bold">
+                  <span className="text-xs font-mono text-[#00D2FF] font-bold">
                     STAGE 0{idx + 1}
                   </span>
                   <span className="text-xs font-mono px-2 py-0.5 bg-neutral-900 border border-neutral-700 rounded text-neutral-300">
@@ -268,7 +268,7 @@ export const HeadlightsPage: React.FC = () => {
         {/* Section 4: Why Toothpaste & Quick Buffing Fails */}
         <section className="bg-[#121212] border border-neutral-800 p-8 sm:p-12 rounded-sm space-y-8">
           <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
               Buyer Awareness
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
@@ -309,19 +309,19 @@ export const HeadlightsPage: React.FC = () => {
               </div>
               <ul className="space-y-2.5 text-xs text-neutral-300">
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Sands progressively (800 to 3000 grit) to physically shave off the dead layer.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Applies an automotive-grade UV clearcoat that bonds directly to the lens.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Lasts for years under normal coastal driving conditions.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>Backed by our written 1-Year Clarity Guarantee.</span>
                 </li>
               </ul>
@@ -332,7 +332,7 @@ export const HeadlightsPage: React.FC = () => {
         {/* Section 5: The 1-Year Written Guarantee Explained */}
         <section className="bg-gradient-to-br from-[#161616] to-[#0E0E0E] border border-neutral-800 p-8 sm:p-12 rounded-sm flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-3 max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#D4AF37] uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#00D2FF] uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4" />
               <span>Written Certificate</span>
             </div>
@@ -348,7 +348,7 @@ export const HeadlightsPage: React.FC = () => {
             <button
               type="button"
               onClick={() => openBooking('headlight-restoration')}
-              className="w-full sm:w-auto px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-lg cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-lg cursor-pointer"
             >
               Book Headlights (R650)
             </button>

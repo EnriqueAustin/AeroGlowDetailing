@@ -62,7 +62,7 @@ export const BeforeAfterPage: React.FC = () => {
                   }}
                   className={`px-4 py-2.5 text-xs font-semibold rounded-sm transition-all cursor-pointer ${
                     isSelected
-                      ? 'bg-[#1E1E1E] text-[#D4AF37] border border-[#D4AF37] shadow-md'
+                      ? 'bg-[#1E1E1E] text-[#00D2FF] border border-[#00D2FF] shadow-md'
                       : 'bg-[#121212] hover:bg-[#161616] text-neutral-400 border border-neutral-800'
                   }`}
                 >
@@ -85,7 +85,7 @@ export const BeforeAfterPage: React.FC = () => {
               onClick={() => setViewMode('slider')}
               className={`px-3 py-1.5 text-xs font-mono rounded-sm transition-colors flex items-center gap-1.5 cursor-pointer ${
                 viewMode === 'slider'
-                  ? 'bg-[#222] text-[#D4AF37] font-bold'
+                  ? 'bg-[#222] text-[#00D2FF] font-bold'
                   : 'text-neutral-400 hover:text-white'
               }`}
             >
@@ -97,7 +97,7 @@ export const BeforeAfterPage: React.FC = () => {
               onClick={() => setViewMode('sideBySide')}
               className={`px-3 py-1.5 text-xs font-mono rounded-sm transition-colors flex items-center gap-1.5 cursor-pointer ${
                 viewMode === 'sideBySide'
-                  ? 'bg-[#222] text-[#D4AF37] font-bold'
+                  ? 'bg-[#222] text-[#00D2FF] font-bold'
                   : 'text-neutral-400 hover:text-white'
               }`}
             >
@@ -159,16 +159,16 @@ export const BeforeAfterPage: React.FC = () => {
                 <div className="absolute top-2.5 sm:top-4 left-2.5 sm:left-4 max-w-[44%] truncate bg-black/80 px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border border-neutral-800 text-[10px] sm:text-xs font-mono text-neutral-300 pointer-events-none">
                   BEFORE: {activeCase.beforeLabel}
                 </div>
-                <div className="absolute top-2.5 sm:top-4 right-2.5 sm:right-4 max-w-[44%] truncate bg-black/80 px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border border-neutral-800 text-[10px] sm:text-xs font-mono text-[#D4AF37] pointer-events-none">
+                <div className="absolute top-2.5 sm:top-4 right-2.5 sm:right-4 max-w-[44%] truncate bg-black/80 px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm border border-neutral-800 text-[10px] sm:text-xs font-mono text-[#00D2FF] pointer-events-none">
                   AFTER: {activeCase.afterLabel}
                 </div>
 
                 {/* Divider Line */}
                 <div
-                  className="absolute top-0 bottom-0 w-[2px] bg-[#D4AF37] pointer-events-none shadow-[0_0_12px_rgba(212,175,55,0.7)]"
+                  className="absolute top-0 bottom-0 w-[2px] bg-[#00D2FF] pointer-events-none shadow-[0_0_12px_rgba(0,210,255,0.7)]"
                   style={{ left: `${sliderPosition}%` }}
                 >
-                  <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#181818] border-2 border-[#D4AF37] flex items-center justify-center text-[#D4AF37] shadow-2xl">
+                  <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#181818] border-2 border-[#00D2FF] flex items-center justify-center text-[#00D2FF] shadow-2xl">
                     <MoveHorizontal className="w-5 h-5 animate-pulse" />
                   </div>
                 </div>
@@ -190,13 +190,13 @@ export const BeforeAfterPage: React.FC = () => {
                     BEFORE: {activeCase.beforeLabel}
                   </div>
                 </div>
-                <div className="relative aspect-video rounded-sm overflow-hidden border border-[#D4AF37]/50">
+                <div className="relative aspect-video rounded-sm overflow-hidden border border-[#00D2FF]/50">
                   <img
                     src={activeCase.afterImage}
                     alt="Restored state"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded text-xs font-mono text-[#D4AF37] border border-neutral-800">
+                  <div className="absolute top-3 left-3 bg-black/80 px-2.5 py-1 rounded text-xs font-mono text-[#00D2FF] border border-neutral-800">
                     AFTER: {activeCase.afterLabel}
                   </div>
                 </div>
@@ -223,13 +223,13 @@ export const BeforeAfterPage: React.FC = () => {
 
             {/* Technical Metrics List */}
             <div className="space-y-3 pt-4 border-t border-neutral-800">
-              <div className="text-xs font-mono uppercase tracking-wider text-[#D4AF37] flex items-center gap-1.5">
+              <div className="text-xs font-mono uppercase tracking-wider text-[#00D2FF] flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Verified Diagnostic Audit</span>
               </div>
               {activeCase.technicalDetails.map((detail, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 text-xs text-neutral-300">
-                  <Check className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-[#00D2FF] shrink-0 mt-0.5" />
                   <span>{detail}</span>
                 </div>
               ))}
@@ -242,7 +242,7 @@ export const BeforeAfterPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={openCoupon}
-                    className="w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-md cursor-pointer text-center"
+                    className="w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer text-center"
                   >
                     Claim R650 Coupon & Book
                   </button>
@@ -254,7 +254,7 @@ export const BeforeAfterPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => openBooking(activeCase.id)}
-                  className="w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#D4AF37] hover:bg-[#E5C07B] rounded-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full py-3.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
                 >
                   <span>Request Similar Transformation</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -267,7 +267,7 @@ export const BeforeAfterPage: React.FC = () => {
         {/* Defect Severity Scale Diagnostic Guide */}
         <section className="bg-[#111111] border border-neutral-800 p-6 sm:p-10 rounded-sm space-y-6">
           <div className="max-w-2xl">
-            <div className="text-xs font-mono uppercase text-[#D4AF37] tracking-widest mb-1">
+            <div className="text-xs font-mono uppercase text-[#00D2FF] tracking-widest mb-1">
               Condition Assessment
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
@@ -280,28 +280,28 @@ export const BeforeAfterPage: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
             <div className="p-4 bg-neutral-900/80 border border-neutral-800 rounded-sm space-y-1.5">
-              <span className="text-[#D4AF37] font-mono font-bold block">GRADE 01 · MILD</span>
+              <span className="text-[#00D2FF] font-mono font-bold block">GRADE 01 · MILD</span>
               <div className="text-white font-semibold">Light Surface Hazing</div>
               <p className="text-neutral-400 leading-relaxed">
                 Early UV cloudiness creeping onto top edges. Cleared with progressive wet-sanding and UV clearcoat.
               </p>
             </div>
             <div className="p-4 bg-neutral-900/80 border border-neutral-800 rounded-sm space-y-1.5">
-              <span className="text-[#D4AF37] font-mono font-bold block">GRADE 02 · MODERATE</span>
+              <span className="text-[#00D2FF] font-mono font-bold block">GRADE 02 · MODERATE</span>
               <div className="text-white font-semibold">Yellowing Headlight Lens</div>
               <p className="text-neutral-400 leading-relaxed">
                 Visible yellow tint across the center and upper lens. Night driving light pattern begins to scatter.
               </p>
             </div>
             <div className="p-4 bg-neutral-900/80 border border-neutral-800 rounded-sm space-y-1.5">
-              <span className="text-[#D4AF37] font-mono font-bold block">GRADE 03 · HEAVY</span>
+              <span className="text-[#00D2FF] font-mono font-bold block">GRADE 03 · HEAVY</span>
               <div className="text-white font-semibold">Chalky Yellow Breakdown</div>
               <p className="text-neutral-400 leading-relaxed">
                 Severe yellow crusting across the entire lens. Light output is muffled and hazy.
               </p>
             </div>
             <div className="p-4 bg-neutral-900/80 border border-neutral-800 rounded-sm space-y-1.5">
-              <span className="text-[#D4AF37] font-mono font-bold block">GRADE 04 · SEVERE</span>
+              <span className="text-[#00D2FF] font-mono font-bold block">GRADE 04 · SEVERE</span>
               <div className="text-white font-semibold">Opaque Polycarbonate & Pitting</div>
               <p className="text-neutral-400 leading-relaxed">
                 Risk of roadworthy failure. Thoroughly leveled with coarse 800-grit wet cut and sealed with UV clearcoat.
