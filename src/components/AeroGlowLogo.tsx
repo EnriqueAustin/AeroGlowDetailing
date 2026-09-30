@@ -1,4 +1,5 @@
 import React from 'react';
+import { IMAGES } from '../data/images';
 
 interface LogoProps {
   className?: string;
@@ -24,7 +25,7 @@ export const AeroGlowLogo: React.FC<LogoProps> = ({
       {/* Official AeroGlow Logo with Transparent Background */}
       <div className={`relative flex items-center justify-center shrink-0 ${heightClasses}`}>
         <img
-          src="/src/assets/images/aeroglow_logo_transparent.png"
+          src={IMAGES.logo}
           alt="AeroGlow Detailing Logo"
           className="h-full w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,210,255,0.2)]"
         />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, ShieldCheck, Sparkles, Droplets, Layers } from 'lucide-react';
+import { IMAGES } from '../data/images';
 
 interface TransformationSequenceProps {
   onOpenBooking: () => void;
@@ -18,7 +19,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
         'Headlights and lenses are inspected for UV degradation, micro-cracks, and road pitting. Surrounding body paintwork and rubber seals are taped off with high-tack protective automotive tape.',
       metric: 'Zero-contact protection for vehicle body panels',
       icon: Layers,
-      image: '/src/assets/images/headlight_oxidized_lens_1790548123675.jpg',
+      image: IMAGES.headlightOxidized,
       visualNote: 'Oxidized, cloudy surface safely isolated and protected.',
     },
     {
@@ -28,7 +29,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
         'Progressive wet-sanding through 800, 1200, 2000, and 3000 grits with purified water lubrication. Shaves away the dead, chalky yellow polycarbonate layer.',
       metric: 'Progressive grit sequence removes yellow crust',
       icon: Droplets,
-      image: '/src/assets/images/paint_swirled_surface_1790548135101.jpg',
+      image: IMAGES.paintSwirledSurface,
       visualNote: 'Micro-scratches refined down to a uniform satin finish.',
     },
     {
@@ -38,7 +39,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
         'Pure isopropyl alcohol (IPA) chemical wipe-down removes all microscopic sanding residue, oils, and moisture to ensure optimal chemical adhesion.',
       metric: 'Clean mechanical anchor for clearcoat adhesion',
       icon: Sparkles,
-      image: '/src/assets/images/paint_correction_gloss_1790548103040.jpg',
+      image: IMAGES.paintCorrectionGloss,
       visualNote: 'Pristine, keyed surface ready for clearcoat application.',
     },
     {
@@ -48,7 +49,7 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
         'Spraying of high-grade UV-resistant clearcoat. Fills all microscopic sanding marks, instantly restoring crystal optical clarity and sealing against future sun burn.',
       metric: 'Backed by 1-Year Written Clarity Guarantee',
       icon: ShieldCheck,
-      image: '/src/assets/images/headlight_clear_lens_1790548092543.jpg',
+      image: IMAGES.headlightClear,
       visualNote: 'Crystal clear lens transparency and lasting UV seal.',
     },
   ];

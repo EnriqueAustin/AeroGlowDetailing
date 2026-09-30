@@ -20,6 +20,7 @@ export const Navbar: React.FC = () => {
   const navLinks: { label: string; page: AppPage; badge?: string }[] = [
     { label: 'Home', page: 'home' },
     { label: 'Headlights', page: 'headlights', badge: 'R650' },
+    { label: 'Detailing', page: 'detailing', badge: 'NEW' },
     { label: 'Process', page: 'process' },
     { label: 'Before & After', page: 'before-after' },
     { label: 'Services', page: 'services' },

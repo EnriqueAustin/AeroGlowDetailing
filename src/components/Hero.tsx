@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, ShieldCheck, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { AeroGlowLogo } from './AeroGlowLogo';
+import { IMAGES } from '../data/images';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -25,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreWork }) => {
       {/* Background cinematic photography with layered scrim */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_cinematic_automotive_1790548077922.jpg"
+          src={IMAGES.heroAutomotive}
           alt="Cinematic luxury vehicle showcasing freshly detailed glossy paintwork and crystal clear restored headlights"
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
           referrerPolicy="no-referrer"

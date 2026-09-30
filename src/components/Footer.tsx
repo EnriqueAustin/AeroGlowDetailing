@@ -47,6 +47,15 @@ export const Footer: React.FC = () => {
               <li>
                 <button
                   type="button"
+                  onClick={() => navigateTo('detailing')}
+                  className="hover:text-[#00D2FF] transition-colors cursor-pointer text-left"
+                >
+                  Mobile Detailing & Exterior Wash
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
                   onClick={() => navigateTo('process')}
                   className="hover:text-[#00D2FF] transition-colors cursor-pointer text-left"
                 >

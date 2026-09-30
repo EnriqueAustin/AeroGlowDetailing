@@ -9,6 +9,7 @@ import { CouponModal } from './components/CouponModal';
 // Pages
 import { HomePage } from './pages/HomePage';
 import { HeadlightsPage } from './pages/HeadlightsPage';
+import { DetailingPage } from './pages/DetailingPage';
 import { ProcessPage } from './pages/ProcessPage';
 import { BeforeAfterPage } from './pages/BeforeAfterPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -34,6 +35,8 @@ function AppContent() {
     switch (currentPage) {
       case 'headlights':
         return <HeadlightsPage />;
+      case 'detailing':
+        return <DetailingPage />;
       case 'process':
         return <ProcessPage />;
       case 'before-after':

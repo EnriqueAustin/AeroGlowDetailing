@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { useNavigation } from '../context/NavigationContext';
 import { HERO_HEADLIGHT_OFFER, HEADLIGHT_PROCESS_STEPS } from '../data/studioData';
+import { IMAGES } from '../data/images';
 import {
   ShieldCheck,
   Tag,
@@ -147,6 +148,193 @@ export const HeadlightsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Section: Headlight Specialist Packages & Combined Bundles */}
+        <section className="space-y-8 pt-2">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
+                Specialist Rates & Value Combos
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
+                HEADLIGHT SPECIALIST PACKAGES
+              </h2>
+              <p className="text-sm text-neutral-400 mt-1 max-w-2xl">
+                Choose standalone headlight restoration with a 1-Year Guarantee, or bundle with front-end trim or an exterior wash for extra savings.
+              </p>
+            </div>
+            <span className="text-xs font-mono text-[#38BDF8] border border-[#00D2FF]/30 px-3 py-1.5 rounded-sm bg-[#00D2FF]/10 shrink-0 self-start md:self-auto">
+              ✓ Free Call-Out on all packages over R700
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Package 1: Premium Headlight Restoration (Core Specialty) */}
+            <div className="bg-[#121212] border-2 border-[#00D2FF]/70 rounded-sm p-6 sm:p-7 flex flex-col justify-between shadow-xl relative bg-gradient-to-b from-[#181818] to-[#101010]">
+              <div>
+                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-black bg-[#00D2FF] px-2.5 py-0.5 rounded-sm mb-4">
+                  ⭐ Core Specialty
+                </span>
+                <h3 className="text-xl font-bold text-white font-display">
+                  Premium Headlight Restoration
+                </h3>
+                <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
+                  For clients who specifically need night vision restored and lens UV protection, with zero detailing required.
+                </p>
+
+                <div className="my-5 pb-5 border-b border-neutral-800">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-extrabold text-[#00D2FF] font-mono-tabular">
+                      R650
+                    </span>
+                    <span className="text-xs text-neutral-400 font-mono">Both Front Lenses</span>
+                  </div>
+                  <div className="text-[11px] text-[#38BDF8] flex items-center gap-1 mt-1 font-medium">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
+                    <span>1-Year Written Clarity Guarantee</span>
+                  </div>
+                  <span className="text-[11px] text-neutral-500 font-mono mt-1 block">
+                    Duration: 1.5 – 2 Hours
+                  </span>
+                </div>
+
+                <div className="space-y-2.5 text-xs text-neutral-300 mb-6">
+                  {[
+                    'Dual-side progressive wet-sanding (800 → 3000 grit)',
+                    'Removes cloudy yellow UV damage & road pitting',
+                    'IPA chemical wipe degreasing for sterile surface',
+                    'Automotive UV clearcoat / Meguiar\'s protective coating',
+                    'Protective masking tape shields surrounding bumper paint',
+                    'Pay on completion in your driveway',
+                  ].map((inc, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
+                      <span>{inc}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => openBooking('headlight-restoration')}
+                className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer bg-[#00D2FF] hover:bg-[#38BDF8] text-black shadow-md"
+              >
+                <span>Book Core Specialty (R650)</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* Package 2: Tier 1 Sight & Shine Combo */}
+            <div className="bg-[#121212] border border-neutral-800 hover:border-neutral-700 rounded-sm p-6 sm:p-7 flex flex-col justify-between transition-all bg-gradient-to-b from-[#141414] to-[#0E0E0E]">
+              <div>
+                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-[#00D2FF] border border-[#00D2FF]/40 px-2.5 py-0.5 rounded-sm mb-4">
+                  Popular Front-End
+                </span>
+                <h3 className="text-xl font-bold text-white font-display">
+                  Tier 1: "Sight & Shine" Combo
+                </h3>
+                <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
+                  Headlight restoration plus a front-end cosmetic refresh for faded plastics or dulled metal.
+                </p>
+
+                <div className="my-5 pb-5 border-b border-neutral-800">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-extrabold text-[#00D2FF] font-mono-tabular">
+                      R750
+                    </span>
+                    <span className="text-xs text-neutral-400 font-mono">Headlights + Choice</span>
+                  </div>
+                  <div className="text-[11px] text-emerald-400 font-mono mt-1">
+                    Save R150 (Combo Value R900)
+                  </div>
+                  <span className="text-[11px] text-neutral-500 font-mono mt-1 block">
+                    Duration: 1.5 – 2 Hours
+                  </span>
+                </div>
+
+                <div className="space-y-2.5 text-xs text-neutral-300 mb-6">
+                  {[
+                    'Premium Headlight Restoration (both lenses + 1-Year Guarantee)',
+                    'Choice of: Permanent Black Plastic Trim Restoration (bumpers/mirrors)',
+                    'OR Choice of: Chrome & Stainless Steel Roll-Bar Polishing',
+                    'Masking tape protection around body panels',
+                    'FREE Call-Out across Vredenburg, Saldanha, Langebaan & Jacobsbaai',
+                  ].map((inc, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
+                      <span>{inc}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => openBooking('sight-and-shine')}
+                className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700"
+              >
+                <span>Book Sight & Shine (R750)</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* Package 3: Combined Bundle 1 - The Sight & Wash Express */}
+            <div className="bg-[#121212] border border-[#00D2FF]/40 rounded-sm p-6 sm:p-7 flex flex-col justify-between transition-all bg-gradient-to-b from-[#151515] to-[#101010]">
+              <div>
+                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-black bg-[#38BDF8] px-2.5 py-0.5 rounded-sm mb-4">
+                  Quick-Fix Combo
+                </span>
+                <h3 className="text-xl font-bold text-white font-display">
+                  Combined: "Sight & Wash" Express
+                </h3>
+                <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
+                  Headlight restoration plus a full scratch-free exterior wash & wax in a single convenient visit.
+                </p>
+
+                <div className="my-5 pb-5 border-b border-neutral-800">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-extrabold text-[#00D2FF] font-mono-tabular">
+                      R800
+                    </span>
+                    <span className="text-xs text-neutral-400 font-mono">Cars / R850 Bakkies</span>
+                  </div>
+                  <div className="text-[11px] text-emerald-400 font-mono mt-1">
+                    Save R100 (Separate Value R900)
+                  </div>
+                  <span className="text-[11px] text-neutral-500 font-mono mt-1 block">
+                    Duration: 2 – 2.5 Hours
+                  </span>
+                </div>
+
+                <div className="space-y-2.5 text-xs text-neutral-300 mb-6">
+                  {[
+                    'Premium Headlight Restoration (both lenses + 1-Year Guarantee)',
+                    'The West Coast Wash & Protect (exterior hand wash & foam rinse)',
+                    'High-gloss polymer spray wax applied to all paintwork',
+                    'Wheel faces, arches & tires degreased',
+                    'Temporary tire & exterior trim dressing applied',
+                    'FREE Call-Out across the West Coast',
+                  ].map((inc, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
+                      <span>{inc}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => openBooking('sight-and-wash-express')}
+                className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700"
+              >
+                <span>Book Sight & Wash (R800)</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Section 2: Interactive Before & After Visual Slider */}
         <section className="space-y-8">
           <div className="max-w-3xl">
@@ -187,7 +375,7 @@ export const HeadlightsPage: React.FC = () => {
             >
               {/* After Image */}
               <img
-                src="/src/assets/images/headlight_clear_lens_1790548092543.jpg"
+                src={IMAGES.headlightClear}
                 alt="Headlight restored to crystal clarity"
                 className="w-full h-full object-cover object-center pointer-events-none"
               />
@@ -202,7 +390,7 @@ export const HeadlightsPage: React.FC = () => {
                 style={{ width: `${sliderPos}%` }}
               >
                 <img
-                  src="/src/assets/images/headlight_oxidized_lens_1790548123675.jpg"
+                  src={IMAGES.headlightOxidized}
                   alt="Headlight with cloudy yellow UV oxidation"
                   className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
                   style={{ width: '100%', minWidth: '100%' }}

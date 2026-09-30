@@ -11,25 +11,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
   onOpenBooking,
 }) => {
   const [selectedVehicle, setSelectedVehicle] = useState<'sedan' | 'suv' | 'bakkie'>('sedan');
-
-  const headlineOffer = {
-    id: 'headlight-restoration',
-    name: 'Core Service: Headlight Restoration',
-    badge: '⭐ CORE SERVICE',
-    price: 650,
-    duration: '1.5 – 2 Hours',
-    description:
-      'Professional wet-sand restoration and protective clearcoat for both front headlights. Backed by our written 1-Year Guarantee.',
-    includes: [
-      'Dual front headlights restored (progressive 800 → 3000 grit)',
-      'Removes yellow UV oxidation, haze & road pitting',
-      "Sealed with Meguiar's Headlight Coating / 1K Acrylic Clear Coat",
-      'Surrounding car paint masked and protected',
-      '1-Year Written Clarity Guarantee against coastal sun',
-      'Mobile service: we come to your location',
-    ],
-    savingsText: 'Both Headlights Included',
-  };
+  const [activeCategory, setActiveCategory] = useState<'all' | 'combined' | 'detailing' | 'headlight'>('all');
 
   const getPrice = (pkg: typeof PACKAGES[0]) => {
     if (selectedVehicle === 'sedan') return pkg.priceSedan;
@@ -37,11 +19,19 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
     return pkg.priceBakkie;
   };
 
+  const displayedPackages = PACKAGES.filter((pkg) => {
+    if (activeCategory === 'all') return true;
+    if (activeCategory === 'combined') return pkg.category === 'combined-bundle';
+    if (activeCategory === 'detailing') return pkg.category === 'wash-detailing';
+    if (activeCategory === 'headlight') return pkg.category === 'headlight';
+    return true;
+  });
+
   return (
     <section id="packages" className="py-20 lg:py-28 bg-[#080808] border-b border-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
             <div className="text-xs font-semibold tracking-[0.2em] text-[#00D2FF] uppercase mb-2">
               Transparent West Coast Rates
@@ -95,72 +85,34 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
           </div>
         </div>
 
-        {/* Pricing Cards Grid (Core Service + 3 Bundles) */}
+        {/* Category Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-8">
+          {[
+            { id: 'all', label: 'All Packages & Bundles' },
+            { id: 'combined', label: '⭐ Combined Detailing & Headlights' },
+            { id: 'detailing', label: '🚗 Standalone Mobile Detailing' },
+            { id: 'headlight', label: '💡 Headlight Specialists' },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setActiveCategory(tab.id as typeof activeCategory)}
+              className={`px-3 sm:px-4 py-2 text-xs font-semibold rounded-sm transition-all cursor-pointer ${
+                activeCategory === tab.id
+                  ? 'bg-[#00D2FF] text-black font-bold shadow-sm'
+                  : 'bg-[#141414] text-neutral-400 hover:text-white hover:bg-neutral-800 border border-neutral-800'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Card 1: Core Headlight Restoration */}
-          <div className="bg-[#121212] rounded-sm p-6 flex flex-col justify-between transition-all duration-300 relative border border-[#00D2FF]/60 shadow-[0_0_25px_rgba(0,210,255,0.08)] bg-gradient-to-b from-[#161616] to-[#101010]">
-            <div>
-              <div className="inline-block text-[10px] font-bold uppercase tracking-wider text-black bg-[#00D2FF] px-2.5 py-0.5 rounded-sm mb-3">
-                {headlineOffer.badge}
-              </div>
-
-              <h3 className="text-lg font-bold text-white font-display">
-                {headlineOffer.name}
-              </h3>
-              <p className="text-xs text-neutral-400 mt-2 min-h-[36px] line-clamp-2">
-                {headlineOffer.description}
-              </p>
-
-              {/* Price */}
-              <div className="mt-5 pt-4 border-t border-neutral-800">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-extrabold text-[#00D2FF] font-mono-tabular">
-                    R{headlineOffer.price}
-                  </span>
-                  <span className="text-xs text-neutral-400 font-mono">Both Headlights</span>
-                </div>
-                <div className="text-[11px] text-[#38BDF8] mt-0.5 flex items-center justify-between">
-                  <span className="flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
-                    1-Year Written Guarantee
-                  </span>
-                  <span className="flex items-center gap-1 text-neutral-400 font-mono">
-                    <Clock className="w-3 h-3 text-neutral-500" />
-                    {headlineOffer.duration}
-                  </span>
-                </div>
-              </div>
-
-              {/* Inclusions */}
-              <div className="mt-6 space-y-2.5">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">
-                  Procedure Inclusions
-                </div>
-                {headlineOffer.includes.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-neutral-300">
-                    <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-8 pt-4 border-t border-neutral-800 space-y-2">
-              <button
-                type="button"
-                onClick={() => onOpenBooking('headlight-restoration')}
-                className="w-full py-2.5 px-4 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
-              >
-                <span>Book Headlights (R650)</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Cards 2, 3, 4: Weskus Value Bundles */}
-          {PACKAGES.map((pkg) => {
+          {displayedPackages.map((pkg) => {
             const price = getPrice(pkg);
-            const isBestSeller = pkg.id === 'weskus-bakkie-revive';
+            const isBestSeller = pkg.badge?.includes('BEST SELLER') || pkg.badge?.includes('Core');
 
             return (
               <div
@@ -168,7 +120,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                 className={`bg-[#121212] rounded-sm p-6 flex flex-col justify-between transition-all duration-300 relative border ${
                   isBestSeller
                     ? 'border-[#00D2FF]/80 shadow-[0_0_30px_rgba(0,210,255,0.12)] bg-gradient-to-b from-[#181818] to-[#111111]'
-                    : 'border-neutral-800 hover:border-neutral-700'
+                    : 'border-neutral-800 hover:border-neutral-700 bg-gradient-to-b from-[#141414] to-[#0E0E0E]'
                 }`}
               >
                 <div>
@@ -184,7 +136,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                     </div>
                   )}
 
-                  <h3 className="text-lg font-bold text-white font-display">
+                  <h3 className="text-lg font-bold text-white font-display leading-snug">
                     {pkg.name}
                   </h3>
                   <p className="text-xs text-neutral-400 mt-2 min-h-[36px] line-clamp-2">
@@ -215,12 +167,12 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                   {/* Inclusions */}
                   <div className="mt-6 space-y-2.5">
                     <div className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">
-                      Bundle Inclusions
+                      Inclusions
                     </div>
-                    {pkg.includes.map((feature, i) => (
+                    {pkg.includes.slice(0, 5).map((feature, i) => (
                       <div key={i} className="flex items-start gap-2 text-xs text-neutral-300">
                         <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
-                        <span>{feature}</span>
+                        <span className="line-clamp-2">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -236,7 +188,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                         : 'bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700'
                     }`}
                   >
-                    <span>Book {pkg.name.split(':')[0]}</span>
+                    <span>Book Package</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Tag, Sparkles, Check, X, ArrowRight, Zap, Award } from 'lucide-react';
 import { HERO_HEADLIGHT_OFFER } from '../data/studioData';
+import { IMAGES } from '../data/images';
 
 interface HeadlightFeatureProps {
   onOpenCoupon: () => void;
@@ -38,7 +39,7 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
           <div className="lg:col-span-7 bg-[#141414] border border-neutral-800 p-2 sm:p-4 rounded-sm relative overflow-hidden shadow-2xl">
             <div className="relative min-h-[220px] aspect-[4/3] sm:aspect-video overflow-hidden rounded-sm bg-neutral-900">
               <img
-                src="/src/assets/images/headlight_clear_lens_1790548092543.jpg"
+                src={IMAGES.headlightClear}
                 alt="Headlight lens restored to crystal optical clarity with automotive clearcoat"
                 className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"

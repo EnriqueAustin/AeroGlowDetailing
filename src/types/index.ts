@@ -12,6 +12,7 @@ export type WestCoastArea =
 export type AppPage =
   | 'home'
   | 'headlights'
+  | 'detailing'
   | 'process'
   | 'before-after'
   | 'services'
@@ -29,6 +30,11 @@ export interface ServiceItem {
   tagline: string;
   description: string;
   priceZAR: number;
+  priceVehicle?: {
+    sedan: number;
+    suv: number;
+    bakkie: number;
+  };
   durationHours: string;
   inclusions: string[];
   processHighlights: string[];
@@ -44,6 +50,7 @@ export interface PackagePlan {
   id: string;
   name: string;
   badge?: string;
+  category?: 'headlight' | 'wash-detailing' | 'combined-bundle';
   priceSedan: number;
   priceSuv: number;
   priceBakkie: number;

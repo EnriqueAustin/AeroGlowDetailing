@@ -19,13 +19,16 @@ import {
 export const PackagesPage: React.FC = () => {
   const { openBooking } = useNavigation();
   const [vehicleType, setVehicleType] = useState<'sedan' | 'suv' | 'bakkie'>('sedan');
+  const [activeCategory, setActiveCategory] = useState<'all' | 'combined' | 'detailing' | 'headlight'>('all');
 
-  // Custom Detail Configurator using the 7 Core Services
+  // Custom Detail Configurator using all Mobile Offerings
   const [customIncludes, setCustomIncludes] = useState<{ [key: string]: boolean }>({
     headlights: true,
+    wash: true,
     trim: false,
     chrome: false,
-    windshield: true,
+    windshield: false,
+    interiorVacuum: false,
     engineBay: false,
     interiorSpot: false,
     doorSeals: false,
@@ -39,38 +42,50 @@ export const PackagesPage: React.FC = () => {
       note: "Multi-stage wet sanding + Meguiar's / 1K Acrylic UV clearcoat · 1-Year Guarantee",
     },
     {
+      id: 'wash',
+      label: '2. The West Coast Wash & Wax (Hand Wash & Polymer Wax)',
+      price: vehicleType === 'sedan' ? 250 : 350,
+      note: 'Grit-guard two-bucket wash, wheel degrease, spray wax & tire/trim dressing',
+    },
+    {
+      id: 'interiorVacuum',
+      label: '3. Essential Interior Detail (Deep Vacuum & Dust-Down)',
+      price: vehicleType === 'sedan' ? 300 : 350,
+      note: 'Beach sand extracted, dash/console degreased, UV satin dressing, glass cleaned',
+    },
+    {
       id: 'trim',
-      label: '2. Black Plastic Trim Restoration',
+      label: '4. Black Plastic Trim Restoration',
       price: 250,
       note: 'Sun-bleached bumpers, wheel arches, mirrors restored to deep factory black',
     },
     {
       id: 'chrome',
-      label: '3. Chrome & Roll-Bar Polishing',
+      label: '5. Chrome & Roll-Bar Polishing',
       price: 250,
       note: 'Roll bars, nudge bars, and side steps polished to mirror shine, cuts salt haze',
     },
     {
       id: 'windshield',
-      label: '4. Windshield Water-Spot & Sea-Salt Removal',
+      label: '6. Windshield Water-Spot & Sea-Salt Removal',
       price: 200,
       note: 'Hand compounded to clear mineral scale, eliminates wiper glare and chatter',
     },
     {
       id: 'engineBay',
-      label: '5. Engine Bay Degreasing & Detail',
+      label: '7. Engine Bay Degreasing & Detail',
       price: 300,
       note: 'Safe citrus degrease & satin plastics dressing, showroom resale appeal',
     },
     {
       id: 'interiorSpot',
-      label: '6. Localized Interior Spot-Cleaning',
+      label: '8. Localized Interior Spot-Cleaning',
       price: 250,
       note: 'Enzyme spot lift for seat spills and roof lining without soaking carpets',
     },
     {
       id: 'doorSeals',
-      label: '7. Rubber Door Seal Rejuvenation',
+      label: '9. Rubber Door Seal Rejuvenation',
       price: 150,
       note: 'All door and boot rubbers conditioned, stops gravel road dust and wind whistle',
     },
@@ -87,6 +102,14 @@ export const PackagesPage: React.FC = () => {
     if (vehicleType === 'suv') return pkg.priceSuv;
     return pkg.priceBakkie;
   };
+
+  const filteredPackages = PACKAGES.filter((pkg) => {
+    if (activeCategory === 'all') return true;
+    if (activeCategory === 'combined') return pkg.category === 'combined-bundle';
+    if (activeCategory === 'detailing') return pkg.category === 'wash-detailing';
+    if (activeCategory === 'headlight') return pkg.category === 'headlight';
+    return true;
+  });
 
   return (
     <div className="bg-[#080808] text-[#F0EFEA] min-h-screen">
@@ -145,91 +168,58 @@ export const PackagesPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Packages Cards Grid: 1 Core Service + 3 Weskus Value Bundles */}
+        {/* Packages Cards Grid with Category Filter */}
         <section className="space-y-8">
-          <div className="max-w-3xl">
-            <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
-              The Weskus Value Bundles
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <div className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest mb-2">
+                The Weskus Value Bundles & Packages
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
+                MOBILE RESTORATION & DETAILING PACKAGES
+              </h2>
+              <p className="text-sm text-neutral-400 mt-1">
+                Bundling services saves you money and gets your vehicle looking its best in one visit.
+              </p>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-display">
-              MOBILE RESTORATION PACKAGES
-            </h2>
-            <p className="text-sm text-neutral-400 mt-1">
-              Bundling services saves you money and gets your vehicle looking its best in one visit.
-            </p>
+
+            {/* Category Filter Tabs */}
+            <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#121212] border border-neutral-800 rounded-sm">
+              {[
+                { id: 'all', label: 'All Packages' },
+                { id: 'combined', label: '⭐ Combined Bundles' },
+                { id: 'detailing', label: '🚗 Detailing Only' },
+                { id: 'headlight', label: '💡 Headlight Packages' },
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.id as typeof activeCategory)}
+                  className={`px-3 py-1.5 text-xs font-semibold rounded-sm transition-all cursor-pointer ${
+                    activeCategory === cat.id
+                      ? 'bg-[#00D2FF] text-black font-bold shadow-sm'
+                      : 'text-neutral-400 hover:text-white hover:bg-neutral-800'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Standalone Core Headlight Service */}
-            <div className="bg-[#121212] border border-[#00D2FF]/60 rounded-sm p-6 sm:p-7 flex flex-col justify-between shadow-xl relative bg-gradient-to-b from-[#181818] to-[#101010]">
-              <div>
-                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-black bg-[#00D2FF] px-2.5 py-0.5 rounded-sm mb-4">
-                  ⭐ Core Service
-                </span>
-
-                <h3 className="text-xl font-bold text-white font-display">
-                  Premium Headlight Restoration
-                </h3>
-
-                <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
-                  Both front headlights restored via progressive wet sanding and sealed with clear coat.
-                </p>
-
-                {/* Price Block */}
-                <div className="my-6 pb-6 border-b border-neutral-800">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#00D2FF] font-mono-tabular">
-                    R650
-                  </div>
-                  <span className="text-xs text-neutral-400 font-mono mt-1 block">
-                    Both Headlights · 1.5–2 Hours
-                  </span>
-                  <div className="text-[11px] text-[#38BDF8] flex items-center gap-1 mt-1 font-medium">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
-                    <span>1-Year Written Clarity Guarantee</span>
-                  </div>
-                </div>
-
-                {/* Includes List */}
-                <div className="space-y-2.5 text-xs text-neutral-300 mb-6">
-                  {[
-                    'Both front headlights wet-sanded (800 → 3000 grit)',
-                    'Removes cloudy yellow UV oxidation & road pits',
-                    "Meguiar's Headlight Coating / 1K Acrylic Clear Coat",
-                    'Masking tape shields bumper and surrounding paint',
-                    'Pay on completion in your driveway',
-                  ].map((inc, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
-                      <span>{inc}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <button
-                  type="button"
-                  onClick={() => openBooking('headlight-restoration')}
-                  className="w-full py-3 px-4 text-xs font-bold uppercase tracking-wider rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer bg-[#00D2FF] hover:bg-[#38BDF8] text-black shadow-md"
-                >
-                  <span>Book Headlights (R650)</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-
-            {/* 3 Bundles */}
-            {PACKAGES.map((pkg) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Filtered Packages */}
+            {filteredPackages.map((pkg) => {
               const currentPrice = getPackagePrice(pkg);
-              const isBestSeller = pkg.id === 'weskus-bakkie-revive';
+              const isBestSeller = pkg.badge?.includes('BEST SELLER') || pkg.badge?.includes('Core');
 
               return (
                 <div
                   key={pkg.id}
-                  className={`bg-[#121212] border rounded-sm p-6 sm:p-7 flex flex-col justify-between transition-all ${
+                  className={`bg-[#121212] border rounded-sm p-6 flex flex-col justify-between transition-all ${
                     isBestSeller
-                      ? 'border-[#00D2FF]/80 shadow-[0_0_30px_rgba(0,210,255,0.12)] bg-gradient-to-b from-[#181818] to-[#121212]'
-                      : 'border-neutral-800 hover:border-neutral-700'
+                      ? 'border-[#00D2FF]/80 shadow-[0_0_25px_rgba(0,210,255,0.12)] bg-gradient-to-b from-[#181818] to-[#111111]'
+                      : 'border-neutral-800 hover:border-neutral-700 bg-gradient-to-b from-[#141414] to-[#0E0E0E]'
                   }`}
                 >
                   <div>
@@ -245,17 +235,17 @@ export const PackagesPage: React.FC = () => {
                       </span>
                     )}
 
-                    <h3 className="text-xl font-bold text-white font-display">
+                    <h3 className="text-lg font-bold text-white font-display leading-snug">
                       {pkg.name}
                     </h3>
 
-                    <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
+                    <p className="text-xs text-neutral-400 mt-2 min-h-[36px] line-clamp-2 leading-relaxed">
                       {pkg.description}
                     </p>
 
                     {/* Price Block */}
-                    <div className="my-6 pb-6 border-b border-neutral-800">
-                      <div className="text-3xl sm:text-4xl font-extrabold text-[#00D2FF] font-mono-tabular">
+                    <div className="my-5 pb-5 border-b border-neutral-800">
+                      <div className="text-3xl font-extrabold text-[#00D2FF] font-mono-tabular">
                         R{currentPrice.toLocaleString()}
                       </div>
                       <span className="text-xs text-neutral-400 font-mono mt-1 block">
@@ -266,14 +256,20 @@ export const PackagesPage: React.FC = () => {
                           {pkg.savingsText}
                         </span>
                       )}
+                      {pkg.warranty && (
+                        <div className="text-[11px] text-[#38BDF8] flex items-center gap-1 mt-1 font-medium">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#00D2FF]" />
+                          <span>{pkg.warranty}</span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Includes List */}
-                    <div className="space-y-2.5 text-xs text-neutral-300 mb-6">
+                    <div className="space-y-2 text-xs text-neutral-300 mb-6">
                       {pkg.includes.map((inc, i) => (
                         <div key={i} className="flex items-start gap-2">
                           <Check className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
-                          <span>{inc}</span>
+                          <span className="line-clamp-2">{inc}</span>
                         </div>
                       ))}
                     </div>
@@ -289,7 +285,7 @@ export const PackagesPage: React.FC = () => {
                           : 'bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700'
                       }`}
                     >
-                      <span>Book {pkg.name.split(':')[0]}</span>
+                      <span>Book Package</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

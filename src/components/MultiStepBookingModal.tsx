@@ -62,16 +62,25 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
       id: s.id,
       title: s.title,
       subtitle: s.subtitle,
-      price: s.priceZAR,
+      price: s.priceVehicle
+        ? (booking.vehicleType === 'sedan' || booking.vehicleType === 'hatchback'
+            ? s.priceVehicle.sedan
+            : s.priceVehicle.bakkie)
+        : s.priceZAR,
       duration: s.durationHours,
-      badge: s.isSpecialistHero ? 'Core Specialist' : 'Core Service',
+      badge: s.isSpecialistHero ? 'Core Specialist' : 'Mobile Service',
       isBundle: false,
     })),
     ...PACKAGES.map((p) => ({
       id: p.id,
       title: p.name,
       subtitle: p.description,
-      price: p.priceSedan,
+      price:
+        booking.vehicleType === 'sedan' || booking.vehicleType === 'hatchback'
+          ? p.priceSedan
+          : booking.vehicleType === 'suv'
+          ? p.priceSuv
+          : p.priceBakkie,
       duration: p.duration,
       badge: p.badge || 'Weskus Value Bundle',
       isBundle: true,

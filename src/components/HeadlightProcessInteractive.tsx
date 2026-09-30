@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HEADLIGHT_PROCESS_STEPS } from '../data/studioData';
 import { CheckCircle2, ChevronRight, Eye, ShieldAlert, Sparkles, Layers, Flame } from 'lucide-react';
+import { IMAGES } from '../data/images';
 
 export const HeadlightProcessInteractive: React.FC = () => {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
@@ -8,35 +9,35 @@ export const HeadlightProcessInteractive: React.FC = () => {
   const stepVisuals = [
     {
       stage: 'OLD / OXIDISED',
-      image: '/src/assets/images/headlight_oxidized_lens_1790548123675.jpg',
+      image: IMAGES.headlightOxidized,
       headline: 'Degraded Polycarbonate Surface',
       caption: 'Sun-baked UV yellowing, coastal road film oxidation, and surface pitting.',
       icon: ShieldAlert,
     },
     {
       stage: 'WET-SANDING',
-      image: '/src/assets/images/headlight_oxidized_lens_1790548123675.jpg',
+      image: IMAGES.headlightOxidized,
       headline: 'Progressive Multi-Stage Wet Sanding',
       caption: 'Water-lubricated 800 to 3000 grit blocks safely level away the yellow dead material.',
       icon: Layers,
     },
     {
       stage: 'PREPARATION',
-      image: '/src/assets/images/headlight_clear_lens_1790548092543.jpg',
+      image: IMAGES.headlightClear,
       headline: 'Solvent Degreasing & Masking Protection',
       caption: 'Pure IPA wipe-down leaves a clean mechanical anchor surface ready for clearcoat adhesion.',
       icon: Sparkles,
     },
     {
       stage: 'NEW CLEARCOAT',
-      image: '/src/assets/images/headlight_clear_lens_1790548092543.jpg',
+      image: IMAGES.headlightClear,
       headline: 'Automotive UV Protective Clearcoat Spray',
       caption: 'Application of durable UV clearcoat fills fine sanding grooves, restoring crystal transparency.',
       icon: Sparkles,
     },
     {
       stage: 'RESTORED & INSPECTED',
-      image: '/src/assets/images/headlight_clear_lens_1790548092543.jpg',
+      image: IMAGES.headlightClear,
       headline: 'Cured & Backed by 1-Year Written Guarantee',
       caption: 'Night driving light output and clarity restored. Backed by our written guarantee.',
       icon: CheckCircle2,

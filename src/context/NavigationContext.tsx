@@ -20,6 +20,7 @@ const NavigationContext = createContext<NavigationContextType | undefined>(undef
 const PAGE_TITLES: Record<AppPage, string> = {
   home: 'AeroGlow Detailing | Mobile Headlight Restoration & Detailing | Vredenburg, Saldanha, Langebaan',
   headlights: 'Mobile Headlight Restoration (Wet-Sanding & UV Clearcoat) | AeroGlow Detailing',
+  detailing: 'Mobile Auto Detailing & Exterior Wash Packages | AeroGlow Detailing West Coast',
   process: '5-Stage Mobile Restoration Process & Tools | AeroGlow Detailing',
   'before-after': 'Before & After Headlight Restoration Results | AeroGlow Detailing',
   services: 'Mobile Detailing Services & Pricing | AeroGlow Detailing West Coast',
@@ -35,6 +36,7 @@ const getPageFromHash = (): AppPage => {
   const validPages: AppPage[] = [
     'home',
     'headlights',
+    'detailing',
     'process',
     'before-after',
     'services',
