@@ -49,27 +49,27 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
                       : 'bg-[#0E0E0E] hover:bg-[#121212] border-neutral-800/80 text-neutral-400'
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-start gap-4">
+                  <div className="flex items-start justify-between gap-3 sm:gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4 min-w-0">
                       {/* Editorial Number */}
                       <span
-                        className={`text-xl sm:text-2xl font-bold font-mono transition-colors ${
+                        className={`text-lg sm:text-2xl font-bold font-mono transition-colors shrink-0 ${
                           isSelected ? 'text-[#00D2FF]' : 'text-neutral-600 group-hover:text-neutral-400'
                         }`}
                       >
                         {service.number}
                       </span>
-                      <div>
-                        <div className="flex items-center gap-2">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                           <h3
-                            className={`text-lg sm:text-xl font-bold font-display transition-colors ${
+                            className={`text-base sm:text-xl font-bold font-display transition-colors break-words ${
                               isSelected ? 'text-white' : 'text-neutral-300 group-hover:text-white'
                             }`}
                           >
                             {service.title}
                           </h3>
                           {service.isSpecialistHero && (
-                            <span className="text-[10px] uppercase font-bold tracking-wider text-[#00D2FF] border border-[#00D2FF]/40 px-2 py-0.5 rounded-sm">
+                            <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-[#00D2FF] border border-[#00D2FF]/40 px-1.5 sm:px-2 py-0.5 rounded-sm shrink-0">
                               Specialist
                             </span>
                           )}

@@ -159,7 +159,7 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-3.5 h-3.5 text-[#00D2FF] shrink-0 mt-0.5" />
                 <span>Operating Hub: Vredenburg, West Coast</span>
               </div>
-              <div className="text-[11px] text-neutral-400 pl-5.5 leading-relaxed">
+              <div className="text-[11px] text-neutral-400 pl-5 leading-relaxed">
                 Mobile service covering Vredenburg (FREE call-out), Saldanha, Langebaan, and Jacobsbaai (FREE call-out over R700!).
               </div>
               <div className="flex items-center gap-2 pt-1">

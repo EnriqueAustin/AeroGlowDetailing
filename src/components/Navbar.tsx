@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => handleLinkClick('home')}
-              className="text-left group shrink-0 cursor-pointer flex items-center hover:opacity-95 transition-opacity"
+              className="text-left group shrink min-w-0 cursor-pointer flex items-center hover:opacity-95 transition-opacity"
             >
               <AeroGlowLogo size="md" showSubtitle={true} />
             </button>

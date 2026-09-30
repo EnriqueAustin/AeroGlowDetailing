@@ -7,11 +7,25 @@
     --font-mono: 'JetBrains Mono', monospace;
   }
 
-  body {
+  html, body {
     font-family: var(--font-sans);
     background-color: #080808;
     color: #F0EFEA;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Prevent elements from blowing out container widths on small mobile screens */
+  *, ::before, ::after {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* Exclude elements that intentionally position themselves with overflow like absolute backgrounds or canvas/svg */
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
   }
 
   h1, h2, h3, .font-display {

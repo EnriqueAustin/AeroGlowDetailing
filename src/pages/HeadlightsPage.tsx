@@ -387,13 +387,12 @@ export const HeadlightsPage: React.FC = () => {
               {/* Before Image (Clipped) */}
               <div
                 className="absolute inset-0 overflow-hidden pointer-events-none"
-                style={{ width: `${sliderPos}%` }}
+                style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
               >
                 <img
                   src={IMAGES.headlightOxidized}
                   alt="Headlight with cloudy yellow UV oxidation"
-                  className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
-                  style={{ width: '100%', minWidth: '100%' }}
+                  className="absolute inset-0 w-full h-full object-cover object-center"
                 />
                 <div className="absolute top-2.5 sm:top-4 left-2.5 sm:left-4 max-w-[44%] truncate bg-black/80 backdrop-blur-sm border border-neutral-700 px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm text-[10px] sm:text-xs font-mono text-neutral-300 flex items-center gap-1.5 pointer-events-none">
                   <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />

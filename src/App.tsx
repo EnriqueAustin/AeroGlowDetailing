@@ -60,12 +60,12 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] text-[#F0EFEA] flex flex-col font-sans selection:bg-[#00D2FF] selection:text-black">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#080808] text-[#F0EFEA] flex flex-col font-sans selection:bg-[#00D2FF] selection:text-black">
       {/* Universal Top Navigation */}
       <Navbar />
 
       {/* Main Bespoke Page Render Target */}
-      <main className="flex-grow">
+      <main className="flex-grow w-full max-w-full overflow-x-hidden">
         {renderCurrentPage()}
       </main>
 

@@ -29,13 +29,13 @@ export const HomePage: React.FC = () => {
           onOpenCoupon={openCoupon}
           onBookHeadlights={() => navigateTo('headlights')}
         />
-        <div className="bg-[#0D0D0D] pb-8 text-center">
+        <div className="bg-[#0D0D0D] pb-8 px-4 text-center">
           <button
             onClick={() => navigateTo('headlights')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>View Dedicated Headlight Restoration Page with Full Technical Specs</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">View Dedicated Headlight Restoration Page with Full Technical Specs</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
@@ -43,13 +43,13 @@ export const HomePage: React.FC = () => {
       {/* 03: Interactive Headlight Process */}
       <div className="relative">
         <HeadlightProcessInteractive />
-        <div className="bg-[#080808] pb-10 text-center">
+        <div className="bg-[#080808] pb-10 px-4 text-center">
           <button
             onClick={() => navigateTo('process')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>View Step-by-Step Mobile Restoration Process</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">View Step-by-Step Mobile Restoration Process</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
@@ -60,13 +60,13 @@ export const HomePage: React.FC = () => {
           onOpenBooking={(id) => openBooking(id)}
           onOpenCoupon={openCoupon}
         />
-        <div className="bg-[#0A0A0A] pb-10 text-center">
+        <div className="bg-[#0A0A0A] pb-10 px-4 text-center">
           <button
             onClick={() => navigateTo('before-after')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>View Before & After Comparisons & Visual Proof</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">View Before & After Comparisons & Visual Proof</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
@@ -77,13 +77,13 @@ export const HomePage: React.FC = () => {
           onOpenBooking={(id) => openBooking(id)}
           onOpenCoupon={openCoupon}
         />
-        <div className="bg-[#080808] pb-10 text-center">
+        <div className="bg-[#080808] pb-10 px-4 text-center">
           <button
             onClick={() => navigateTo('services')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>Browse All Mobile Detailing Services & Pricing</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">Browse All Mobile Detailing Services & Pricing</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
@@ -97,13 +97,13 @@ export const HomePage: React.FC = () => {
           onOpenBooking={(id) => openBooking(id)}
           onOpenCoupon={openCoupon}
         />
-        <div className="bg-[#080808] pb-10 text-center">
+        <div className="bg-[#080808] pb-10 px-4 text-center">
           <button
             onClick={() => navigateTo('packages')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>Open Packages & Mobile Cost Calculator</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">Open Packages & Mobile Cost Calculator</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
@@ -111,13 +111,13 @@ export const HomePage: React.FC = () => {
       {/* 08: Work Gallery */}
       <div className="relative">
         <WorkGallery onOpenBooking={(id) => openBooking(id)} />
-        <div className="bg-[#0A0A0A] pb-10 text-center">
+        <div className="bg-[#0A0A0A] pb-10 px-4 text-center">
           <button
             onClick={() => navigateTo('work')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>View Restoration Demonstrations & Work Archive</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">View Restoration Demonstrations & Work Archive</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
@@ -125,13 +125,13 @@ export const HomePage: React.FC = () => {
       {/* 09: Client Reviews & Studio Credentials */}
       <div className="relative">
         <ReviewsSection />
-        <div className="bg-[#080808] pb-10 text-center">
+        <div className="bg-[#080808] pb-10 px-4 text-center">
           <button
             onClick={() => navigateTo('reviews')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>Read Our 5-Point Quality Charter & Guarantees</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">Read Our 5-Point Quality Charter & Guarantees</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>
@@ -139,13 +139,13 @@ export const HomePage: React.FC = () => {
       {/* 10: Frequently Asked Questions Accordion */}
       <div className="relative">
         <FaqSection />
-        <div className="bg-[#090909] pb-10 text-center">
+        <div className="bg-[#090909] pb-10 px-4 text-center">
           <button
             onClick={() => navigateTo('faq')}
-            className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
           >
-            <span>View Mobile FAQs & Service Information</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-balance">Have Questions? Read Common Questions & Requirements</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </button>
         </div>
       </div>

@@ -184,7 +184,7 @@ export const PackagesPage: React.FC = () => {
             </div>
 
             {/* Category Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#121212] border border-neutral-800 rounded-sm">
+            <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#121212] border border-neutral-800 rounded-sm max-w-full">
               {[
                 { id: 'all', label: 'All Packages' },
                 { id: 'combined', label: '⭐ Combined Bundles' },

@@ -34,7 +34,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
           </div>
 
           {/* Functional filter buttons as allowed in frontend-design */}
-          <div className="flex items-center gap-1.5 p-1 bg-[#141414] border border-neutral-800 rounded-sm overflow-x-auto">
+          <div className="flex items-center gap-1.5 p-1 bg-[#141414] border border-neutral-800 rounded-sm overflow-x-auto max-w-full">
             {[
               { id: 'all', label: 'All Examples' },
               { id: 'headlights', label: 'Headlights' },

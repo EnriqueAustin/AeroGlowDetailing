@@ -86,7 +86,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
+        <div className="flex flex-wrap items-center gap-2 mb-8 max-w-full">
           {[
             { id: 'all', label: 'All Packages & Bundles' },
             { id: 'combined', label: '⭐ Combined Detailing & Headlights' },

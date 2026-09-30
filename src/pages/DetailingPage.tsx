@@ -178,37 +178,38 @@ export const DetailingPage: React.FC = () => {
             </div>
 
             {/* Vehicle Selector & Tab Filter */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
               {/* Category Filter */}
-              <div className="flex items-center gap-1 p-1 bg-[#121212] border border-neutral-800 rounded-sm">
+              <div className="grid grid-cols-3 sm:flex items-center gap-1 p-1 bg-[#121212] border border-neutral-800 rounded-sm w-full sm:w-auto">
                 {[
-                  { id: 'all', label: 'All Packages' },
-                  { id: 'standalone', label: '🚗 Detailing Only' },
-                  { id: 'combined', label: '⭐ With Headlights' },
+                  { id: 'all', label: 'All', full: 'All Packages' },
+                  { id: 'standalone', label: '🚗 Detailing', full: '🚗 Detailing Only' },
+                  { id: 'combined', label: '⭐ Combo', full: '⭐ With Headlights' },
                 ].map((tab) => (
                   <button
                     key={tab.id}
                     type="button"
                     onClick={() => setDetailingTab(tab.id as typeof detailingTab)}
-                    className={`px-3 py-1.5 text-xs font-semibold rounded-sm transition-all cursor-pointer ${
+                    className={`px-2 sm:px-3 py-1.5 text-xs font-semibold rounded-sm transition-all cursor-pointer text-center ${
                       detailingTab === tab.id
                         ? 'bg-[#00D2FF] text-black font-bold shadow-sm'
                         : 'text-neutral-400 hover:text-white'
                     }`}
                   >
-                    {tab.label}
+                    <span className="hidden sm:inline">{tab.full}</span>
+                    <span className="sm:hidden">{tab.label}</span>
                   </button>
                 ))}
               </div>
 
               {/* Vehicle Type Toggle */}
-              <div className="inline-flex rounded-sm border border-neutral-800 bg-[#121212] p-1 text-xs">
+              <div className="grid grid-cols-3 sm:inline-flex rounded-sm border border-neutral-800 bg-[#121212] p-1 text-xs w-full sm:w-auto">
                 {(['sedan', 'suv', 'bakkie'] as const).map((type) => (
                   <button
                     key={type}
                     type="button"
                     onClick={() => setVehicleType(type)}
-                    className={`px-3 py-1.5 rounded-sm font-semibold uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`px-3 py-1.5 rounded-sm font-semibold uppercase tracking-wider transition-all cursor-pointer text-center ${
                       vehicleType === type
                         ? 'bg-[#00D2FF] text-black shadow-sm font-bold'
                         : 'text-neutral-400 hover:text-white'
