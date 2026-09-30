@@ -1,7 +1,7 @@
 // Centralized image asset resolver for Vite & static deployments
 // Resolves safely across Vite dev server, production builds (dist/), and standard static hosting (GitHub Pages, Vercel, Netlify)
 
-import aeroglowLogoTransparent from '../assets/images/aeroglow_logo_transparent.png';
+import aeroglowLogoTransparent from '../assets/images/mainLogo.png';
 import aeroglowDarkTransparent from '../assets/images/aeroglow_dark_transparent.png';
 import headlightClearLens from '../assets/images/headlight_clear_lens_1790548092543.jpg';
 import headlightOxidizedLens from '../assets/images/headlight_oxidized_lens_1790548123675.jpg';
