@@ -1,0 +1,6 @@
+{
+  "name": "AURA Automotive Studio | Headlight Restoration & Detailing",
+  "description": "Professional mobile automotive headlight restoration and detailing service operating across Vredenburg, Saldanha, Langebaan, and Jacobsbaai on the West Coast.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
