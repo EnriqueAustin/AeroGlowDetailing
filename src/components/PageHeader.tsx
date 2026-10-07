@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '../context/NavigationContext';
-import { ChevronRight, ArrowLeft } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { AppPage } from '../types';
 
 interface PageHeaderProps {

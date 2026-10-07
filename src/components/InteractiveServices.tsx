@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SERVICES } from '../data/studioData';
-import { ArrowRight, Check, Clock, ShieldCheck, Tag } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 interface InteractiveServicesProps {

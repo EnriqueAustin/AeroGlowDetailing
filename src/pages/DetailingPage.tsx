@@ -5,7 +5,6 @@ import { PACKAGES } from '../data/studioData';
 import { IMAGES } from '../data/images';
 import {
   ShieldCheck,
-  CheckCircle2,
   Clock,
   Sparkles,
   ArrowRight,
@@ -16,7 +15,6 @@ import {
   Layers,
   Car,
   CircleGauge,
-  SlidersHorizontal,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 

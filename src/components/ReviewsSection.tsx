@@ -1,6 +1,6 @@
 import React from 'react';
 import { QUALITY_CHARTER_PILLARS } from '../data/studioData';
-import { ShieldCheck, CheckCircle2, MessageSquare, Award, ThumbsUp, MapPin } from 'lucide-react';
+import { ShieldCheck, MessageSquare, MapPin } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const ReviewsSection: React.FC = () => {

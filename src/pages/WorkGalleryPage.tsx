@@ -5,20 +5,15 @@ import { GALLERY_PROJECTS } from '../data/studioData';
 import { GalleryProject } from '../types';
 import { useModalBehavior } from '../hooks/useModalBehavior';
 import {
-  Clock,
-  CheckCircle2,
   X,
   ArrowRight,
-  Filter,
-  Sparkles,
-  Camera,
   MapPin,
   Check,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const WorkGalleryPage: React.FC = () => {
-  const { openBooking, openCoupon } = useNavigation();
+  const { openBooking } = useNavigation();
   const [filter, setFilter] = useState<'all' | 'headlights' | 'wash' | 'combo' | 'interior'>('all');
   const [activeModalProject, setActiveModalProject] = useState<GalleryProject | null>(null);
   const closeProjectModal = useCallback(() => setActiveModalProject(null), []);

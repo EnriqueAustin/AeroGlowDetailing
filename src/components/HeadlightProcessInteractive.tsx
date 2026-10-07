@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HEADLIGHT_PROCESS_STEPS } from '../data/studioData';
-import { CheckCircle2, ChevronRight, Eye, ShieldAlert, Sparkles, Layers, Flame } from 'lucide-react';
+import { CheckCircle2, ShieldAlert, Sparkles, Layers } from 'lucide-react';
 import { IMAGES } from '../data/images';
 
 export const HeadlightProcessInteractive: React.FC = () => {

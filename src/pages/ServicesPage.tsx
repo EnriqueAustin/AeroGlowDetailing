@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { useNavigation } from '../context/NavigationContext';
 import { SERVICES } from '../data/studioData';
 import {
   Check,
-  ShieldCheck,
-  Clock,
-  Tag,
   ArrowRight,
-  Sparkles,
-  Zap,
-  HelpCircle,
   Plus,
-  MapPin,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const ServicesPage: React.FC = () => {
-  const { openBooking, openCoupon } = useNavigation();
+  const { openBooking } = useNavigation();
 
   const addOnServices = [
     {

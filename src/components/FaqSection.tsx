@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FAQ_LIST } from '../data/studioData';
-import { ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
+import { ChevronDown, MessageSquare } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const FaqSection: React.FC = () => {

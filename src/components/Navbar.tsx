@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigation } from '../context/NavigationContext';
-import { Calendar, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Calendar, Menu, X, ArrowUpRight } from 'lucide-react';
 import { AppPage } from '../types';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { useModalBehavior } from '../hooks/useModalBehavior';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const Navbar: React.FC = () => {
-  const { currentPage, navigateTo, openBooking, openCoupon } = useNavigation();
+  const { currentPage, navigateTo } = useNavigation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), []);
@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
     { label: 'Services', page: 'services' },
     { label: 'Packages', page: 'packages' },
     { label: 'Our Work', page: 'work' },
-    { label: 'Reviews', page: 'reviews' },
+    { label: 'Our Guarantee', page: 'reviews' },
     { label: 'FAQ', page: 'faq' },
   ];
 
@@ -75,7 +75,7 @@ export const Navbar: React.FC = () => {
                   >
                     <span>{link.label}</span>
                     {link.badge && (
-                      <span className="text-[9px] font-mono text-black bg-[#00D2FF] px-1.5 py-0.2 rounded-sm font-bold">
+                      <span className="text-[9px] font-mono text-black bg-[#00D2FF] px-1.5 py-0.5 rounded-sm font-bold">
                         {link.badge}
                       </span>
                     )}

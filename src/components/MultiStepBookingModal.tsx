@@ -2,20 +2,14 @@ import React, { useState } from 'react';
 import {
   X,
   Check,
-  Calendar,
-  Clock,
-  Car,
-  Tag,
   Camera,
   MessageSquare,
   ArrowRight,
-  ShieldCheck,
   CheckCircle2,
   MapPin,
-  Sparkles,
 } from 'lucide-react';
 import { VehicleType, BookingState, WestCoastArea } from '../types';
-import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
+import { SERVICES, PACKAGES } from '../data/studioData';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { useModalBehavior } from '../hooks/useModalBehavior';
 import { BUSINESS } from '../data/businessConfig';
@@ -24,7 +18,6 @@ interface MultiStepBookingModalProps {
   isOpen: boolean;
   onClose: () => void;
   preselectedServiceId?: string;
-  hasCouponApplied?: boolean;
 }
 
 export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
@@ -344,7 +337,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                                   {item.title}
                                 </span>
                                 {item.badge && (
-                                  <span className="text-[9px] uppercase tracking-wider font-bold text-black bg-[#00D2FF] px-1.5 py-0.2 rounded-sm">
+                                  <span className="text-[9px] uppercase tracking-wider font-bold text-black bg-[#00D2FF] px-1.5 py-0.5 rounded-sm">
                                     {item.badge}
                                   </span>
                                 )}

@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { GALLERY_PROJECTS } from '../data/studioData';
 import { GalleryProject } from '../types';
 import { useModalBehavior } from '../hooks/useModalBehavior';
-import { Eye, X, CheckCircle2, Clock, Tag, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, Clock, ArrowRight } from 'lucide-react';
 
 interface WorkGalleryProps {
   onOpenBooking: (serviceId?: string) => void;

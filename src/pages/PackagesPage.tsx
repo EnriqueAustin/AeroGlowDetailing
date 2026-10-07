@@ -5,7 +5,6 @@ import { PACKAGES, TRADE_DEALERSHIP_PACKAGES, TRAVEL_ZONES } from '../data/studi
 import {
   Check,
   ShieldCheck,
-  Clock,
   ArrowRight,
   Calculator,
   CheckSquare,
@@ -13,7 +12,6 @@ import {
   Briefcase,
   MapPin,
   MessageSquare,
-  Sparkles,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 

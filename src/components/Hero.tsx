@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, ShieldCheck, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { IMAGES } from '../data/images';
 

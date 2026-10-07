@@ -1,6 +1,6 @@
 import React from 'react';
-import { X, ShieldCheck, MessageSquare, ArrowRight, MapPin, Check } from 'lucide-react';
-import { HERO_HEADLIGHT_OFFER } from '../data/studioData';
+import { X, ShieldCheck, MessageSquare, ArrowRight, Check } from 'lucide-react';
+import {  } from '../data/studioData';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { useModalBehavior } from '../hooks/useModalBehavior';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';

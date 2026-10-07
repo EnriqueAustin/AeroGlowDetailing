@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShieldCheck, Tag, Sparkles, Check, X, ArrowRight, Zap, Award } from 'lucide-react';
-import { HERO_HEADLIGHT_OFFER } from '../data/studioData';
+import { ShieldCheck, Check, X, ArrowRight, Zap, Award } from 'lucide-react';
+import {  } from '../data/studioData';
 import { IMAGES } from '../data/images';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 

@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { useNavigation } from '../context/NavigationContext';
-import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
+import { SERVICES, PACKAGES } from '../data/studioData';
 import { VehicleType, BookingState, WestCoastArea } from '../types';
 import { AeroGlowLogo } from '../components/AeroGlowLogo';
 import {
-  Calendar,
-  Clock,
-  Car,
   Camera,
   Check,
   CheckCircle2,
   MessageSquare,
-  ShieldCheck,
   ArrowRight,
-  MapPin,
-  Sparkles,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 

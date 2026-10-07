@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { PACKAGES, TRADE_DEALERSHIP_PACKAGES, TRAVEL_ZONES } from '../data/studioData';
-import { Check, ShieldCheck, ArrowRight, Clock, MapPin, Briefcase, Zap, MessageSquare } from 'lucide-react';
+import { PACKAGES, TRADE_DEALERSHIP_PACKAGES } from '../data/studioData';
+import { Check, ArrowRight, Clock, MapPin, Briefcase, MessageSquare } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 interface PackagesPricingProps {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigation } from '../context/NavigationContext';
-import { MapPin, MessageSquare, Clock, ShieldCheck, ArrowRight, Car, CheckCircle2 } from 'lucide-react';
+import { MapPin, MessageSquare, Clock, ShieldCheck } from 'lucide-react';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const Footer: React.FC = () => {
-  const { navigateTo, openBooking, openCoupon } = useNavigation();
+  const { navigateTo } = useNavigation();
 
   return (
     <footer className="bg-[#050505] text-neutral-400 border-t border-neutral-900 pt-16 pb-12">

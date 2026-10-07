@@ -4,18 +4,13 @@ import { useNavigation } from '../context/NavigationContext';
 import { FAQ_LIST } from '../data/studioData';
 import {
   ChevronDown,
-  HelpCircle,
   MessageSquare,
-  ShieldCheck,
-  Droplets,
-  Sun,
-  Sparkles,
   BookOpen,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const FaqPage: React.FC = () => {
-  const { openBooking, openCoupon } = useNavigation();
+  const { openBooking } = useNavigation();
   const [openIds, setOpenIds] = useState<string[]>([FAQ_LIST[0].id, FAQ_LIST[1].id]);
   const [activeCategory, setActiveCategory] = useState<'all' | 'headlights' | 'mobile' | 'booking'>('all');
   const [searchTerm, setSearchTerm] = useState('');

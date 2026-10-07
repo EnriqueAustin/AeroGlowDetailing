@@ -1,22 +1,16 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { useNavigation } from '../context/NavigationContext';
 import { QUALITY_CHARTER_PILLARS } from '../data/studioData';
 import {
   ShieldCheck,
-  CheckCircle2,
-  Award,
   MessageSquare,
-  ArrowRight,
-  FileCheck,
   MapPin,
-  Check,
-  Clock,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const ReviewsPage: React.FC = () => {
-  const { openBooking, openCoupon } = useNavigation();
+  const { openBooking } = useNavigation();
 
   return (
     <div className="bg-[#080808] text-[#F0EFEA] min-h-screen">

@@ -6,12 +6,9 @@ import {
   MoveHorizontal,
   Columns,
   Check,
-  ShieldCheck,
   Clock,
   ArrowRight,
   Sparkles,
-  Info,
-  Layers,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 

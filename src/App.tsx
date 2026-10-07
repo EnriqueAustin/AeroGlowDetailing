@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavigationProvider, useNavigation } from './context/NavigationContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -27,7 +26,6 @@ function AppContent() {
     isCouponOpen,
     closeCoupon,
     preselectedServiceId,
-    hasCouponApplied,
     applyCoupon,
   } = useNavigation();
 
@@ -80,7 +78,6 @@ function AppContent() {
         isOpen={isBookingOpen}
         onClose={closeBooking}
         preselectedServiceId={preselectedServiceId}
-        hasCouponApplied={hasCouponApplied}
       />
 
       {/* Headlight Coupon Modal (Available on any page) */}

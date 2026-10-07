@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { BEFORE_AFTER_CASES } from '../data/studioData';
-import { MoveHorizontal, Check, ShieldCheck, ArrowRight } from 'lucide-react';
+import { MoveHorizontal, Check, ArrowRight } from 'lucide-react';
 
 interface BeforeAfterSliderProps {
   onOpenBooking: (serviceId?: string) => void;

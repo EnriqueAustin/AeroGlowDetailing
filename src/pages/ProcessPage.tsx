@@ -5,19 +5,13 @@ import { HEADLIGHT_PROCESS_STEPS } from '../data/studioData';
 import {
   Layers,
   Wrench,
-  ShieldCheck,
-  CheckCircle2,
   Sparkles,
   Droplets,
-  ArrowRight,
-  MapPin,
-  Check,
-  Car,
 } from 'lucide-react';
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const ProcessPage: React.FC = () => {
-  const { openBooking, openCoupon } = useNavigation();
+  const { openBooking } = useNavigation();
   const [activeStep, setActiveStep] = useState(0);
 
   const realEquipment = [

@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { useNavigation } from '../context/NavigationContext';
-import { HERO_HEADLIGHT_OFFER, HEADLIGHT_PROCESS_STEPS } from '../data/studioData';
 import { IMAGES } from '../data/images';
 import {
   ShieldCheck,
-  Tag,
-  Sparkles,
   CheckCircle2,
   XCircle,
   Clock,
-  Layers,
-  Award,
   ArrowRight,
   MoveHorizontal,
   MapPin,
@@ -21,9 +16,8 @@ import {
 import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const HeadlightsPage: React.FC = () => {
-  const { openBooking, openCoupon } = useNavigation();
+  const { openBooking } = useNavigation();
   const [sliderPos, setSliderPos] = useState(50);
-  const [activeStageIndex, setActiveStageIndex] = useState(1);
 
   const gritStages = [
     {
