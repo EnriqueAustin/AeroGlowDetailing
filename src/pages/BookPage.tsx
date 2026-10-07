@@ -17,6 +17,7 @@ import {
   MapPin,
   Sparkles,
 } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const BookPage: React.FC = () => {
   const { preselectedServiceId } = useNavigation();
@@ -136,7 +137,7 @@ export const BookPage: React.FC = () => {
       handleNext();
       return;
     }
-    window.open(`https://wa.me/27738595637?text=${whatsAppText}`, '_blank', 'noopener,noreferrer');
+    window.open(`${BUSINESS.whatsAppBase}?text=${whatsAppText}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
   };
 
@@ -148,11 +149,11 @@ export const BookPage: React.FC = () => {
         subtitle="Book a mobile appointment at your home or workplace across Vredenburg, Saldanha, Langebaan, and Jacobsbaai. Transparent pricing, no advance deposit needed for headlights, pay upon completion."
         breadcrumbs={[{ label: 'Online Booking' }]}
         primaryAction={{
-          label: 'WhatsApp: 073 859 5637',
+          label: `WhatsApp: ${BUSINESS.phoneDisplay}`,
           onClick: () => {
-            window.location.href = `https://wa.me/27738595637?text=${encodeURIComponent(
+            window.location.href = whatsAppLink(
               "Hi, I'd like to book a mobile detailing appointment."
-            )}`;
+            );
           },
         }}
       />
@@ -254,7 +255,7 @@ export const BookPage: React.FC = () => {
 
                 <div className="space-y-3 max-w-md mx-auto pt-2">
                   <a
-                    href={`https://wa.me/27738595637?text=${whatsAppText}`}
+                    href={`${BUSINESS.whatsAppBase}?text=${whatsAppText}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#20ba59] text-black font-bold text-xs uppercase tracking-wider rounded-sm transition-transform shadow-lg cursor-pointer"

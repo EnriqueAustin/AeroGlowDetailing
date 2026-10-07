@@ -18,6 +18,7 @@ import { VehicleType, BookingState, WestCoastArea } from '../types';
 import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { useModalBehavior } from '../hooks/useModalBehavior';
+import { BUSINESS } from '../data/businessConfig';
 
 interface MultiStepBookingModalProps {
   isOpen: boolean;
@@ -152,7 +153,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
       handleNext();
       return;
     }
-    window.open(`https://wa.me/27738595637?text=${whatsAppText}`, '_blank', 'noopener,noreferrer');
+    window.open(`${BUSINESS.whatsAppBase}?text=${whatsAppText}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
   };
 
@@ -279,7 +280,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
 
               <div className="space-y-3 pt-2 max-w-md mx-auto">
                 <a
-                  href={`https://wa.me/27738595637?text=${whatsAppText}`}
+                  href={`${BUSINESS.whatsAppBase}?text=${whatsAppText}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-black font-bold text-xs uppercase tracking-wider rounded-sm transition-transform shadow-lg cursor-pointer"

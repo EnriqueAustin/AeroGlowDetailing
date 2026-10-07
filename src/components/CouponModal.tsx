@@ -3,6 +3,7 @@ import { X, ShieldCheck, MessageSquare, ArrowRight, MapPin, Check } from 'lucide
 import { HERO_HEADLIGHT_OFFER } from '../data/studioData';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { useModalBehavior } from '../hooks/useModalBehavior';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 interface CouponModalProps {
   isOpen: boolean;
@@ -19,9 +20,9 @@ export const CouponModal: React.FC<CouponModalProps> = ({
 
   if (!isOpen) return null;
 
-  const whatsAppUrl = `https://wa.me/27738595637?text=${encodeURIComponent(
+  const whatsAppUrl = whatsAppLink(
     "Hi, I'd like to book a headlight restoration at R650 for both headlights."
-  )}`;
+  );
 
   return (
     <div
@@ -110,7 +111,7 @@ export const CouponModal: React.FC<CouponModalProps> = ({
             className="w-full py-3 px-4 text-xs font-semibold text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 rounded-sm transition-all flex items-center justify-center gap-2 text-center"
           >
             <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
-            <span>WhatsApp Direct: 073 859 5637</span>
+            <span>WhatsApp Direct: {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
 

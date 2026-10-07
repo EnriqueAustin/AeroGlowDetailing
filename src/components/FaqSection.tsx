@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FAQ_LIST } from '../data/studioData';
 import { ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const FaqSection: React.FC = () => {
   const [openIds, setOpenIds] = useState<string[]>([FAQ_LIST[0].id]);
@@ -71,15 +72,15 @@ export const FaqSection: React.FC = () => {
             </p>
           </div>
           <a
-            href={`https://wa.me/27738595637?text=${encodeURIComponent(
+            href={whatsAppLink(
               "Hi, I'd like a quote for mobile detailing on the West Coast."
-            )}`}
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-5 py-2.5 text-xs font-semibold text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer shadow-sm text-center"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>WhatsApp: 073 859 5637</span>
+            <span>WhatsApp: {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
       </div>

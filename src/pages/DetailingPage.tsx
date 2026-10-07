@@ -18,6 +18,7 @@ import {
   CircleGauge,
   SlidersHorizontal,
 } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const DetailingPage: React.FC = () => {
   const { openBooking } = useNavigation();
@@ -82,11 +83,11 @@ export const DetailingPage: React.FC = () => {
           onClick: () => openBooking('west-coast-wash-wax'),
         }}
         secondaryAction={{
-          label: 'WhatsApp: 073 859 5637',
+          label: `WhatsApp: ${BUSINESS.phoneDisplay}`,
           onClick: () => {
-            window.location.href = `https://wa.me/27738595637?text=${encodeURIComponent(
+            window.location.href = whatsAppLink(
               "Hi, I'd like to book a mobile detailing service."
-            )}`;
+            );
           },
         }}
       />

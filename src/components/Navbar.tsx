@@ -4,6 +4,7 @@ import { Calendar, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { AppPage } from '../types';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { useModalBehavior } from '../hooks/useModalBehavior';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const Navbar: React.FC = () => {
   const { currentPage, navigateTo, openBooking, openCoupon } = useNavigation();
@@ -89,14 +90,14 @@ export const Navbar: React.FC = () => {
             {/* Zone 3: Actions */}
             <div className="flex items-center gap-1.5 sm:gap-3">
               <a
-                href={`https://wa.me/27738595637?text=${encodeURIComponent(
+                href={whatsAppLink(
                   "Hi, I'd like to book a headlight restoration."
-                )}`}
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden md:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-[#25D366] border border-[#25D366]/50 hover:border-[#25D366] rounded-sm hover:bg-[#25D366]/10 transition-colors whitespace-nowrap cursor-pointer"
               >
-                <span>WhatsApp: 073 859 5637</span>
+                <span>WhatsApp: {BUSINESS.phoneDisplay}</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
 
@@ -166,14 +167,14 @@ export const Navbar: React.FC = () => {
 
           <div className="pt-4 border-t border-neutral-900 space-y-3">
             <a
-              href={`https://wa.me/27738595637?text=${encodeURIComponent(
+              href={whatsAppLink(
                 "Hi, I'd like to book a headlight restoration."
-              )}`}
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full block py-3 text-center text-xs font-bold uppercase tracking-wider text-[#25D366] border border-[#25D366]/50 rounded-sm cursor-pointer"
             >
-              WhatsApp: 073 859 5637
+              WhatsApp: {BUSINESS.phoneDisplay}
             </a>
             <button
               type="button"

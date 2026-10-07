@@ -2,6 +2,7 @@ import React from 'react';
 import { ShieldCheck, Tag, Sparkles, Check, X, ArrowRight, Zap, Award } from 'lucide-react';
 import { HERO_HEADLIGHT_OFFER } from '../data/studioData';
 import { IMAGES } from '../data/images';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 interface HeadlightFeatureProps {
   onOpenCoupon: () => void;
@@ -155,14 +156,14 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
                 </button>
 
                 <a
-                  href={`https://wa.me/27738595637?text=${encodeURIComponent(
+                  href={whatsAppLink(
                     "Hi, I'd like to book a headlight restoration."
-                  )}`}
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-white bg-[#1F1F1F] hover:bg-[#252525] border border-neutral-700 hover:border-[#25D366] rounded-sm transition-all cursor-pointer"
                 >
-                  <span className="text-[#25D366] font-bold">WhatsApp: 073 859 5637</span>
+                  <span className="text-[#25D366] font-bold">WhatsApp: {BUSINESS.phoneDisplay}</span>
                 </a>
               </div>
 

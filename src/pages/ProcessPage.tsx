@@ -14,6 +14,7 @@ import {
   Check,
   Car,
 } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const ProcessPage: React.FC = () => {
   const { openBooking, openCoupon } = useNavigation();
@@ -91,11 +92,11 @@ export const ProcessPage: React.FC = () => {
           onClick: () => openBooking(),
         }}
         secondaryAction={{
-          label: 'WhatsApp: 073 859 5637',
+          label: `WhatsApp: ${BUSINESS.phoneDisplay}`,
           onClick: () => {
-            window.location.href = `https://wa.me/27738595637?text=${encodeURIComponent(
+            window.location.href = whatsAppLink(
               "Hi, I'd like to book a headlight restoration."
-            )}`;
+            );
           },
         }}
       />

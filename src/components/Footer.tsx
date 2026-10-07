@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigation } from '../context/NavigationContext';
 import { MapPin, MessageSquare, Clock, ShieldCheck, ArrowRight, Car, CheckCircle2 } from 'lucide-react';
 import { AeroGlowLogo } from './AeroGlowLogo';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const Footer: React.FC = () => {
   const { navigateTo, openBooking, openCoupon } = useNavigation();
@@ -127,14 +128,14 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href={`https://wa.me/27738595637?text=${encodeURIComponent(
+                  href={whatsAppLink(
                     "Hi, I'd like to book a headlight restoration."
-                  )}`}
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#25D366] font-semibold hover:underline cursor-pointer text-left block"
                 >
-                  WhatsApp: 073 859 5637 →
+                  WhatsApp: {BUSINESS.phoneDisplay} →
                 </a>
               </li>
               <li>
@@ -165,14 +166,14 @@ export const Footer: React.FC = () => {
               <div className="flex items-center gap-2 pt-1">
                 <MessageSquare className="w-3.5 h-3.5 text-[#25D366] shrink-0" />
                 <a
-                  href={`https://wa.me/27738595637?text=${encodeURIComponent(
+                  href={whatsAppLink(
                     "Hi, I'd like to book a headlight restoration or mobile detailing service."
-                  )}`}
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#00D2FF] transition-colors font-mono font-bold"
                 >
-                  WhatsApp: 073 859 5637
+                  WhatsApp: {BUSINESS.phoneDisplay}
                 </a>
               </div>
               <div className="flex items-center gap-2">

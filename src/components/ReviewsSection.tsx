@@ -1,6 +1,7 @@
 import React from 'react';
 import { QUALITY_CHARTER_PILLARS } from '../data/studioData';
 import { ShieldCheck, CheckCircle2, MessageSquare, Award, ThumbsUp, MapPin } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const ReviewsSection: React.FC = () => {
   return (
@@ -63,15 +64,15 @@ export const ReviewsSection: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
             <a
-              href={`https://wa.me/27738595637?text=${encodeURIComponent(
+              href={whatsAppLink(
                 "Hi, I'd like to book a mobile detailing service or ask a question."
-              )}`}
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>WhatsApp: 073 859 5637</span>
+              <span>WhatsApp: {BUSINESS.phoneDisplay}</span>
             </a>
           </div>
         </div>

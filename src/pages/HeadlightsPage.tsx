@@ -18,6 +18,7 @@ import {
   Check,
   X,
 } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const HeadlightsPage: React.FC = () => {
   const { openBooking, openCoupon } = useNavigation();
@@ -70,11 +71,11 @@ export const HeadlightsPage: React.FC = () => {
           onClick: () => openBooking('headlight-restoration'),
         }}
         secondaryAction={{
-          label: 'WhatsApp: 073 859 5637',
+          label: `WhatsApp: ${BUSINESS.phoneDisplay}`,
           onClick: () => {
-            window.location.href = `https://wa.me/27738595637?text=${encodeURIComponent(
+            window.location.href = whatsAppLink(
               "Hi, I'd like to book a headlight restoration."
-            )}`;
+            );
           },
         }}
       />
@@ -135,14 +136,14 @@ export const HeadlightsPage: React.FC = () => {
               </button>
 
               <a
-                href={`https://wa.me/27738595637?text=${encodeURIComponent(
+                href={whatsAppLink(
                   "Hi, I'd like to book a headlight restoration."
-                )}`}
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 px-6 text-xs sm:text-sm font-semibold tracking-wider text-white bg-[#1F1F1F] hover:bg-[#252525] border border-neutral-700 hover:border-[#25D366] rounded-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span className="text-[#25D366] font-bold">WhatsApp: 073 859 5637</span>
+                <span className="text-[#25D366] font-bold">WhatsApp: {BUSINESS.phoneDisplay}</span>
               </a>
             </div>
           </div>

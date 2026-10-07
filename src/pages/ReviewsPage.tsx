@@ -13,6 +13,7 @@ import {
   Check,
   Clock,
 } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const ReviewsPage: React.FC = () => {
   const { openBooking, openCoupon } = useNavigation();
@@ -29,11 +30,11 @@ export const ReviewsPage: React.FC = () => {
           onClick: () => openBooking(),
         }}
         secondaryAction={{
-          label: 'WhatsApp: 073 859 5637',
+          label: `WhatsApp: ${BUSINESS.phoneDisplay}`,
           onClick: () => {
-            window.location.href = `https://wa.me/27738595637?text=${encodeURIComponent(
+            window.location.href = whatsAppLink(
               "Hi, I'd like to book a mobile detailing service on the West Coast."
-            )}`;
+            );
           },
         }}
       />
@@ -167,15 +168,15 @@ export const ReviewsPage: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
             <a
-              href={`https://wa.me/27738595637?text=${encodeURIComponent(
+              href={whatsAppLink(
                 "Hi, I'd like to leave feedback regarding my recent headlight restoration / mobile detail."
-              )}`}
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all shadow-md cursor-pointer"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>WhatsApp Us: 073 859 5637</span>
+              <span>WhatsApp Us: {BUSINESS.phoneDisplay}</span>
             </a>
           </div>
         </section>

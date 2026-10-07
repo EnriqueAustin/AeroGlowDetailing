@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PACKAGES, TRADE_DEALERSHIP_PACKAGES, TRAVEL_ZONES } from '../data/studioData';
 import { Check, ShieldCheck, ArrowRight, Clock, MapPin, Briefcase, Zap, MessageSquare } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 interface PackagesPricingProps {
   onOpenBooking: (serviceId?: string) => void;
@@ -251,15 +252,15 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
             <div className="pt-4 mt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs">
               <span className="text-neutral-400">Questions? WhatsApp us:</span>
               <a
-                href={`https://wa.me/27738595637?text=${encodeURIComponent(
+                href={whatsAppLink(
                   "Hi, I'd like a quote for mobile detailing on the West Coast."
-                )}`}
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-[#25D366] hover:underline font-mono font-bold"
               >
                 <MessageSquare className="w-3.5 h-3.5 fill-current" />
-                <span>073 859 5637</span>
+                <span>{BUSINESS.phoneDisplay}</span>
               </a>
             </div>
           </div>

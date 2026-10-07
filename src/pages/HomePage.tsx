@@ -11,6 +11,7 @@ import { ReviewsSection } from '../components/ReviewsSection';
 import { FaqSection } from '../components/FaqSection';
 import { useNavigation } from '../context/NavigationContext';
 import { ArrowRight } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const HomePage: React.FC = () => {
   const { navigateTo, openBooking, openCoupon } = useNavigation();
@@ -174,14 +175,14 @@ export const HomePage: React.FC = () => {
             </button>
 
             <a
-              href={`https://wa.me/27738595637?text=${encodeURIComponent(
+              href={whatsAppLink(
                 "Hi, I'd like to book a headlight restoration."
-              )}`}
+              )}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 text-xs sm:text-sm font-semibold tracking-wider text-[#25D366] border border-[#25D366]/50 hover:bg-[#25D366]/10 rounded-sm transition-all cursor-pointer inline-flex items-center justify-center gap-2"
             >
-              <span>WHATSAPP: 073 859 5637</span>
+              <span>WHATSAPP: {BUSINESS.phoneDisplay}</span>
             </a>
           </div>
         </div>

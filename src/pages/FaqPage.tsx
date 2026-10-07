@@ -12,6 +12,7 @@ import {
   Sparkles,
   BookOpen,
 } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const FaqPage: React.FC = () => {
   const { openBooking, openCoupon } = useNavigation();
@@ -45,11 +46,11 @@ export const FaqPage: React.FC = () => {
           onClick: () => openBooking(),
         }}
         secondaryAction={{
-          label: 'WhatsApp: 073 859 5637',
+          label: `WhatsApp: ${BUSINESS.phoneDisplay}`,
           onClick: () => {
-            window.location.href = `https://wa.me/27738595637?text=${encodeURIComponent(
+            window.location.href = whatsAppLink(
               "Hi, I'd like a quote for mobile detailing on the West Coast."
-            )}`;
+            );
           },
         }}
       />
@@ -180,15 +181,15 @@ export const FaqPage: React.FC = () => {
             </p>
           </div>
           <a
-            href={`https://wa.me/27738595637?text=${encodeURIComponent(
+            href={whatsAppLink(
               "Hi, I have a question regarding mobile headlight restoration / detailing on the West Coast."
-            )}`}
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-2.5 text-xs font-semibold text-black bg-[#00D2FF] hover:bg-[#38BDF8] rounded-sm transition-all flex items-center gap-2 shrink-0 cursor-pointer shadow-sm"
           >
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>WhatsApp: 073 859 5637</span>
+            <span>WhatsApp: {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
 

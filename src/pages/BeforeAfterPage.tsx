@@ -13,6 +13,7 @@ import {
   Info,
   Layers,
 } from 'lucide-react';
+import { BUSINESS, whatsAppLink } from '../data/businessConfig';
 
 export const BeforeAfterPage: React.FC = () => {
   const { openBooking, openCoupon } = useNavigation();
@@ -35,11 +36,11 @@ export const BeforeAfterPage: React.FC = () => {
           onClick: () => openBooking('headlight-restoration'),
         }}
         secondaryAction={{
-          label: 'WhatsApp: 073 859 5637',
+          label: `WhatsApp: ${BUSINESS.phoneDisplay}`,
           onClick: () => {
-            window.location.href = `https://wa.me/27738595637?text=${encodeURIComponent(
+            window.location.href = whatsAppLink(
               "Hi, I'd like to book a headlight restoration."
-            )}`;
+            );
           },
         }}
       />
