@@ -386,10 +386,12 @@ export const BookPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                      <label htmlFor="book-vehicle-model" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                         Make, Model & Year
                       </label>
                       <input
+                        id="book-vehicle-model"
+                        autoComplete="off"
                         type="text"
                         placeholder="e.g. Ford Ranger 2020 or Toyota Hilux 2017"
                         value={booking.vehicleModel}
@@ -482,10 +484,13 @@ export const BookPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                      <label htmlFor="book-street-address" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                         Physical Street Address / Business Premises
                       </label>
                       <input
+                        id="book-street-address"
+                        autoComplete="street-address"
+                        required
                         type="text"
                         placeholder="e.g. 14 Church Street, Vredenburg or Mykonos, Langebaan"
                         value={booking.streetAddress}
@@ -545,10 +550,12 @@ export const BookPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                        <label htmlFor="book-preferred-date" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                           Preferred Date
                         </label>
                         <input
+                          id="book-preferred-date"
+                          autoComplete="off"
                           type="date"
                           value={booking.preferredDate}
                           onChange={(e) => setBooking({ ...booking, preferredDate: e.target.value })}
@@ -557,10 +564,12 @@ export const BookPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                        <label htmlFor="book-preferred-time" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                           Preferred Time Window
                         </label>
                         <select
+                          id="book-preferred-time"
+                          autoComplete="off"
                           value={booking.preferredTime}
                           onChange={(e) => setBooking({ ...booking, preferredTime: e.target.value })}
                           className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm"
@@ -573,10 +582,12 @@ export const BookPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                      <label htmlFor="book-notes" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                         Special Instructions or Parking Access
                       </label>
                       <textarea
+                        id="book-notes"
+                        autoComplete="off"
                         rows={3}
                         placeholder="e.g. Park behind gate, barking dog in yard, shady driveway, etc."
                         value={booking.notes}
@@ -601,10 +612,12 @@ export const BookPage: React.FC = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                        <label htmlFor="book-client-name" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                           Your Full Name *
                         </label>
                         <input
+                          id="book-client-name"
+                          autoComplete="name"
                           type="text"
                           required
                           placeholder="Your name"
@@ -615,10 +628,13 @@ export const BookPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                        <label htmlFor="book-client-phone" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                           Mobile / WhatsApp Number *
                         </label>
                         <input
+                          id="book-client-phone"
+                          autoComplete="tel"
+                          inputMode="tel"
                           type="tel"
                           required
                           placeholder="e.g. 082 123 4567"
@@ -629,10 +645,13 @@ export const BookPage: React.FC = () => {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                        <label htmlFor="book-client-email" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
                           EMAIL (OPTIONAL)
                         </label>
                         <input
+                          id="book-client-email"
+                          autoComplete="email"
+                          inputMode="email"
                           type="email"
                           placeholder="you@example.com"
                           value={booking.clientEmail}

@@ -396,10 +396,12 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                    <label htmlFor="modal-vehicle-model" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                       Vehicle Make, Model & Year
                     </label>
                     <input
+                      id="modal-vehicle-model"
+                      autoComplete="off"
                       type="text"
                       placeholder="e.g. Toyota Hilux 2018 or VW Polo 2016"
                       value={booking.vehicleModel}
@@ -493,10 +495,13 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                    <label htmlFor="modal-street-address" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                       Street Address / Workplace Location
                     </label>
                     <input
+                      id="modal-street-address"
+                      autoComplete="street-address"
+                      required
                       type="text"
                       placeholder="e.g. 14 Main Road, Vredenburg or Business Park, Saldanha"
                       value={booking.streetAddress}
@@ -556,10 +561,12 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                      <label htmlFor="modal-preferred-date" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                         Preferred Date
                       </label>
                       <input
+                        id="modal-preferred-date"
+                        autoComplete="off"
                         type="date"
                         value={booking.preferredDate}
                         onChange={(e) => setBooking({ ...booking, preferredDate: e.target.value })}
@@ -568,10 +575,12 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                      <label htmlFor="modal-preferred-time" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                         Preferred Time Slot
                       </label>
                       <select
+                        id="modal-preferred-time"
+                        autoComplete="off"
                         value={booking.preferredTime}
                         onChange={(e) => setBooking({ ...booking, preferredTime: e.target.value })}
                         className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm"
@@ -584,10 +593,12 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                    <label htmlFor="modal-notes" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                       Special Notes or Access Instructions
                     </label>
                     <textarea
+                      id="modal-notes"
+                      autoComplete="off"
                       rows={2}
                       placeholder="e.g. Gate code, park in driveway, shading available, etc."
                       value={booking.notes}
@@ -612,10 +623,12 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                      <label htmlFor="modal-client-name" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                         Full Name *
                       </label>
                       <input
+                        id="modal-client-name"
+                        autoComplete="name"
                         type="text"
                         required
                         placeholder="Your name"
@@ -626,10 +639,13 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                      <label htmlFor="modal-client-phone" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                         Phone / WhatsApp Number *
                       </label>
                       <input
+                        id="modal-client-phone"
+                        autoComplete="tel"
+                        inputMode="tel"
                         type="tel"
                         required
                         placeholder="e.g. 082 123 4567"
@@ -640,10 +656,13 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                      <label htmlFor="modal-client-email" className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
                         EMAIL (OPTIONAL)
                       </label>
                       <input
+                        id="modal-client-email"
+                        autoComplete="email"
+                        inputMode="email"
                         type="email"
                         placeholder="you@example.com"
                         value={booking.clientEmail}
