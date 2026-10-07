@@ -47,9 +47,9 @@ export const TRAVEL_ZONES: TravelZone[] = [
   },
   {
     area: 'Surrounding West Coast',
-    callOutFeeZAR: 200,
-    waiveThresholdZAR: 1000,
-    description: 'St Helena Bay, Velddrif & Paternoster by arrangement.',
+    callOutFeeZAR: 250,
+    waiveThresholdZAR: 1500,
+    description: 'R250 Call-Out (FREE on bookings of R1500+). St Helena Bay, Velddrif & Paternoster by arrangement.',
   },
 ];
 
@@ -745,7 +745,7 @@ export const QUALITY_CHARTER_PILLARS: CharterPillar[] = [
     title: 'Transparent West Coast Pricing',
     summary: 'Fixed ZAR pricing with call-out fee waived over R700.',
     details:
-      'Headlights are R650 standard for both front lights (with written 1-Year Guarantee). Call-out to Saldanha, Langebaan, or Jacobsbaai is R150, but waived completely if you book any service or bundle over R700!',
+      'Headlights are R650 standard for both front lights (with written 1-Year Guarantee). Call-out to Saldanha, Langebaan, or Jacobsbaai is R150, but waived completely if you book any service or bundle over R700! Further afield (St Helena Bay, Velddrif, Paternoster) is R250, FREE on bookings of R1500 or more.',
   },
 ];
 
@@ -769,7 +769,7 @@ export const FAQ_LIST: FaqItem[] = [
     category: 'booking',
     question: 'How do your travel and call-out fees work?',
     answer:
-      'We are based in Vredenburg, so call-outs within Vredenburg are completely FREE. For Saldanha, Langebaan, and Jacobsbaai, our standard call-out fee is R150. However, if you book any service or bundle over R700 (such as Tier 1 Sight & Shine, Tier 2 Weskus Bakkie Revive, or headlights with an add-on), the call-out fee is WAIVED COMPLETELY!',
+      'We are based in Vredenburg, so call-outs within Vredenburg are completely FREE. For Saldanha, Langebaan, and Jacobsbaai, our standard call-out fee is R150. However, if you book any service or bundle over R700 (such as Tier 1 Sight & Shine, Tier 2 Weskus Bakkie Revive, or headlights with an add-on), the call-out fee is WAIVED COMPLETELY! For the surrounding West Coast (St Helena Bay, Velddrif, Paternoster) the call-out is R250, waived on any booking of R1500 or more.',
   },
   {
     id: 'faq-4',

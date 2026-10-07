@@ -425,7 +425,7 @@ export const PackagesPage: React.FC = () => {
                 TRAVEL & CALL-OUT ZONES
               </h3>
               <p className="text-xs text-neutral-400 leading-relaxed mb-4">
-                We are based in Vredenburg. Call-out fees for surrounding West Coast areas are 100% waived whenever you book a service or bundle over R700!
+                We are based in Vredenburg. Call-outs to Saldanha, Langebaan and Jacobsbaai are 100% waived whenever you book a service or bundle over R700. Further afield (St Helena Bay, Velddrif, Paternoster) is R250, waived from R1500.
               </p>
               <div className="space-y-2.5 text-xs">
                 {TRAVEL_ZONES.map((zone) => (

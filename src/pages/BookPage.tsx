@@ -388,6 +388,10 @@ export const BookPage: React.FC = () => {
                       <div className="text-[11px] text-neutral-400 mt-2">
                         {booking.suburb === 'Vredenburg' ? (
                           <span className="text-emerald-400">✓ FREE Call-Out in Vredenburg</span>
+                        ) : booking.suburb === 'Surrounding West Coast' ? (
+                          <span>
+                            Call-out fee is R250, but <strong className="text-[#00D2FF]">completely waived</strong> on any booking of R1500 or more!
+                          </span>
                         ) : (
                           <span>
                             Call-out fee is R150, but <strong className="text-[#00D2FF]">completely waived</strong> on any booking over R700!

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SERVICES, PACKAGES } from '../data/studioData';
+import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
 import { BookingState, WestCoastArea } from '../types';
 import { BUSINESS } from '../data/businessConfig';
 
@@ -36,6 +36,8 @@ export const useBookingFlow = (preselectedServiceId?: string) => {
       price: s.priceVehicle
         ? (booking.vehicleType === 'sedan' || booking.vehicleType === 'hatchback'
             ? s.priceVehicle.sedan
+            : booking.vehicleType === 'suv'
+            ? s.priceVehicle.suv
             : s.priceVehicle.bakkie)
         : s.priceZAR,
       duration: s.durationHours,
@@ -64,11 +66,9 @@ export const useBookingFlow = (preselectedServiceId?: string) => {
   const baseServicePrice = activeOption.price;
 
   const getTravelFee = (suburb: WestCoastArea, subtotal: number) => {
-    if (suburb === 'Vredenburg') return 0;
-    if (suburb === 'Surrounding West Coast') {
-      return subtotal >= 1000 ? 0 : 200;
-    }
-    return subtotal >= 700 ? 0 : 150;
+    const zone = TRAVEL_ZONES.find((z) => z.area === suburb);
+    if (!zone || zone.callOutFeeZAR === 0) return 0;
+    return subtotal >= zone.waiveThresholdZAR ? 0 : zone.callOutFeeZAR;
   };
 
   const travelFee = getTravelFee(booking.suburb, baseServicePrice);

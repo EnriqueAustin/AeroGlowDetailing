@@ -235,7 +235,7 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                 TRAVEL & CALL-OUT ZONES
               </h4>
               <p className="text-xs text-neutral-400 mb-4 leading-relaxed">
-                Operating directly from Vredenburg. Call-out fees to surrounding coastal towns are completely waived when booking any bundle or service over R700!
+                Operating directly from Vredenburg. Call-outs to Saldanha, Langebaan and Jacobsbaai are completely waived on any bundle or service over R700; further afield is waived from R1500.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                 <div className="p-2.5 bg-[#161616] border border-neutral-800 rounded-sm">
@@ -245,6 +245,10 @@ export const PackagesPricing: React.FC<PackagesPricingProps> = ({
                 <div className="p-2.5 bg-[#161616] border border-neutral-800 rounded-sm">
                   <span className="text-white font-bold block">Saldanha, Langebaan, Jacobsbaai</span>
                   <span className="text-[#00D2FF] text-[11px] font-mono">R150 (FREE over R700!)</span>
+                </div>
+                <div className="p-2.5 bg-[#161616] border border-neutral-800 rounded-sm sm:col-span-2">
+                  <span className="text-white font-bold block">Surrounding West Coast</span>
+                  <span className="text-[#00D2FF] text-[11px] font-mono">R250 (FREE from R1500!)</span>
                 </div>
               </div>
             </div>
