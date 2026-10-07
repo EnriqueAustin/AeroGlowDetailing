@@ -71,8 +71,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreWork }) => {
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-2xl text-balance font-normal leading-relaxed mb-10">
-          Professional vehicle restoration at your location. We come to you across <strong className="text-white font-medium">Vredenburg, Saldanha, Langebaan, and Jacobsbaai</strong>.
-          Specialized in multi-stage wet-sanding headlight restoration with UV clearcoat protection, plus thorough mobile washing and interior cleaning.
+          Two specialities, one mobile visit: <strong className="text-white font-medium">guaranteed headlight restoration</strong> and <strong className="text-white font-medium">proper mobile detailing</strong> — wet-sanded UV clearcoat lenses, scratch-free hand washes, and interiors stripped of beach sand.
+          We come to you across Vredenburg, Saldanha, Langebaan, and Jacobsbaai.
         </p>
 
         {/* Dual Actions */}
@@ -104,12 +104,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreWork }) => {
           <span aria-hidden="true" className="hidden sm:inline text-neutral-700">·</span>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#00D2FF]" />
-            <span className="tracking-wide">1-Year Written Clarity Guarantee</span>
+            <span className="tracking-wide">Headlights From R650 · Detailing From R250</span>
           </div>
           <span aria-hidden="true" className="hidden sm:inline text-neutral-700">·</span>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-[#00D2FF]" />
-            <span className="tracking-wide">Pay on Completion (R650 per Pair)</span>
+            <span className="tracking-wide">Pay on Completion (No Deposit)</span>
           </div>
         </div>
 

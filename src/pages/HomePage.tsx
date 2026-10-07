@@ -1,10 +1,12 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
-import { HeadlightFeature } from '../components/HeadlightFeature';
-import { HeadlightProcessInteractive } from '../components/HeadlightProcessInteractive';
-import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
+import { TwinSpecialities } from '../components/TwinSpecialities';
 import { InteractiveServices } from '../components/InteractiveServices';
-import { TransformationSequence } from '../components/TransformationSequence';
+import { HeadlightFeature } from '../components/HeadlightFeature';
+import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
+import { HeadlightProcessInteractive } from '../components/HeadlightProcessInteractive';
+import { DetailingJourney } from '../components/DetailingJourney';
+import { ComboValueBand } from '../components/ComboValueBand';
 import { PackagesPricing } from '../components/PackagesPricing';
 import { WorkGallery } from '../components/WorkGallery';
 import { ReviewsSection } from '../components/ReviewsSection';
@@ -24,55 +26,13 @@ export const HomePage: React.FC = () => {
         onExploreWork={() => navigateTo('work')}
       />
 
-      {/* 02: Headlight Specialist Feature (Hero Product) */}
-      <div className="relative">
-        <HeadlightFeature
-          onOpenCoupon={openCoupon}
-          onBookHeadlights={() => navigateTo('headlights')}
-        />
-        <div className="bg-[#0D0D0D] pb-8 px-4 text-center">
-          <button
-            onClick={() => navigateTo('headlights')}
-            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
-          >
-            <span className="text-balance">View Dedicated Headlight Restoration Page with Full Technical Specs</span>
-            <ArrowRight className="w-4 h-4 shrink-0" />
-          </button>
-        </div>
-      </div>
+      {/* 02: Twin Specialities — headlight restoration & detailing, equal billing */}
+      <TwinSpecialities
+        onNavigate={navigateTo}
+        onOpenBooking={(id) => openBooking(id)}
+      />
 
-      {/* 03: Interactive Headlight Process */}
-      <div className="relative">
-        <HeadlightProcessInteractive />
-        <div className="bg-[#080808] pb-10 px-4 text-center">
-          <button
-            onClick={() => navigateTo('process')}
-            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
-          >
-            <span className="text-balance">View Step-by-Step Mobile Restoration Process</span>
-            <ArrowRight className="w-4 h-4 shrink-0" />
-          </button>
-        </div>
-      </div>
-
-      {/* 04: Interactive Draggable Before / After */}
-      <div className="relative">
-        <BeforeAfterSlider
-          onOpenBooking={(id) => openBooking(id)}
-          onOpenCoupon={openCoupon}
-        />
-        <div className="bg-[#0A0A0A] pb-10 px-4 text-center">
-          <button
-            onClick={() => navigateTo('before-after')}
-            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
-          >
-            <span className="text-balance">View Before & After Comparisons & Visual Proof</span>
-            <ArrowRight className="w-4 h-4 shrink-0" />
-          </button>
-        </div>
-      </div>
-
-      {/* 05: Interactive Services Discovery */}
+      {/* 03: Interactive Services Discovery (full detailing + headlight menu) */}
       <div className="relative">
         <InteractiveServices
           onOpenBooking={(id) => openBooking(id)}
@@ -89,10 +49,64 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* 06: The Transformation Journey (Dirty -> Clean -> Corrected -> Protected) */}
-      <TransformationSequence onOpenBooking={() => openBooking()} />
+      {/* 04: The Detailing Journey (Exterior & Interior, stage by stage) */}
+      <DetailingJourney onOpenBooking={(id) => openBooking(id)} />
 
-      {/* 07: Transparent Packages & Pricing */}
+      {/* 05: Headlight Specialist Feature (Core Specialty Offer) */}
+      <div className="relative">
+        <HeadlightFeature
+          onOpenCoupon={openCoupon}
+          onBookHeadlights={() => navigateTo('headlights')}
+        />
+        <div className="bg-[#0D0D0D] pb-8 px-4 text-center">
+          <button
+            onClick={() => navigateTo('headlights')}
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
+          >
+            <span className="text-balance">View Dedicated Headlight Restoration Page with Full Technical Specs</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
+          </button>
+        </div>
+      </div>
+
+      {/* 06: Interactive Draggable Before / After (headlights, trim & chrome proof) */}
+      <div className="relative">
+        <BeforeAfterSlider
+          onOpenBooking={(id) => openBooking(id)}
+          onOpenCoupon={openCoupon}
+        />
+        <div className="bg-[#0A0A0A] pb-10 px-4 text-center">
+          <button
+            onClick={() => navigateTo('before-after')}
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
+          >
+            <span className="text-balance">View Before & After Comparisons & Visual Proof</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
+          </button>
+        </div>
+      </div>
+
+      {/* 07: Combined Bundles — the two specialities in one call-out */}
+      <ComboValueBand
+        onNavigate={navigateTo}
+        onOpenBooking={(id) => openBooking(id)}
+      />
+
+      {/* 08: Interactive Headlight Process (technical depth) */}
+      <div className="relative">
+        <HeadlightProcessInteractive />
+        <div className="bg-[#080808] pb-10 px-4 text-center">
+          <button
+            onClick={() => navigateTo('process')}
+            className="inline-flex items-center justify-center gap-2 max-w-full text-xs font-mono font-semibold uppercase tracking-wider text-[#00D2FF] hover:text-[#38BDF8] transition-colors cursor-pointer text-center"
+          >
+            <span className="text-balance">View Step-by-Step Mobile Restoration Process</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
+          </button>
+        </div>
+      </div>
+
+      {/* 09: Transparent Packages & Pricing */}
       <div className="relative">
         <PackagesPricing
           onOpenBooking={(id) => openBooking(id)}
@@ -109,7 +123,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* 08: Work Gallery */}
+      {/* 10: Work Gallery */}
       <div className="relative">
         <WorkGallery onOpenBooking={(id) => openBooking(id)} />
         <div className="bg-[#0A0A0A] pb-10 px-4 text-center">
@@ -123,7 +137,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* 09: Client Reviews & Studio Credentials */}
+      {/* 11: Client Reviews & Studio Credentials */}
       <div className="relative">
         <ReviewsSection />
         <div className="bg-[#080808] pb-10 px-4 text-center">
@@ -137,7 +151,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* 10: Frequently Asked Questions Accordion */}
+      {/* 12: Frequently Asked Questions Accordion */}
       <div className="relative">
         <FaqSection />
         <div className="bg-[#090909] pb-10 px-4 text-center">
@@ -158,10 +172,10 @@ export const HomePage: React.FC = () => {
             Mobile Service Across The West Coast
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white font-display tracking-tight text-balance mb-6">
-            READY TO RESTORE YOUR VEHICLE'S HEADLIGHTS?
+            READY TO RESTORE YOUR VEHICLE?
           </h2>
           <p className="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto mb-10 leading-relaxed text-balance">
-            We come directly to your location in Vredenburg, Saldanha, Langebaan, and Jacobsbaai. Professional wet-sanding, durable UV clearcoat, and a written 1-Year Guarantee.
+            Guaranteed headlight restoration, proper mobile detailing, or both in one visit. We come directly to your location in Vredenburg, Saldanha, Langebaan, and Jacobsbaai — and you only pay once the work is done.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -176,7 +190,7 @@ export const HomePage: React.FC = () => {
 
             <a
               href={whatsAppLink(
-                "Hi, I'd like to book a headlight restoration."
+                "Hi, I'd like to book mobile headlight restoration and/or detailing."
               )}
               target="_blank"
               rel="noopener noreferrer"

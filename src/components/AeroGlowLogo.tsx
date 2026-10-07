@@ -5,12 +5,14 @@ interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'hero';
   showSubtitle?: boolean;
+  subtitleClassName?: string;
 }
 
 export const AeroGlowLogo: React.FC<LogoProps> = ({
   className = '',
   size = 'md',
   showSubtitle = true,
+  subtitleClassName = '',
 }) => {
   // Height presets
   const heightClasses = {
@@ -35,7 +37,7 @@ export const AeroGlowLogo: React.FC<LogoProps> = ({
       </div>
 
       {showSubtitle && size !== 'sm' && (
-        <div className="hidden sm:flex flex-col justify-center border-l border-neutral-800 pl-3">
+        <div className={`hidden sm:flex flex-col justify-center border-l border-neutral-800 pl-3 ${subtitleClassName}`}>
           <span className="text-[10px] font-mono tracking-widest text-[#00D2FF] uppercase font-bold">
             Mobile Detailing
           </span>

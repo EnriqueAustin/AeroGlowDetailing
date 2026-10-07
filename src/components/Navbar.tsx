@@ -48,20 +48,20 @@ export const Navbar: React.FC = () => {
             : 'bg-gradient-to-b from-[#080808]/98 via-[#080808]/85 to-transparent py-4 sm:py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
             
             {/* Zone 1: Wordmark & Official Brand Logo */}
             <button
               type="button"
               onClick={() => handleLinkClick('home')}
-              className="text-left group shrink min-w-0 cursor-pointer flex items-center hover:opacity-95 transition-opacity"
+              className="text-left group shrink-0 cursor-pointer flex items-center hover:opacity-95 transition-opacity"
             >
-              <AeroGlowLogo size="md" showSubtitle={true} />
+              <AeroGlowLogo size="md" showSubtitle={true} subtitleClassName="xl:hidden" />
             </button>
 
             {/* Zone 2: Navigation Links for Bespoke Pages */}
-            <nav className="hidden xl:flex items-center gap-5 text-sm font-medium text-neutral-300">
+            <nav className="hidden xl:flex items-center gap-3 2xl:gap-5 text-sm font-medium text-neutral-300">
               {navLinks.map((link) => {
                 const isActive = currentPage === link.page;
                 return (
@@ -95,7 +95,7 @@ export const Navbar: React.FC = () => {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-[#25D366] border border-[#25D366]/50 hover:border-[#25D366] rounded-sm hover:bg-[#25D366]/10 transition-colors whitespace-nowrap cursor-pointer"
+                className="hidden md:inline-flex xl:hidden 2xl:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-[#25D366] border border-[#25D366]/50 hover:border-[#25D366] rounded-sm hover:bg-[#25D366]/10 transition-colors whitespace-nowrap cursor-pointer"
               >
                 <span>WhatsApp: {BUSINESS.phoneDisplay}</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />

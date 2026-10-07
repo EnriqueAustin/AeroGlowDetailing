@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
 import { BookingState, WestCoastArea } from '../types';
 import { BUSINESS } from '../data/businessConfig';
@@ -27,6 +27,19 @@ export const useBookingFlow = (preselectedServiceId?: string) => {
   });
 
   const [uploadedPhotos, setUploadedPhotos] = useState<string[]>([]);
+
+  // The modal stays mounted for the life of the app, so the initial state above
+  // only ever sees an undefined preselection. Sync it whenever a "book this
+  // service" button hands over a new id — otherwise every entry point opens on
+  // the default headlight restoration.
+  useEffect(() => {
+    if (!preselectedServiceId) return;
+    setBooking((prev) =>
+      prev.serviceId === preselectedServiceId
+        ? prev
+        : { ...prev, serviceId: preselectedServiceId }
+    );
+  }, [preselectedServiceId]);
 
   const allSelectableItems = [
     ...SERVICES.map((s) => ({
