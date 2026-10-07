@@ -52,7 +52,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
     notes: '',
   });
 
-  const [simulatedUploadedImages, setSimulatedUploadedImages] = useState<string[]>([]);
+  const [selectedPhotoNames, setSelectedPhotoNames] = useState<string[]>([]);
 
   if (!isOpen) return null;
 
@@ -106,13 +106,13 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
   const travelFee = getTravelFee(booking.suburb, baseServicePrice);
   const totalEstimate = baseServicePrice + travelFee;
 
-  const handleSimulatedUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const names: string[] = [];
       for (let i = 0; i < e.target.files.length; i++) {
         names.push(e.target.files[i].name);
       }
-      setSimulatedUploadedImages((prev) => [...prev, ...names]);
+      setSelectedPhotoNames((prev) => [...prev, ...names]);
       setBooking((prev) => ({
         ...prev,
         uploadedPhotoNames: [...prev.uploadedPhotoNames, ...names],
@@ -128,11 +128,6 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   const whatsAppText = encodeURIComponent(
     `*NEW MOBILE BOOKING REQUEST — AEROGLOW DETAILING*\n` +
       `--------------------------------\n` +
@@ -142,11 +137,22 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
       `*Date & Time:* ${booking.preferredDate} at ${booking.preferredTime}\n` +
       `*Water & Power Available:* ${booking.waterAndPowerAvailable.toUpperCase()}\n` +
       `*Client:* ${booking.clientName} (${booking.clientPhone})\n` +
+      `*Email:* ${booking.clientEmail || 'Not provided'}\n` +
       `*Estimated Cost:* R${totalEstimate.toLocaleString()} (Pay on Completion)\n` +
       `*Travel:* ${travelFee === 0 ? 'FREE Call-Out' : `R${travelFee} Call-Out Fee`}\n` +
       `--------------------------------\n` +
       `*Notes:* ${booking.notes || 'None'}`
   );
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (currentStep < 5) {
+      handleNext();
+      return;
+    }
+    window.open(`https://wa.me/27738595637?text=${whatsAppText}`, '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
+  };
+
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto">
@@ -223,12 +229,12 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
               </div>
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
-                  BOOKING REQUEST RECEIVED!
+                  ONE LAST STEP
                 </h3>
                 <p className="text-neutral-400 mt-2 max-w-md mx-auto text-xs sm:text-sm leading-relaxed">
-                  Thank you, <strong className="text-white">{booking.clientName || 'valued customer'}</strong>. We have logged your request for{' '}
+                  Thank you, <strong className="text-white">{booking.clientName || 'valued customer'}</strong>. Your request for{' '}
                   <strong className="text-white">{booking.suburb}</strong> on{' '}
-                  <strong className="text-white">{booking.preferredDate}</strong>.
+                  <strong className="text-white">{booking.preferredDate}</strong> is almost done. WhatsApp should have opened in a new tab with your booking details ready to send. Press send in WhatsApp to confirm your booking. If WhatsApp did not open, use the green button below.
                 </p>
               </div>
 
@@ -268,7 +274,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-black font-bold text-xs uppercase tracking-wider rounded-sm transition-transform shadow-lg cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Send Confirmation to WhatsApp (073 859 5637)</span>
+                  <span>Open WhatsApp & Send Booking</span>
                 </a>
                 <button
                   type="button"
@@ -416,14 +422,17 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                         type="file"
                         multiple
                         accept="image/*"
-                        onChange={handleSimulatedUpload}
+                        onChange={handlePhotoSelect}
                         className="hidden"
                       />
                     </label>
-                    {simulatedUploadedImages.length > 0 && (
+                    <p className="mt-2 text-xs text-neutral-400">
+                      Photos cannot be attached through this form. Please send them directly on WhatsApp after submitting.
+                    </p>
+                    {selectedPhotoNames.length > 0 && (
                       <div className="mt-2 text-xs text-[#00D2FF] flex items-center gap-1.5">
                         <Check className="w-3.5 h-3.5" />
-                        <span>{simulatedUploadedImages.length} photo(s) selected</span>
+                        <span>{selectedPhotoNames.length} photo(s) selected</span>
                       </div>
                     )}
                   </div>
@@ -626,6 +635,19 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                         placeholder="e.g. 082 123 4567"
                         value={booking.clientPhone}
                         onChange={(e) => setBooking({ ...booking, clientPhone: e.target.value })}
+                        className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm font-mono"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1.5">
+                        EMAIL (OPTIONAL)
+                      </label>
+                      <input
+                        type="email"
+                        placeholder="you@example.com"
+                        value={booking.clientEmail}
+                        onChange={(e) => setBooking({ ...booking, clientEmail: e.target.value })}
                         className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-3.5 py-2.5 text-white placeholder-neutral-600 focus:outline-none focus:border-[#00D2FF] text-xs sm:text-sm font-mono"
                       />
                     </div>

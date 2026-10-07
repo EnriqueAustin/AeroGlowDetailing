@@ -113,11 +113,6 @@ export const BookPage: React.FC = () => {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   const whatsAppText = encodeURIComponent(
     `*NEW MOBILE BOOKING REQUEST — AEROGLOW DETAILING*\n` +
       `--------------------------------\n` +
@@ -128,11 +123,22 @@ export const BookPage: React.FC = () => {
       `*Water & Power on Site:* ${booking.waterAndPowerAvailable.toUpperCase()}\n` +
       `*Preferred Date:* ${booking.preferredDate} (${booking.preferredTime})\n` +
       `*Customer:* ${booking.clientName} (${booking.clientPhone})\n` +
+      `*Email:* ${booking.clientEmail || 'Not provided'}\n` +
       `*Estimated Total:* R${totalEstimate.toLocaleString()} (Pay on Completion)\n` +
       `*Call-Out:* ${travelFee === 0 ? 'FREE Call-Out' : `R${travelFee}`}\n` +
       `--------------------------------\n` +
       `*Notes:* ${booking.notes || 'None'}`
   );
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (currentStep < 5) {
+      handleNext();
+      return;
+    }
+    window.open(`https://wa.me/27738595637?text=${whatsAppText}`, '_blank', 'noopener,noreferrer');
+    setSubmitted(true);
+  };
 
   return (
     <div className="bg-[#080808] text-[#F0EFEA] min-h-screen">
@@ -207,11 +213,11 @@ export const BookPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-extrabold text-white font-display">
-                    BOOKING REQUEST SUBMITTED!
+                    ONE LAST STEP
                   </h3>
                   <p className="text-neutral-400 text-sm mt-2 max-w-md mx-auto leading-relaxed">
                     Thank you, <strong className="text-white">{booking.clientName}</strong>. Your mobile request for{' '}
-                    <strong className="text-white">{booking.suburb}</strong> has been received.
+                    <strong className="text-white">{booking.suburb}</strong> is almost done. WhatsApp should have opened in a new tab with your booking details ready to send. Press send in WhatsApp to confirm your booking. If WhatsApp did not open, use the green button below.
                   </p>
                 </div>
 
@@ -254,7 +260,7 @@ export const BookPage: React.FC = () => {
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#20ba59] text-black font-bold text-xs uppercase tracking-wider rounded-sm transition-transform shadow-lg cursor-pointer"
                   >
                     <MessageSquare className="w-4 h-4 fill-current" />
-                    <span>Send Booking to WhatsApp (073 859 5637)</span>
+                    <span>Open WhatsApp & Send Booking</span>
                   </a>
                   <button
                     type="button"
@@ -409,6 +415,9 @@ export const BookPage: React.FC = () => {
                           className="hidden"
                         />
                       </label>
+                      <p className="mt-2 text-xs text-neutral-400">
+                        Photos cannot be attached through this form. Please send them directly on WhatsApp after submitting.
+                      </p>
                       {uploadedPhotos.length > 0 && (
                         <div className="mt-2 text-xs text-[#00D2FF] flex items-center gap-1.5">
                           <Check className="w-3.5 h-3.5" />
@@ -615,6 +624,19 @@ export const BookPage: React.FC = () => {
                           placeholder="e.g. 082 123 4567"
                           value={booking.clientPhone}
                           onChange={(e) => setBooking({ ...booking, clientPhone: e.target.value })}
+                          className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm font-mono"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">
+                          EMAIL (OPTIONAL)
+                        </label>
+                        <input
+                          type="email"
+                          placeholder="you@example.com"
+                          value={booking.clientEmail}
+                          onChange={(e) => setBooking({ ...booking, clientEmail: e.target.value })}
                           className="w-full bg-[#111111] border border-neutral-800 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-[#00D2FF] text-sm font-mono"
                         />
                       </div>
