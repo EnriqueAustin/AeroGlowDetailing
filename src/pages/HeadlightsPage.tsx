@@ -375,6 +375,8 @@ export const HeadlightsPage: React.FC = () => {
             >
               {/* After Image */}
               <img
+                loading="lazy"
+                decoding="async"
                 src={IMAGES.headlightClear}
                 alt="Headlight restored to crystal clarity"
                 className="w-full h-full object-cover object-center pointer-events-none"
@@ -390,6 +392,8 @@ export const HeadlightsPage: React.FC = () => {
                 style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
               >
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={IMAGES.headlightOxidized}
                   alt="Headlight with cloudy yellow UV oxidation"
                   className="absolute inset-0 w-full h-full object-cover object-center"

@@ -101,6 +101,8 @@ export const InteractiveServices: React.FC<InteractiveServicesProps> = ({
             <div>
               <div className="relative aspect-video w-full rounded-sm overflow-hidden mb-6 bg-black border border-neutral-800">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={activeService.imageSrc}
                   alt={activeService.title}
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"

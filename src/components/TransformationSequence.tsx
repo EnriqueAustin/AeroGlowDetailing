@@ -107,6 +107,8 @@ export const TransformationSequence: React.FC<TransformationSequenceProps> = ({
           {/* Left Media Canvas */}
           <div className="lg:col-span-7 relative aspect-video rounded-sm overflow-hidden bg-black border border-neutral-800 shadow-2xl">
             <img
+              loading="lazy"
+              decoding="async"
               src={current.image}
               alt={`${current.label} transformation state`}
               className="w-full h-full object-cover object-center transition-all duration-500"

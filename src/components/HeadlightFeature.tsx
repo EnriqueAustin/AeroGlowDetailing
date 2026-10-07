@@ -39,6 +39,8 @@ export const HeadlightFeature: React.FC<HeadlightFeatureProps> = ({
           <div className="lg:col-span-7 bg-[#141414] border border-neutral-800 p-2 sm:p-4 rounded-sm relative overflow-hidden shadow-2xl">
             <div className="relative min-h-[220px] aspect-[4/3] sm:aspect-video overflow-hidden rounded-sm bg-neutral-900">
               <img
+                loading="lazy"
+                decoding="async"
                 src={IMAGES.headlightClear}
                 alt="Headlight lens restored to crystal optical clarity with automotive clearcoat"
                 className="w-full h-full object-cover object-center"

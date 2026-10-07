@@ -100,6 +100,8 @@ export const HeadlightProcessInteractive: React.FC = () => {
           {/* Visual Presentation */}
           <div className="lg:col-span-7 relative aspect-video bg-black rounded-sm overflow-hidden border border-neutral-800 shadow-xl group">
             <img
+              loading="lazy"
+              decoding="async"
               src={currentVisual.image}
               alt={currentVisual.headline}
               className="w-full h-full object-cover transition-opacity duration-300"

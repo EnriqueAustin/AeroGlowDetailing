@@ -138,6 +138,8 @@ export const BeforeAfterPage: React.FC = () => {
               >
                 {/* After Image */}
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={activeCase.afterImage}
                   alt={`${activeCase.title} restored state`}
                   className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
@@ -149,6 +151,8 @@ export const BeforeAfterPage: React.FC = () => {
                   style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
                 >
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={activeCase.beforeImage}
                     alt={`${activeCase.title} damaged state`}
                     className="absolute inset-0 w-full h-full object-cover object-center"
@@ -182,6 +186,8 @@ export const BeforeAfterPage: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-black p-2 rounded-sm">
                 <div className="relative aspect-video rounded-sm overflow-hidden border border-neutral-800">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={activeCase.beforeImage}
                     alt="Before state"
                     className="w-full h-full object-cover"
@@ -192,6 +198,8 @@ export const BeforeAfterPage: React.FC = () => {
                 </div>
                 <div className="relative aspect-video rounded-sm overflow-hidden border border-[#00D2FF]/50">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={activeCase.afterImage}
                     alt="Restored state"
                     className="w-full h-full object-cover"

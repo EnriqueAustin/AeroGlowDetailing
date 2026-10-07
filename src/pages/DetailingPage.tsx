@@ -328,6 +328,8 @@ export const DetailingPage: React.FC = () => {
             <div className="bg-[#121212] border border-neutral-800 rounded-sm overflow-hidden group">
               <div className="relative h-64 sm:h-72 overflow-hidden">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={IMAGES.westCoastWashFoam}
                   alt="West Coast snow foam hand wash"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -350,6 +352,8 @@ export const DetailingPage: React.FC = () => {
             <div className="bg-[#121212] border border-neutral-800 rounded-sm overflow-hidden group">
               <div className="relative h-64 sm:h-72 overflow-hidden">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={IMAGES.interiorClean}
                   alt="Clean dry automotive cockpit detailing"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

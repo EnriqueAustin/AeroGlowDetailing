@@ -45,6 +45,17 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
     handleMove(e.clientX);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    let next: number;
+    if (e.key === 'ArrowLeft') next = sliderPosition - 5;
+    else if (e.key === 'ArrowRight') next = sliderPosition + 5;
+    else if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = 100;
+    else return;
+    e.preventDefault();
+    setSliderPosition(Math.max(0, Math.min(100, next)));
+  };
+
   return (
     <section id="comparisons" className="py-20 lg:py-28 bg-[#0A0A0A] border-b border-neutral-900 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,10 +117,19 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
               onTouchStart={(e) => handleMove(e.touches[0].clientX)}
               onTouchMove={handleTouchMove}
               onClick={(e) => handleMove(e.clientX)}
-              className="relative aspect-video w-full overflow-hidden rounded-sm cursor-ew-resize touch-none select-none bg-black"
+              onKeyDown={handleKeyDown}
+              tabIndex={0}
+              role="slider"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(sliderPosition)}
+              aria-label="Before and after comparison slider. Use the left and right arrow keys to compare."
+              className="relative aspect-video w-full overflow-hidden rounded-sm cursor-ew-resize touch-none select-none bg-black focus:outline-none focus:ring-2 focus:ring-[#00D2FF] focus:ring-offset-2 focus:ring-offset-black"
             >
               {/* "After" Image (Full background layer) */}
               <img
+                loading="lazy"
+                decoding="async"
                 src={activeCase.afterImage}
                 alt={`${activeCase.title} - ${activeCase.afterLabel}`}
                 className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
@@ -122,6 +142,8 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
                 style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
               >
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={activeCase.beforeImage}
                   alt={`${activeCase.title} - ${activeCase.beforeLabel}`}
                   className="absolute inset-0 w-full h-full object-cover object-center"

@@ -26,11 +26,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onExploreWork }) => {
       {/* Background cinematic photography with layered scrim */}
       <div className="absolute inset-0 z-0">
         <img
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           src={IMAGES.heroAutomotive}
           alt="Cinematic luxury vehicle showcasing freshly detailed glossy paintwork and crystal clear restored headlights"
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000 ease-out"
           referrerPolicy="no-referrer"
-          loading="eager"
         />
         {/* Measured dark scrim to guarantee WCAG text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/85 to-[#080808]/60" />

@@ -105,6 +105,8 @@ export const WorkGalleryPage: React.FC = () => {
               {/* Media Thumbnail */}
               <div className="relative aspect-[4/3] bg-neutral-900 overflow-hidden">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={project.thumbnail}
                   alt={project.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -184,6 +186,8 @@ export const WorkGalleryPage: React.FC = () => {
                 {activeModalProject.beforeImage && (
                   <div className="relative aspect-video sm:aspect-[4/3] rounded-sm overflow-hidden">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={activeModalProject.beforeImage}
                       alt="Before restoration"
                       className="w-full h-full object-cover"
@@ -197,6 +201,8 @@ export const WorkGalleryPage: React.FC = () => {
                 {activeModalProject.afterImage && (
                   <div className="relative aspect-video sm:aspect-[4/3] rounded-sm overflow-hidden">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={activeModalProject.afterImage}
                       alt="After restoration"
                       className="w-full h-full object-cover"
