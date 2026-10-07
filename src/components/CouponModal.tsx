@@ -2,6 +2,7 @@ import React from 'react';
 import { X, ShieldCheck, MessageSquare, ArrowRight, MapPin, Check } from 'lucide-react';
 import { HERO_HEADLIGHT_OFFER } from '../data/studioData';
 import { AeroGlowLogo } from './AeroGlowLogo';
+import { useModalBehavior } from '../hooks/useModalBehavior';
 
 interface CouponModalProps {
   isOpen: boolean;
@@ -14,6 +15,8 @@ export const CouponModal: React.FC<CouponModalProps> = ({
   onClose,
   onApplyAndBook,
 }) => {
+  useModalBehavior(isOpen, onClose);
+
   if (!isOpen) return null;
 
   const whatsAppUrl = `https://wa.me/27738595637?text=${encodeURIComponent(
@@ -21,7 +24,15 @@ export const CouponModal: React.FC<CouponModalProps> = ({
   )}`;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="coupon-modal-title"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in"
+    >
       <div className="bg-[#141414] border-2 border-[#00D2FF]/60 max-w-md w-full rounded-sm shadow-2xl p-6 sm:p-8 relative">
         {/* Brand Logo & Close Button */}
         <div className="flex items-center justify-between mb-4">
@@ -42,7 +53,7 @@ export const CouponModal: React.FC<CouponModalProps> = ({
           <span>Core West Coast Rate</span>
         </div>
 
-        <h3 className="text-2xl font-extrabold text-white font-display">
+        <h3 id="coupon-modal-title" className="text-2xl font-extrabold text-white font-display">
           HEADLIGHT RESTORATION: R650
         </h3>
         <p className="text-xs text-neutral-400 mt-1 mb-5 leading-relaxed">

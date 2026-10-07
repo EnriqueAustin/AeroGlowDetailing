@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { GALLERY_PROJECTS } from '../data/studioData';
 import { GalleryProject } from '../types';
+import { useModalBehavior } from '../hooks/useModalBehavior';
 import { Eye, X, CheckCircle2, Clock, Tag, ArrowRight } from 'lucide-react';
 
 interface WorkGalleryProps {
@@ -10,6 +11,8 @@ interface WorkGalleryProps {
 export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
   const [filter, setFilter] = useState<'all' | 'headlights' | 'wash' | 'combo' | 'interior'>('all');
   const [activeModalProject, setActiveModalProject] = useState<GalleryProject | null>(null);
+  const closeProjectModal = useCallback(() => setActiveModalProject(null), []);
+  useModalBehavior(activeModalProject !== null, closeProjectModal);
 
   const filteredProjects =
     filter === 'all'
@@ -115,7 +118,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
 
         {/* Project Detail Modal */}
         {activeModalProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in">
+          <div role="dialog" aria-modal="true" aria-labelledby="project-modal-title" className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in">
             <div className="bg-[#141414] border border-neutral-800 max-w-3xl w-full rounded-sm max-h-[90vh] overflow-y-auto shadow-2xl relative">
               {/* Close Button */}
               <button
@@ -172,7 +175,7 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onOpenBooking }) => {
                       {activeModalProject.hoursLogged}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-extrabold text-white font-display">
+                  <h3 id="project-modal-title" className="text-2xl font-extrabold text-white font-display">
                     {activeModalProject.title}
                   </h3>
                   <p className="text-sm text-neutral-300 mt-2 leading-relaxed">

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { PageHeader } from '../components/PageHeader';
 import { useNavigation } from '../context/NavigationContext';
 import { GALLERY_PROJECTS } from '../data/studioData';
 import { GalleryProject } from '../types';
+import { useModalBehavior } from '../hooks/useModalBehavior';
 import {
   Clock,
   CheckCircle2,
@@ -19,6 +20,8 @@ export const WorkGalleryPage: React.FC = () => {
   const { openBooking, openCoupon } = useNavigation();
   const [filter, setFilter] = useState<'all' | 'headlights' | 'wash' | 'combo' | 'interior'>('all');
   const [activeModalProject, setActiveModalProject] = useState<GalleryProject | null>(null);
+  const closeProjectModal = useCallback(() => setActiveModalProject(null), []);
+  useModalBehavior(activeModalProject !== null, closeProjectModal);
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProjects = GALLERY_PROJECTS.filter((project) => {
@@ -169,7 +172,7 @@ export const WorkGalleryPage: React.FC = () => {
 
         {/* Project Detail Modal */}
         {activeModalProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in">
+          <div role="dialog" aria-modal="true" aria-labelledby="project-modal-title" className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in">
             <div className="bg-[#141414] border border-neutral-800 max-w-3xl w-full rounded-sm max-h-[90vh] overflow-y-auto shadow-2xl relative">
               {/* Close Button */}
               <button
@@ -223,7 +226,7 @@ export const WorkGalleryPage: React.FC = () => {
                     <span>·</span>
                     <span>{activeModalProject.area}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white font-display">
+                  <h3 id="project-modal-title" className="text-2xl font-bold text-white font-display">
                     {activeModalProject.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-neutral-300 mt-2 leading-relaxed">

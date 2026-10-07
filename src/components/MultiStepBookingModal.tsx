@@ -17,6 +17,7 @@ import {
 import { VehicleType, BookingState, WestCoastArea } from '../types';
 import { SERVICES, PACKAGES, TRAVEL_ZONES } from '../data/studioData';
 import { AeroGlowLogo } from './AeroGlowLogo';
+import { useModalBehavior } from '../hooks/useModalBehavior';
 
 interface MultiStepBookingModalProps {
   isOpen: boolean;
@@ -53,6 +54,8 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
   });
 
   const [selectedPhotoNames, setSelectedPhotoNames] = useState<string[]>([]);
+
+  useModalBehavior(isOpen, onClose);
 
   if (!isOpen) return null;
 
@@ -155,7 +158,15 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
 
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="booking-modal-title"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto"
+    >
       <div className="bg-[#121212] border border-neutral-800 max-w-2xl w-full rounded-sm shadow-2xl relative flex flex-col max-h-[92vh] overflow-hidden my-auto">
         {/* Header */}
         <div className="p-4 sm:p-6 border-b border-neutral-800 flex items-center justify-between bg-[#161616]">
@@ -166,7 +177,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
                 <MapPin className="w-3 h-3" />
                 <span>West Coast Mobile Booking</span>
               </div>
-              <h2 className="text-base sm:text-lg font-bold text-white font-display">
+              <h2 id="booking-modal-title" className="text-base sm:text-lg font-bold text-white font-display">
                 BOOK YOUR MOBILE SERVICE
               </h2>
             </div>

@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigation } from '../context/NavigationContext';
 import { Calendar, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { AppPage } from '../types';
 import { AeroGlowLogo } from './AeroGlowLogo';
+import { useModalBehavior } from '../hooks/useModalBehavior';
 
 export const Navbar: React.FC = () => {
   const { currentPage, navigateTo, openBooking, openCoupon } = useNavigation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const closeMobileMenu = useCallback(() => setMobileMenuOpen(false), []);
+  useModalBehavior(mobileMenuOpen, closeMobileMenu);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,7 +126,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 xl:hidden bg-[#080808]/98 backdrop-blur-xl pt-20 px-6 pb-8 flex flex-col justify-between border-b border-neutral-800 animate-fade-in overflow-y-auto">
+        <div role="dialog" aria-modal="true" aria-label="Navigation menu" className="fixed inset-0 z-50 xl:hidden bg-[#080808]/98 backdrop-blur-xl pt-20 px-6 pb-8 flex flex-col justify-between border-b border-neutral-800 animate-fade-in overflow-y-auto">
           <div className="flex justify-between items-center pb-4 border-b border-neutral-900">
             <span className="text-xs font-mono text-[#00D2FF] uppercase tracking-widest">
               Navigation Menu
