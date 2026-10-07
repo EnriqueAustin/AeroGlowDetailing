@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   X,
   Check,
@@ -8,11 +8,11 @@ import {
   CheckCircle2,
   MapPin,
 } from 'lucide-react';
-import { VehicleType, BookingState, WestCoastArea } from '../types';
-import { SERVICES, PACKAGES } from '../data/studioData';
+import { VehicleType, WestCoastArea } from '../types';
+import { useBookingFlow } from '../hooks/useBookingFlow';
+import { BUSINESS } from '../data/businessConfig';
 import { AeroGlowLogo } from './AeroGlowLogo';
 import { useModalBehavior } from '../hooks/useModalBehavior';
-import { BUSINESS } from '../data/businessConfig';
 
 interface MultiStepBookingModalProps {
   isOpen: boolean;
@@ -25,105 +25,28 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
   onClose,
   preselectedServiceId,
 }) => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [submitted, setSubmitted] = useState(false);
-
-  const [booking, setBooking] = useState<BookingState>({
-    serviceId: preselectedServiceId || 'headlight-restoration',
-    vehicleType: 'sedan',
-    vehicleModel: '',
-    condition: 'moderate',
-    suburb: 'Vredenburg',
-    streetAddress: '',
-    waterAndPowerAvailable: 'yes',
-    preferredDate: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
-    preferredTime: '08:30 AM (Morning)',
-    clientName: '',
-    clientPhone: '',
-    clientEmail: '',
-    uploadedPhotoNames: [],
-    couponApplied: false,
-    couponCode: '',
-    notes: '',
-  });
-
-  const [selectedPhotoNames, setSelectedPhotoNames] = useState<string[]>([]);
+  const {
+    currentStep,
+    setCurrentStep,
+    submitted,
+    setSubmitted,
+    booking,
+    setBooking,
+    uploadedPhotos: selectedPhotoNames,
+    allSelectableItems,
+    activeOption,
+    baseServicePrice,
+    totalEstimate,
+    travelFee,
+    handlePhotoUpload: handlePhotoSelect,
+    handleNext,
+    handleBack,
+    submitBooking,
+  } = useBookingFlow(preselectedServiceId);
 
   useModalBehavior(isOpen, onClose);
 
   if (!isOpen) return null;
-
-  // Combine Core Services and Bundles for seamless booking
-  const allSelectableItems = [
-    ...SERVICES.map((s) => ({
-      id: s.id,
-      title: s.title,
-      subtitle: s.subtitle,
-      price: s.priceVehicle
-        ? (booking.vehicleType === 'sedan' || booking.vehicleType === 'hatchback'
-            ? s.priceVehicle.sedan
-            : s.priceVehicle.bakkie)
-        : s.priceZAR,
-      duration: s.durationHours,
-      badge: s.isSpecialistHero ? 'Core Specialist' : 'Mobile Service',
-      isBundle: false,
-    })),
-    ...PACKAGES.map((p) => ({
-      id: p.id,
-      title: p.name,
-      subtitle: p.description,
-      price:
-        booking.vehicleType === 'sedan' || booking.vehicleType === 'hatchback'
-          ? p.priceSedan
-          : booking.vehicleType === 'suv'
-          ? p.priceSuv
-          : p.priceBakkie,
-      duration: p.duration,
-      badge: p.badge || 'Weskus Value Bundle',
-      isBundle: true,
-    })),
-  ];
-
-  const activeOption =
-    allSelectableItems.find((item) => item.id === booking.serviceId) || allSelectableItems[0];
-
-  // Base service price
-  const baseServicePrice = activeOption.price;
-
-  // Travel calculation
-  const getTravelFee = (suburb: WestCoastArea, subtotal: number) => {
-    if (suburb === 'Vredenburg') return 0;
-    if (suburb === 'Surrounding West Coast') {
-      return subtotal >= 1000 ? 0 : 200;
-    }
-    // Saldanha, Langebaan, Jacobsbaai
-    return subtotal >= 700 ? 0 : 150;
-  };
-
-  const travelFee = getTravelFee(booking.suburb, baseServicePrice);
-  const totalEstimate = baseServicePrice + travelFee;
-
-  const handlePhotoSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      const names: string[] = [];
-      for (let i = 0; i < e.target.files.length; i++) {
-        names.push(e.target.files[i].name);
-      }
-      setSelectedPhotoNames((prev) => [...prev, ...names]);
-      setBooking((prev) => ({
-        ...prev,
-        uploadedPhotoNames: [...prev.uploadedPhotoNames, ...names],
-      }));
-    }
-  };
-
-  const handleNext = () => {
-    if (currentStep < 5) setCurrentStep(currentStep + 1);
-  };
-
-  const handleBack = () => {
-    if (currentStep > 1) setCurrentStep(currentStep - 1);
-  };
 
   const whatsAppText = encodeURIComponent(
     `*NEW MOBILE BOOKING REQUEST — AEROGLOW DETAILING*\n` +
@@ -140,16 +63,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
       `--------------------------------\n` +
       `*Notes:* ${booking.notes || 'None'}`
   );
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (currentStep < 5) {
-      handleNext();
-      return;
-    }
-    window.open(`${BUSINESS.whatsAppBase}?text=${whatsAppText}`, '_blank', 'noopener,noreferrer');
-    setSubmitted(true);
-  };
-
+  const handleSubmit = (e: React.FormEvent) => submitBooking(e, whatsAppText);
 
   return (
     <div
