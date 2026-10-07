@@ -1209,16 +1209,16 @@ Create the file with content that allows all crawlers everything, and points to 
 
 A valid XML sitemap listing the site's pages.
 
-**Important caveat:** this site currently uses hash-based URLs (`#/headlights`, `#/book`). Search engines do not index hash fragments as separate pages. Until Phase 13 converts these to real paths, the sitemap can honestly only contain the single root URL.
+Real URL paths are already in place (Phase 13 is done), so list every page. Create one `<url>` entry for each of these paths on `https://YOUR-DOMAIN.co.za`:
 
-So for now, create a sitemap with **one** entry: `https://YOUR-DOMAIN.co.za/`, with `<changefreq>weekly</changefreq>` and `<priority>1.0</priority>`.
+`/`, `/headlights`, `/detailing`, `/process`, `/before-after`, `/services`, `/packages`, `/work`, `/reviews`, `/faq`, `/book`
 
-Add an XML comment in the file noting that the other pages will be added once real routing is in place.
+Give `/` `<priority>1.0</priority>` and the rest `0.8`. Use `<changefreq>weekly</changefreq>` for all.
 
 ### Constraints
 
 - Do NOT invent a domain name. If you were not given a real one, stop and say so.
-- Do NOT list hash URLs in the sitemap — they will not be indexed and may look like spam.
+- Do NOT list any `#/` hash URLs in the sitemap.
 - Do NOT change the prices, service areas or opening hours in the structured data.
 
 ### Verify
