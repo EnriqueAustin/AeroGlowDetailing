@@ -31,8 +31,13 @@ const PAGE_TITLES: Record<AppPage, string> = {
   book: 'Book Mobile Detailing in Vredenburg, Saldanha, Langebaan | AeroGlow Detailing',
 };
 
-const getPageFromHash = (): AppPage => {
-  const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+const getPageFromPath = (): AppPage => {
+  // Forward legacy hash links (e.g. /#/book) to their real path
+  const legacy = window.location.hash.match(/^#\/([a-z-]+)/i);
+  if (legacy) {
+    window.history.replaceState({}, '', `/${legacy[1].toLowerCase()}`);
+  }
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
   const validPages: AppPage[] = [
     'home',
     'headlights',
@@ -46,32 +51,35 @@ const getPageFromHash = (): AppPage => {
     'faq',
     'book',
   ];
-  if (validPages.includes(hash as AppPage)) {
-    return hash as AppPage;
+  if (validPages.includes(path as AppPage)) {
+    return path as AppPage;
   }
   return 'home';
 };
 
 export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState<AppPage>(getPageFromHash);
+  const [currentPage, setCurrentPage] = useState<AppPage>(getPageFromPath);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [isCouponOpen, setIsCouponOpen] = useState(false);
   const [preselectedServiceId, setPreselectedServiceId] = useState<string | undefined>(undefined);
   const [hasCouponApplied, setHasCouponApplied] = useState(false);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const page = getPageFromHash();
+    const handlePopState = () => {
+      const page = getPageFromPath();
       setCurrentPage(page);
       document.title = PAGE_TITLES[page] || PAGE_TITLES.home;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    // Initial document title set
+    window.addEventListener('popstate', handlePopState);
     document.title = PAGE_TITLES[currentPage] || PAGE_TITLES.home;
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonical) {
+      canonical.href = window.location.origin + window.location.pathname;
+    }
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, [currentPage]);
 
   const navigateTo = useCallback((page: AppPage, serviceId?: string) => {
@@ -79,7 +87,7 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       setPreselectedServiceId(serviceId);
     }
     setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : `#/${page}`;
+    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`);
     document.title = PAGE_TITLES[page] || PAGE_TITLES.home;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
